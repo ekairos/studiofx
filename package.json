@@ -1,0 +1,22 @@
+{
+  "name": "studiofx",
+  "version": "1.0.0",
+  "description": "StudioFx's portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GarethS3/studiofx.git"
+  },
+  "author": "Gareth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GarethS3/studiofx/issues"
+  },
+  "homepage": "https://github.com/GarethS3/studiofx#readme",
+  "dependencies": {
+    "bower": "^1.8.4"
+  }
+}

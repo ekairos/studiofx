@@ -1,0 +1,14 @@
+/*		===  CUSTOM STYLE ===
+*/
+body{
+	font-family: 'Rajdhani', sans-serif;
+    color: #ddd;
+    background-color: #333;
+}
+
+header{
+}
+	header h1{
+		padding: 10px;
+		text-align: center;
+	}
