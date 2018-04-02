@@ -31,7 +31,7 @@ It shoud be clear with fluid and simple navigation as well as respnsive so to be
 - [AngularJS](https://angularjs.org/)
     - **AngularJS** is used to handle page routing, build custom directives
 - [Bootstrap](http://getbootstrap.com/)
-    - We use **Bootstrap** to give the project a simple, responsive layout
+    - **Bootstrap v3.3.7** is used to give the project a simple, responsive layout. No update to BS4 planed at this stage and would result in new version.
 - [npm](https://www.npmjs.com/)
     - We use **npm** to help manage some of the dependencies in our application
 - [bower](https://bower.io/)
