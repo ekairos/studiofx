@@ -29,6 +29,24 @@
 </head>
 <body>
 
+<nav id="studioNavbar" class="navbar navbar-fixed-top navbar-inverse" ng-controller="NavController">
+	<div class="navbar-header">
+		<div id="navLogo" class="navbar-brand"><a href="/">Brand Logo</a></div>
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navMenu">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	</div><!-- /navbar hedaer -->
+	<div id="navMenu" class="collapse navbar-collapse">
+		<ul class="nav navbar-nav navbar-right">
+			<li ng-class="pageClass('/about')"><a href="/about">About</a></li>
+			<li ng-class="pageClass('/work')"><a href="/work">Work</a></li>
+			<li ng-class="pageClass('/contact')"><a href="/contact">Contact</a></li>
+		</ul>
+	</div><!-- /navbar collapse -->
+</nav>
+
 <div ng-view>
 	<!-- angularJS views -->
 </div>

@@ -7,5 +7,20 @@ angular.module('studioApp').config(function($locationProvider, $routeProvider) {
 	$routeProvider.when('/', {
 		templateUrl: 'templates/home.html',
 		controller: 'HomeController'
+	})
+	.when('/about', {
+		templateUrl: 'templates/about.html',
+		controller: 'AboutController'
+	})
+	.when('/work', {
+		templateUrl: 'templates/work.html',
+		controller: 'WorkController'
+	})
+	.when('/contact', {
+		templateUrl: 'templates/contact.html',
+		controller: 'ContactController'
+	})
+	.otherwise({
+		redirectTo: '/'
 	});
 });
