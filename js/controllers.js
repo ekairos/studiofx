@@ -3,6 +3,10 @@ angular.module('studioApp')
 		$scope.pageClass = function(path) {
 			return (path == $location.path()) ? 'nav-activ' : '';
 		}
+		// hide nav menu on click/touch outside links
+		$('body').click(function() {
+			$('#navMenu').collapse("hide");
+		});
 	})
 	.controller('HomeController', function($scope) {
 		console.log('Home template');
