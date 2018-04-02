@@ -1,5 +1,16 @@
-/*		===  CUSTOM STYLE ===
+/*
+				___ COMMON RULES (mobile first)___
 */
+/*					--- Elements ---
+*/
+
+html, body, [ng-view]{
+	height: 100%;
+}
+
+html{
+	font-size: 14px;
+}
 body{
 	font-family: 'Rajdhani', sans-serif;
     color: #ddd;
@@ -7,8 +18,35 @@ body{
 }
 
 header{
+	margin-top: 70px; 
 }
 	header h1{
 		padding: 10px;
 		text-align: center;
 	}
+
+/*
+				===== INDEX =====
+*/
+/*					--- Navigation ---
+*/
+#navMenu{
+	text-align: center;
+	font-size: 1.3rem;
+	padding: 0px;
+}
+	#navMenu ul{
+		margin: 0px;
+	}
+		#navMenu li{
+			padding-top: 20px;
+			padding-bottom: 20px;
+			border-top: 1px;
+			border-bottom: 1px;
+			border-style: solid;
+			border-color: transparent;
+		}
+		#navMenu .nav-activ{
+			border-color: #999;
+			background-color: rgba(128,128,128,0.2);
+		}
