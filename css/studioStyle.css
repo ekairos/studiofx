@@ -16,14 +16,53 @@ body{
     color: #ddd;
     background-color: #333;
 }
+h1{
+	font-size: 3.6rem;
+}
+h5{
+	font-size: 1.1rem;
+	margin: 4px 0;
+}
 
 header{
-	margin-top: 70px; 
+	position: relative;
+	padding: 10px 0;
 }
-	header h1{
-		padding: 10px;
-		text-align: center;
+footer{
+	width: 100%;
+	text-align: center;
+	padding: 2px 0px;
+	background-color: rgba(0,0,0,0.3);
+}
+
+/*				___ COLOR PANEL ___
+*/
+
+/*				___ Bootstrap Custom ___
+*/
+/*					--- Modals ---
+*/
+.modal{
+	padding: 0px;
+	margin: 0px;
+}
+	.modal-dialog{
+		width: 100%;
+		margin: 0px;
+		vertical-align: middle;
 	}
+.modal-backdrop.in{
+	opacity: 0.8;
+}
+
+/*					--- BS buttons ---
+*/
+.btn{
+	padding: 3px 9px;
+	background-color: transparent;
+	color: #fff;
+}
+
 
 /*
 				===== INDEX =====
@@ -50,3 +89,68 @@ header{
 			border-color: #999;
 			background-color: rgba(128,128,128,0.2);
 		}
+/*					--- Footer ---
+*/
+#social-links{
+	position: fixed;
+	bottom: 0px;
+}
+	.social-icon{
+		display: inline-block;
+		position: relative;
+		width: 22px;
+		height: 22px;
+		padding: 2px;
+		margin: 5px 10px;
+		border: 1px solid #fff;
+		transition: border-radius 0.3s;
+	}
+	.social-icon:hover{
+		border-radius: 50%;
+	}
+
+/*
+				===== HOME TEMPLATE =====
+*/
+#landing{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	align-items: flex-end;
+}
+	#studioFx{
+		width: 100%;
+	    flex: 0 0 35%;
+	}
+		#studioFx h1{
+			padding: 20px;
+			border: 1px solid #fff;
+			border-width: 1px 0px 1px 0px;
+			box-shadow: 0 0 40px rgba(0,0,0,0.5);
+		}
+		#studioFx h5{
+			letter-spacing: 1px;
+			word-spacing: 2px;
+			margin-top: 5%;
+		}
+	#reel{
+		width: 50px;
+		padding: 20px;
+		align-self: center;
+		border: 1px solid white;
+		border-width: 1px 0;
+	}
+		#reel span{
+			cursor: pointer;
+		}
+/*				--- Reel viewer ---
+*/
+#viewer button{
+	z-index: 1;
+	position: absolute;
+	right: 0;
+}

@@ -1,3 +1,29 @@
-<header>
-	<h1>{{title}}</h1>
-</header>
+<main id="landing">
+
+	<header id="studioFx">
+		<h1 id="studioTitle">StudioFX</h1>
+		<h5>We're having a digital craig !</h5>
+	</header>
+
+	<section id="reel" data-toggle="modal" data-target="#viewer">
+		<!-- load full screen demo reel -->
+		<span class="glyphicon glyphicon-play"></span>
+	</section>
+
+</main>
+
+<!-- modal viewer -->
+<div id="viewer" class="modal fade" tabindex="-1">
+	<div class="modal-dialog">
+		<!-- <div class="modal-content"> -->
+			<!-- <div class="modal-body"> -->
+				<button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">&times;</button>
+				<video id="heroVid" width="100%" preload="auto" controls>
+					<source src="../assets/gallery/videos/reel_sd.mp4" type="video/mp4">
+				</video>
+			<!-- </div> -->
+		<!-- </div> -->
+	</div>
+</div>
+
+<script type="text/javascript" src="js/reelviewer.js"></script>

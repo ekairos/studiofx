@@ -11,7 +11,6 @@ angular.module('studioApp')
 	.controller('HomeController', function($scope) {
 		console.log('Home template');
 
-		$scope.title = 'home page';
 	})
 	.controller('AboutController', function($scope) {
 		console.log('About template');
