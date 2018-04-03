@@ -149,8 +149,12 @@ footer{
 		}
 /*				--- Reel viewer ---
 */
-#viewer button{
-	z-index: 1;
-	position: absolute;
-	right: 0;
+#viewer{
+	margin-left: auto;
+	margin-right: auto;
 }
+	#viewer button{
+		z-index: 1;
+		position: absolute;
+		right: 0;
+	}
