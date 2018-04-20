@@ -1,4 +1,4 @@
-angular.module('studioApp', ['ngRoute']);
+angular.module('studioApp', ['ngRoute', 'navController', 'homeController', 'aboutController', 'workController', 'contactController']);
 
 angular.module('studioApp').config(function($locationProvider, $routeProvider) {
 
