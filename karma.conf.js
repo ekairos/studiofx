@@ -23,9 +23,17 @@ module.exports = function(config) {
 
         // --- app files ---
         'js/app.js',
-
+        'js/controllerHome.js',
+        'js/controllerAbout.js',
+        'js/controllerWork.js',
+        'js/controllerContact.js',
+        
         // --- spec files ---
-        'tests/unit/dummySpec.js',
+        //'tests/unit/dummySpec.js',
+        'tests/unit/controllerHomeSpec.js',
+        'tests/unit/controllerAboutSpec.js',
+        'tests/unit/controllerWorkSpec.js',
+        'tests/unit/controllerContactSpec.js'
     ],
 
 
