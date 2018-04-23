@@ -6,10 +6,16 @@ describe('About Controller test - ', function() {
 		$controller = _$controller_;
 		$rootScope = _$rootScope_;
 		$scope = $rootScope.$new();
+		var aboutCtr = $controller('AboutController', {$scope: $scope});
 	}));
 
 	it('should read scope title', function() {
-		var homeCtr = $controller('AboutController', {$scope: $scope});
 		expect($scope.title).toBe('About Page');
+	});
+
+	describe('About Controller', function() {
+		it('should read members list', function() {
+			expect($scope.members.length).toEqual(4);
+		});
 	});
 });
