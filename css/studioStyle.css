@@ -84,6 +84,10 @@ footer {
 .anchor {
 	padding-top: 80px;
 }
+.active {
+	color: #000;
+	background-color: rgba(224,224,224,0.6);
+}
 /*				___ COLOR PANEL ___
 */
 
@@ -250,3 +254,28 @@ footer {
 		font-size: 1.1rem;
 		padding-left: 10%;
 	}
+
+
+/*			
+				___ TABLETS / DESKTOP RULES ___		768 <
+*/
+@media screen and (min-width: 768px){
+/*
+				___ INDEX ___
+*/
+/*					--- Navigation ---
+*/
+	.navbar-header{
+		margin-left: 10%;
+	}
+	#navMenu ul{
+		width: 20%;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		margin-right: 10%;
+	}
+		#navMenu li{
+			padding-top: 0px;
+			padding-bottom: 0px;
+		}
