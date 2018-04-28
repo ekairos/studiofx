@@ -1,3 +1,45 @@
-<header>
-	<h1>{{title}}</h1>
-</header>
+<main id="workMain">
+
+		<!-- 3d gallery -->
+	<article id="work3d" class="anchor">
+		<header>
+			<h1>3D Work</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		</header>
+		<section class="gallery">
+			<figure class="thumb" ng-repeat="g in gallery3d">
+				<img ng-src="../assets/gallery/{{g.file}}_sm.jpg" alt="{{g.name}}" src="/">
+				<figcaption><a href="#">{{g.name}}</a><br>{{g.description}}</figcaption>
+			</figure>
+		</section>
+	</article>
+
+		<!-- post-production gallery -->
+	<article id="work-post" class="anchor">
+		<header>
+			<h1>Post Production</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		</header>
+		<section class="gallery">
+			<figure class="thumb" ng-repeat="g in gallerypost">
+				<img ng-src="../assets/gallery/{{g.file}}_sm.jpg" alt="{{g.name}}" src="/">
+				<figcaption><a href="#">{{g.name}}</a><br>{{g.description}}</figcaption>
+			</figure>
+		</section>
+	</article>
+
+		<!-- motion graphics gallery -->
+	<article id="work-mgx" class="anchor">
+		<header>
+			<h1>Motion graphics</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		</header>
+		<section class="gallery">
+			<figure class="thumb" ng-repeat="g in gallerymgx">
+				<img ng-src="../assets/gallery/{{g.file}}_sm.jpg" alt="{{g.name}}" src="/">
+				<figcaption><a href="#">{{g.name}}</a><br>{{g.description}}</figcaption>
+			</figure>
+		</section>
+	</article>
+
+</main>

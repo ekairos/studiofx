@@ -20,6 +20,7 @@ module.exports = function(config) {
         'bower_components/jquery/dist/jquery.js',
         'bower_components/bootstrap/dist/js/bootstrap.min.js',
         'node_modules/angular-mocks/angular-mocks.js',
+        'node_modules/jasmine-expect/dist/jasmine-matchers.js',
 
         // --- app files ---
         'js/app.js',

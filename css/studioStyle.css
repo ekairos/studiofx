@@ -256,6 +256,52 @@ footer {
 		padding-left: 10%;
 	}
 
+/*
+				===== WORK TEMPLATE =====
+*/
+/*					--- Gallery ---
+*/
+
+#workMain h1 {
+	font-size: 2rem;
+	padding: 6px 0;
+	margin-left: 5%;
+}
+#work-mgx {
+	padding-bottom: 39px;
+	box-sizing: border-box;
+	min-height: 640px;
+}
+.thumb {
+	position: relative;
+	overflow: hidden;
+}
+	.thumb img {
+		width: 100%;
+		display: block;
+	}
+	.thumb figcaption {
+		position: absolute;
+		display: block;
+		width: 100%;
+		padding: 10px 0;
+		bottom: 0px;
+		text-align: center;
+		color: #fff;
+		font-size: 0.9rem;
+		letter-spacing: 1px;
+		line-height: 1.1rem;
+		background-color: rgba(0,0,0,0.65);
+		border-width: 1px 0px 1px 0px;
+		border-style: solid;
+		border-color: rgba(255,255,255,0.5);
+	}
+		.thumb figcaption a {
+			text-decoration: none;
+			color: #fff;
+			font-size: 1.1rem;
+		}
+
 
 /*			
 				___ TABLETS / DESKTOP RULES ___		768 <
@@ -266,17 +312,17 @@ footer {
 */
 /*					--- Navigation ---
 */
-	.navbar-header{
+	.navbar-header {
 		margin-left: 10%;
 	}
-	#navMenu ul{
+	#navMenu ul {
 		width: 20%;
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: space-between;
 		margin-right: 10%;
 	}
-		#navMenu li{
+		#navMenu li {
 			padding-top: 0px;
 			padding-bottom: 0px;
 		}
