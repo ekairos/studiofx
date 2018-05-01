@@ -302,6 +302,85 @@ footer {
 			font-size: 1.1rem;
 		}
 
+/*
+				___ CONTACT TEMPLATE ___
+*/
+#contactMain {
+	width: 90%;
+	margin: 51px auto 45px;
+}
+#contactMain h1 {
+	font-size: 2rem;
+	padding: 6px 0;
+	margin-left: 5%;
+}
+/*					--- Address ---
+*/
+#contactLocation {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	padding: 15px;
+	background-color: rgba(0,0,0,0.3);
+}
+	#address {
+		width: 100%;
+	}
+		#address h2 {
+			font-size: 1.5rem;
+			padding: 5px 0;
+			margin: 4px 0;
+			margin-left: 5%;
+		}
+	#contactMap {
+		margin: 15px 0;
+	}
+		#gMap {
+			/* safe guard width for mobile devices*/
+			width: 90%;
+			height: 250px;
+			margin: 10px auto;
+			background-color: rgb(255,255,255);
+		}
+/*				--- Query Form ---
+*/
+#senderInfo,
+#query {
+	padding: 15px;
+	background-color: rgba(0,0,0,0.3);
+}
+	#contactForm button{
+		display: block;
+		margin: 10px auto;
+	}
+	#contactForm input,
+	#contactForm textarea,
+	#contactForm select{
+		display: block;
+		width: 95%;
+		margin-left: auto;
+	}
+	#contactForm textarea{
+		min-height: 80px;
+	}
+	#contactForm .help-block{
+		position: relative;
+		left: 5%;
+		color: #d7d7d7;
+	}
+	#contactForm .form.control{
+		font-size: 1.2rem;
+	}
+	form label{
+		display: block;
+		padding-bottom: 8px;
+		font-size: 1.2rem;
+	}
+	input::placeholder{
+		font-style: italic;
+	}
+
 
 /*			
 				___ TABLETS / DESKTOP RULES ___		768 <
