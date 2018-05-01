@@ -6,7 +6,7 @@ describe('testing work controller - ', function() {
 		$controller = _$controller_;
 		$rootScope = _$rootScope_;
 		$scope = $rootScope.$new();
-		var homeCtr = $controller('WorkController', {$scope: $scope});
+		var workCtr = $controller('WorkController', {$scope: $scope});
 	}));
 
 	it('should read scope title', function() {
