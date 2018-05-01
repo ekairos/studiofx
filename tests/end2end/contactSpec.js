@@ -44,5 +44,49 @@ describe('About tests - ', function() {
 			expect(this.msg.getAttribute('value')).toBe('A short message !');
 		});
 
-	})
+		describe('modal - ', function() {
+
+			beforeEach(function() {
+				this.modal = element(by.id('formResult'));
+				// var modal = element(by.id('formResult'));
+				this.modalVis = this.modal.getCssValue('display');
+			})
+			it('shouldn\'t drop modal without submission', function() {
+				// expect modal to be hidden
+				expect(this.modal.getCssValue('display')).toBe('none');
+			});
+
+			it('should show modal once query is submidted', function() {
+				// form	is already filled			
+				// submit query
+				this.submitButton = element(by.css('.btn[type="submit"]'));
+				this.submitButton.click();
+				browser.sleep(2500);
+
+				// expect modal to be shown / ie not.hidden
+				expect(this.modal.getCssValue('display')).toBe('block');
+			});
+
+			it('should contain user\'s data and query message', function() {
+				var bindName = element(by.binding('contact.name')).getText();
+				var bindEmail = element(by.binding('contact.email')).getText();
+				var bindMessage = element(by.binding('contact.message')).getText();
+
+				expect(bindName).toBe(this.name.getAttribute('value'));
+				expect(bindEmail).toBe(this.email.getAttribute('value'));
+				expect(bindMessage).toBe(this.msg.getAttribute('value'));
+			});
+
+			it('should close modal with close button', function() {
+				// select button
+				var closeButton = $$('button[data-dismiss="modal"]');
+				// click button
+				closeButton.click();
+				// wait for modal transition to complete
+				browser.sleep(3000);
+
+				expect(this.modal.getCssValue('display')).toBe('none');
+			});
+		}); /* / modal spec block */
+	});
 });
