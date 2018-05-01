@@ -17,5 +17,16 @@ describe('About Controller test - ', function() {
 		it('should read members list', function() {
 			expect($scope.members.length).toEqual(4);
 		});
+		it('should read team members details', function() {
+			// custom matcher from jasmin-expect
+		var expectedString = jasmine.any(String);
+		for(i = 0; i < $scope.members.length; i++) {
+			expect($scope.members[i]).toEqual(jasmine.objectContaining({
+				name: expectedString,
+				title: expectedString,
+				description: expectedString
+			}));
+		}
+	});
 	});
 });
