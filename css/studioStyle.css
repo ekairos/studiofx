@@ -104,6 +104,20 @@ footer {
 		margin: 0px;
 		vertical-align: middle;
 	}
+		.modal-content {
+			background-color: rgba(0,0,0,0.8);
+			color: #fff;
+			border: none;
+			border-radius: 0;
+			box-shadow: none;
+		}
+			.modal-header,
+			.modal-footer {
+				border: none;
+			}
+			.modal-body {
+				padding: 0;
+			}
 .modal-backdrop.in {
 	opacity: 0.8;
 }
@@ -381,6 +395,35 @@ footer {
 		font-style: italic;
 	}
 
+#formResult.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+#formResult.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+#formResult .modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+	#formResult h3 {
+		font-size: 1.5rem;
+		padding: 5px 0;
+		margin: 4px 0;
+		margin-left: 5%;
+}
+
+#formResult .modal-body {
+	max-height: 200px;
+	overflow-y: auto;
+}
 
 /*			
 				___ TABLETS / DESKTOP RULES ___		768 <
