@@ -18,12 +18,12 @@ It shoud be clear with fluid and simple navigation as well as respnsive so to be
 
 - Demo Reel on Home Page
 - About page prensenting services and team
+- Address on googleMap for location
+- Contact Forms
 
 ### Features to add
 
 - Portfolio gallery viewer
-- Address on googleMap for location
-- Contact Form
 
 ## Tech used
 
