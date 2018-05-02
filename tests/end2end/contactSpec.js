@@ -11,7 +11,7 @@ describe('About tests - ', function() {
 
 		it('should eval true as true', function() {
 			expect(true).toBe(true);
-		})
+		});
 
 		it('should send only valid forms', function() {
 			browser.get('/');
@@ -50,7 +50,7 @@ describe('About tests - ', function() {
 				this.modal = element(by.id('formResult'));
 				// var modal = element(by.id('formResult'));
 				this.modalVis = this.modal.getCssValue('display');
-			})
+			});
 			it('shouldn\'t drop modal without submission', function() {
 				// expect modal to be hidden
 				expect(this.modal.getCssValue('display')).toBe('none');

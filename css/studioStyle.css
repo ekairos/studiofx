@@ -119,7 +119,7 @@ footer {
 				padding: 0;
 			}
 .modal-backdrop.in {
-	opacity: 0.8;
+	opacity: 0.9;
 }
 
 /*					--- BS buttons ---
@@ -355,7 +355,6 @@ footer {
 			width: 90%;
 			height: 250px;
 			margin: 10px auto;
-			background-color: rgb(255,255,255);
 		}
 /*				--- Query Form ---
 */
