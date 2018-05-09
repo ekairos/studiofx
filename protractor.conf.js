@@ -2,9 +2,9 @@ exports.config = {
 	// local port for protractor
 	seleniumAddress: 'http://localhost:4444/wd/hub',
 	specs: [
-		//'tests/end2end/aboutSpec.js',
-		//'tests/end2end/navigationMobileSpec.js',
-		//'tests/end2end/navigationSpec.js',
+		'tests/end2end/aboutSpec.js',
+		'tests/end2end/navigationMobileSpec.js',
+		'tests/end2end/navigationSpec.js',
 		'tests/end2end/contactSpec.js'
 	],
 

@@ -35,7 +35,7 @@ describe('About tests - ', function() {
 
 			this.msg.sendKeys('A short message !');
 			// form should be valid now
-			browser.sleep(2000);
+			browser.sleep(1000);
 			expect(this.submitButton.isEnabled()).toBe(true);
 
 			expect(this.name.getAttribute('value')).toBe('My Name');
@@ -61,7 +61,7 @@ describe('About tests - ', function() {
 				// submit query
 				this.submitButton = element(by.css('.btn[type="submit"]'));
 				this.submitButton.click();
-				browser.sleep(2500);
+				browser.sleep(1000);
 
 				// expect modal to be shown / ie not.hidden
 				expect(this.modal.getCssValue('display')).toBe('block');
@@ -83,7 +83,7 @@ describe('About tests - ', function() {
 				// click button
 				closeButton.click();
 				// wait for modal transition to complete
-				browser.sleep(3000);
+				browser.sleep(1000);
 
 				expect(this.modal.getCssValue('display')).toBe('none');
 			});

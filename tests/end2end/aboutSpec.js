@@ -35,7 +35,7 @@ describe('About Template - ', function() {
 		it('should follow to Our Vision', function() {
 			expect(this.aVision.getAttribute('class')).toEqual(this.inactivLink);
 			this.aVision.click();
-			browser.sleep(1000);
+			browser.sleep(500);
 			expect(this.aVision.getAttribute('class')).toEqual(this.activLink);
 			expect(this.aUs.getAttribute('class')).toEqual(this.inactivLink);
 			expect(this.aWork.getAttribute('class')).toEqual(this.inactivLink);
@@ -45,7 +45,7 @@ describe('About Template - ', function() {
 		it('should follow to Our Work', function() {
 			expect(this.aWork.getAttribute('class')).toEqual(this.inactivLink);
 			this.aWork.click();
-			browser.sleep(1000);
+			browser.sleep(500);
 			expect(this.aWork.getAttribute('class')).toEqual(this.activLink);
 			expect(this.aUs.getAttribute('class')).toEqual(this.inactivLink);
 			expect(this.aVision.getAttribute('class')).toEqual(this.inactivLink);
@@ -55,7 +55,7 @@ describe('About Template - ', function() {
 		it('should follow to Our Team', function() {
 			expect(this.aTeam.getAttribute('class')).toEqual(this.inactivLink);
 			this.aTeam.click();
-			browser.sleep(1000);
+			browser.sleep(500);
 			expect(this.aTeam.getAttribute('class')).toEqual(this.activLink);
 			expect(this.aUs.getAttribute('class')).toEqual(this.inactivLink);
 			expect(this.aVision.getAttribute('class')).toEqual(this.inactivLink);
