@@ -23,11 +23,11 @@ h5 {
 	font-size: 1.1rem;
 	margin: 4px 0;
 }
-p{
+p {
 	width: 80%;
 	margin: 6px auto;
 }
-strong{
+strong {
 	font-weight: bolder;
 }
 
@@ -316,8 +316,32 @@ footer {
 			font-size: 1.1rem;
 		}
 
+/*					--- Modal Viewer ---
+*/
+#viewer button {
+	z-index: 1;
+	box-shadow: 0 0 10px #222, inset 0 0 5px #555;
+}
+	#heroPic {
+		width: 100%;
+		padding: 0;
+	}
+
+/*					--- Footer ---
+*/
+footer.copyright {
+	position: relative;
+	font-size: 0.8rem;
+	letter-spacing: 1px;
+	background-color: rgba(0,0,0,0);
+	padding-bottom: 40px; 
+}
+	.copyright p {
+		padding-bottom: 8px;
+	}
+
 /*
-				___ CONTACT TEMPLATE ___
+				===== CONTACT TEMPLATE =====
 */
 #contactMain {
 	width: 90%;
@@ -363,34 +387,34 @@ footer {
 	padding: 15px;
 	background-color: rgba(0,0,0,0.3);
 }
-	#contactForm button{
+	#contactForm button {
 		display: block;
 		margin: 10px auto;
 	}
 	#contactForm input,
 	#contactForm textarea,
-	#contactForm select{
+	#contactForm select {
 		display: block;
 		width: 95%;
 		margin-left: auto;
 	}
-	#contactForm textarea{
+	#contactForm textarea {
 		min-height: 80px;
 	}
-	#contactForm .help-block{
+	#contactForm .help-block {
 		position: relative;
 		left: 5%;
 		color: #d7d7d7;
 	}
-	#contactForm .form.control{
+	#contactForm .form.control {
 		font-size: 1.2rem;
 	}
-	form label{
+	form label {
 		display: block;
 		padding-bottom: 8px;
 		font-size: 1.2rem;
 	}
-	input::placeholder{
+	input::placeholder {
 		font-style: italic;
 	}
 
@@ -427,9 +451,9 @@ footer {
 /*			
 				___ TABLETS / DESKTOP RULES ___		768 <
 */
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
 /*
-				___ INDEX ___
+				===== INDEX =====
 */
 /*					--- Navigation ---
 */
@@ -447,3 +471,4 @@ footer {
 			padding-top: 0px;
 			padding-bottom: 0px;
 		}
+}
