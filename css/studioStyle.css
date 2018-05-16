@@ -24,7 +24,6 @@ h5 {
 	margin: 4px 0;
 }
 p {
-	width: 80%;
 	margin: 6px auto;
 }
 strong {
@@ -214,7 +213,7 @@ footer {
 		#reel span {
 			cursor: pointer;
 		}
-/*				--- Reel viewer ---
+/*					--- Reel viewer ---
 */
 #viewer {
 	margin-left: auto;
@@ -238,37 +237,41 @@ footer {
 #aboutTeam {
 	padding-bottom: 40px;
 }
-#teamBook li {
-	min-width: 200px;
-	max-width: 300px;
-	padding: 10px;
-	margin: 20px auto 0;
-	background: rgb(80,80,80);
+#teamBook {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-self: normal;
 }
-	#teamBook img {
-		width: 100%;
-		height: auto;
+	#teamBook li {
+		padding: 10px;
+		margin: 20px auto 0;
+		background: rgb(80,80,80);
 	}
-	#teamBook h2 {
-		font-size: 2rem;
-		padding-top: 6px;
-		padding-bottom: 6px;
-		padding-left: 5%;
-		padding-right: 5%;
-		margin-left: 5%;
-		border-bottom: 1px;
-		border-color: #eee;
-		border-style: solid;
-	}
-	#teamBook h3,
-	#teamBook p {
-		width: 90%;
-		margin: 5px auto 10px;
-	}
-	#teamBook h3 {
-		font-size: 1.1rem;
-		padding-left: 10%;
-	}
+		#teamBook img {
+			width: 100%;
+			height: auto;
+		}
+		#teamBook h2 {
+			font-size: 2rem;
+			padding-top: 6px;
+			padding-bottom: 6px;
+			padding-left: 5%;
+			padding-right: 5%;
+			margin-left: 5%;
+			border-bottom: 1px;
+			border-color: #eee;
+			border-style: solid;
+		}
+		#teamBook h3,
+		#teamBook p {
+			width: 90%;
+			margin: 5px auto 10px;
+		}
+		#teamBook h3 {
+			font-size: 1.1rem;
+			padding-left: 10%;
+		}
 
 /*
 				===== WORK TEMPLATE =====
@@ -380,7 +383,7 @@ footer.copyright {
 			height: 250px;
 			margin: 10px auto;
 		}
-/*				--- Query Form ---
+/*					--- Query Form ---
 */
 #senderInfo,
 #query {
@@ -448,9 +451,12 @@ footer.copyright {
 	overflow-y: auto;
 }
 
-/*			
-				___ TABLETS / DESKTOP RULES ___		768 <
+
+/*				------------------------------	
+					TABLETS / DESKTOP RULES 		>= 768
+				------------------------------
 */
+
 @media screen and (min-width: 768px) {
 /*
 				===== INDEX =====
@@ -471,4 +477,62 @@ footer.copyright {
 			padding-top: 0px;
 			padding-bottom: 0px;
 		}
+}
+
+/*
+				===== ABOUT TEMPLATE =====
+*/
+	#aboutMain {
+		margin: 0 auto 60px;
+	}
+	#aboutUs,
+	#aboutVision,
+	#aboutWork,
+	#aboutTeam header {
+		width: 80%;
+		max-width: 860px;
+		margin: 40px auto;
+	}
+/*					--- Team ---
+*/
+	#teamBook {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+		#teamBook li {
+			margin: 10px 5px;
+			flex-grow: 1;
+			flex-basis: 220px;
+			align-self: normal;
+			max-width: 320px;
+		}
+
+
+/*				-----------------------------	
+						DESKTOP RULES 				>= 1240
+				-----------------------------
+*/
+@media screen and (min-width: 1240px) {
+/*
+				===== ABOUT TEMPLATE =====
+*/
+	#aboutMain {
+		max-width: 1450px;
+	}
+		#aboutMain section {
+			min-height: 840px;
+		}
+			#aboutMain header {
+				padding-top: 200px;
+			}
+		#aboutTeam {
+			width: 80%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+			#aboutTeam header {
+				padding-top: 60px;
+			}
 }
