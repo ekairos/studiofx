@@ -438,6 +438,7 @@ footer.copyright {
   display: inline-block;
   text-align: left;
   vertical-align: middle;
+  max-width: 600px;
 }
 	#formResult h3 {
 		font-size: 1.5rem;
@@ -449,6 +450,7 @@ footer.copyright {
 #formResult .modal-body {
 	max-height: 200px;
 	overflow-y: auto;
+	padding: 0 20px;
 }
 
 
@@ -477,7 +479,7 @@ footer.copyright {
 			padding-top: 0px;
 			padding-bottom: 0px;
 		}
-}
+
 
 /*
 				===== ABOUT TEMPLATE =====
@@ -509,6 +511,32 @@ footer.copyright {
 			max-width: 320px;
 		}
 
+/*
+				===== CONTACT TEMPLATE =====
+*/
+	#contactMain {
+		max-width: 900px;
+	}
+/*					--- Address ---
+*/
+	#contactLocation {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+	}
+		#contactMap {
+			flex-basis: 75%;
+		}
+			#gMap {
+				height: 300px;
+			}
+		#address {
+			flex-basis: 25%;
+			align-self: center;
+			min-width: 200px;
+		}
+/*					--- Form ---
+*/
 
 /*				-----------------------------	
 						DESKTOP RULES 				>= 1240
