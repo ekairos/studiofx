@@ -29,7 +29,6 @@ p {
 strong {
 	font-weight: bolder;
 }
-
 header {
 	position: relative;
 	padding: 10px 0;
@@ -278,11 +277,14 @@ footer {
 */
 /*					--- Gallery ---
 */
-
+#workMain header {
+	padding-left: 3%;
+	padding-right: 3%;
+}
 #workMain h1 {
 	font-size: 2rem;
 	padding: 6px 0;
-	margin-left: 5%;
+	padding-left: 5%;
 }
 #work-mgx {
 	padding-bottom: 39px;
@@ -510,7 +512,38 @@ footer.copyright {
 			align-self: normal;
 			max-width: 320px;
 		}
-
+/*
+				===== WORK TEMPLATE =====
+*/
+	#workMain {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+	#work-3d header,
+	#work-post header,
+	#work-mgx header {
+		max-width: 900px;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 10px 60px;
+	}
+/*					--- Gallery ---
+*/
+	.gallery {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+	}
+		.thumb figcaption {
+			bottom: -70px;
+			transition: all 0.3s ease-in-out;
+			-moz-transition: all 0.3s ease-in-out;
+			-webkit-transition: all 0.3s ease-in-out;
+			-o-transition: all 0.3s ease-in-out;
+		}
+		.thumb:hover figcaption {
+			bottom: 0px;
+		}
 /*
 				===== CONTACT TEMPLATE =====
 */
@@ -535,8 +568,7 @@ footer.copyright {
 			align-self: center;
 			min-width: 200px;
 		}
-/*					--- Form ---
-*/
+}
 
 /*				-----------------------------	
 						DESKTOP RULES 				>= 1240
