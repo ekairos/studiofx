@@ -25,6 +25,8 @@ h5 {
 }
 p {
 	margin: 6px auto;
+	padding-left: 3%;
+	padding-right: 3%;
 }
 strong {
 	font-weight: bolder;
@@ -231,7 +233,7 @@ footer {
 #aboutMain h1 {
 	font-size: 2rem;
 	padding: 6px 0;
-	margin-left: 5%; 
+	padding-left: 6%; 
 }
 #aboutTeam {
 	padding-bottom: 40px;
@@ -369,12 +371,13 @@ footer.copyright {
 }
 	#address {
 		width: 100%;
+		padding-left: 10%;
 	}
 		#address h2 {
 			font-size: 1.5rem;
 			padding: 5px 0;
 			margin: 4px 0;
-			margin-left: 5%;
+			margin-left: 6%;
 		}
 	#contactMap {
 		margin: 15px 0;
@@ -424,8 +427,8 @@ footer.copyright {
 	}
 
 #formResult.modal {
-  text-align: center;
-  padding: 0!important;
+	text-align: center;
+	padding: 0!important;
 }
 
 #formResult.modal:before {
@@ -437,10 +440,10 @@ footer.copyright {
 }
 
 #formResult .modal-dialog {
-  display: inline-block;
-  text-align: left;
-  vertical-align: middle;
-  max-width: 600px;
+	display: inline-block;
+	text-align: left;
+	vertical-align: middle;
+	max-width: 600px;
 }
 	#formResult h3 {
 		font-size: 1.5rem;
@@ -557,6 +560,9 @@ footer.copyright {
 		flex-direction: row;
 		flex-wrap: nowrap;
 	}
+		#address {
+			padding-left: 3%;
+		}
 		#contactMap {
 			flex-basis: 75%;
 		}
