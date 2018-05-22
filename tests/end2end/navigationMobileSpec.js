@@ -1,7 +1,9 @@
 describe('index page - ', function() {
 
-	// set browser to mobile screen size
-	beforeEach(function() {
+	beforeAll(function() {
+			// navigate to landing page
+		browser.get('/');
+			// set browser to mobile screen size
 		var width = 360;
 		var height = 640;
 		browser.driver.manage().window().setSize(width, height);
@@ -12,17 +14,16 @@ describe('index page - ', function() {
 		beforeEach(function() {
 			baseUrl = 'http://localhost:8080';
 		});
-			// hide dropdown navigation menu between specs
+
 		afterEach(function() {
-			$$('body').click();
-			browser.sleep(500);
+			browser.get('/');
 		})
-		
+
 		it('should navigate to about page', function() {
 
-			browser.get('/');
 			$$('.navbar-header button').click();
 			browser.sleep(500);
+			
 			$$('#navMenu li').then(function(links) {
 				links[0].click();
 			});

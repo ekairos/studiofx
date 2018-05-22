@@ -1,13 +1,12 @@
 describe('About Template - ', function() {
 
-		// navigate to '/about'
-	browser.get('/');
-	browser.sleep(600);
-	browser.setLocation('/about');
-	browser.sleep(600);
-
-		// set browser to mobile screen device
-	beforeEach(function() {
+	beforeAll(function() {
+			// navigate to '/about'
+		browser.get('/');
+		browser.sleep(600);
+		browser.setLocation('/about');
+		browser.sleep(600);
+			// set browser to mobile screen device
 		var width = 360;
 		var height = 640;
 		browser.driver.manage().window().setSize(width, height);

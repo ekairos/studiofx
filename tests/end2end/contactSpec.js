@@ -1,7 +1,16 @@
 describe('About tests - ', function() {
 	describe('contact form - ', function() {
-		// required form's field and submit button
-		beforeEach(function() {
+			// navigate to contact page
+		beforeAll(function() {
+			browser.get('/');
+			browser.setLocation('contact');
+			browser.sleep(500);
+				// scroll submit button
+			browser.setLocation('/contact#submitQueryButton');
+		});
+
+			// required form's field and submit button
+		beforeAll(function() {
 			this.name = element(by.model('contact.name'));
 			this.email = element(by.model('contact.email'));
 			this.queryType = element(by.model('contact.query'));
@@ -9,47 +18,41 @@ describe('About tests - ', function() {
 			this.submitButton = element(by.css('.btn[type="submit"]'));
 		});
 
-		it('should eval true as true', function() {
-			expect(true).toBe(true);
-		});
-
-		it('should send only valid forms', function() {
-			browser.get('/');
-			browser.setLocation('contact');
-			browser.sleep(1000);
-			browser.setLocation('contact#submitQueryButton');
-
-			this.name.sendKeys("My Name");
-			// form shouldn't be valid at this stage
-			expect(this.submitButton.isEnabled()).toBe(false);
-
-			this.email.sendKeys('me@mail.net');
-			// form shouldn't be valid at this stage
-			expect(this.submitButton.isEnabled()).toBe(false);
+		describe('form - ', function() {
 			
-			$$('#queryList option').then(function(queries) {
-				queries[1].click();
+			it('should send only valid forms', function() {
+
+				this.name.sendKeys("My Name");
+				// form shouldn't be valid at this stage
+				expect(this.submitButton.isEnabled()).toBe(false);
+
+				this.email.sendKeys('me@mail.net');
+				// form shouldn't be valid at this stage
+				expect(this.submitButton.isEnabled()).toBe(false);
+				
+				$$('#queryList option').then(function(queries) {
+					queries[1].click();
+				});
+				// form shouldn't be valid at this stage
+				expect(this.submitButton.isEnabled()).toBe(false);
+
+				this.msg.sendKeys('A short message !');
+				// form should be valid now
+				browser.sleep(500);
+				expect(this.submitButton.isEnabled()).toBe(true);
+
+				expect(this.name.getAttribute('value')).toBe('My Name');
+				expect(this.email.getAttribute('value')).toBe('me@mail.net');
+				expect(this.queryType.getAttribute('value')).toBe('string:Career');
+				expect(this.msg.getAttribute('value')).toBe('A short message !');
 			});
-			// form shouldn't be valid at this stage
-			expect(this.submitButton.isEnabled()).toBe(false);
-
-			this.msg.sendKeys('A short message !');
-			// form should be valid now
-			browser.sleep(1000);
-			expect(this.submitButton.isEnabled()).toBe(true);
-
-			expect(this.name.getAttribute('value')).toBe('My Name');
-			expect(this.email.getAttribute('value')).toBe('me@mail.net');
-			expect(this.queryType.getAttribute('value')).toBe('string:Career');
-			expect(this.msg.getAttribute('value')).toBe('A short message !');
-		});
+		}); /* / form spec block */
 
 		describe('modal - ', function() {
 
 			beforeEach(function() {
 				this.modal = element(by.id('formResult'));
 				// var modal = element(by.id('formResult'));
-				this.modalVis = this.modal.getCssValue('display');
 			});
 			it('shouldn\'t drop modal without submission', function() {
 				// expect modal to be hidden
@@ -61,7 +64,7 @@ describe('About tests - ', function() {
 				// submit query
 				this.submitButton = element(by.css('.btn[type="submit"]'));
 				this.submitButton.click();
-				browser.sleep(1000);
+				browser.sleep(500);
 
 				// expect modal to be shown / ie not.hidden
 				expect(this.modal.getCssValue('display')).toBe('block');
@@ -83,7 +86,7 @@ describe('About tests - ', function() {
 				// click button
 				closeButton.click();
 				// wait for modal transition to complete
-				browser.sleep(1000);
+				browser.sleep(500);
 
 				expect(this.modal.getCssValue('display')).toBe('none');
 			});

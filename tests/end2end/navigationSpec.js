@@ -1,8 +1,10 @@
 describe('index page - ', function() {
 
-	// set browser to mobile screen device
 	beforeEach(function() {
-		var width = 768;
+			// open browser to landing
+		browser.get('/');
+			// set browser to mobile screen device
+		var width = 780;
 		var height = 820;
 		browser.driver.manage().window().setSize(width, height);
 	});
@@ -15,7 +17,6 @@ describe('index page - ', function() {
 
 		it('should navigate to about page', function() {
 
-			browser.get('/');
 			$$('#navMenu li').then(function(links) {
 				links[0].click();
 			});
