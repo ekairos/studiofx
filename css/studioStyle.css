@@ -239,10 +239,7 @@ footer {
 	padding-bottom: 40px;
 }
 #teamBook {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	align-self: normal;
+	display: bock;
 }
 	#teamBook li {
 		padding: 10px;
@@ -252,13 +249,18 @@ footer {
 		#teamBook img {
 			width: 100%;
 			height: auto;
+			padding: 10px;
+			max-width: 320px;
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
 		}
 		#teamBook h2 {
 			font-size: 2rem;
 			padding-top: 6px;
 			padding-bottom: 6px;
 			padding-left: 5%;
-			padding-right: 5%;
+			margin-right: 5%;
 			margin-left: 5%;
 			border-bottom: 1px;
 			border-color: #eee;
