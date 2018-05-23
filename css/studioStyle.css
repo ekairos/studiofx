@@ -539,16 +539,6 @@ footer.copyright {
 		flex-flow: row wrap;
 		justify-content: center;
 	}
-		.thumb figcaption {
-			bottom: -70px;
-			transition: all 0.3s ease-in-out;
-			-moz-transition: all 0.3s ease-in-out;
-			-webkit-transition: all 0.3s ease-in-out;
-			-o-transition: all 0.3s ease-in-out;
-		}
-		.thumb:hover figcaption {
-			bottom: 0px;
-		}
 /*
 				===== CONTACT TEMPLATE =====
 */
@@ -603,4 +593,42 @@ footer.copyright {
 			#aboutTeam header {
 				padding-top: 60px;
 			}
+/*
+				===== WORK TEMPLATE =====
+*/
+
+	.thumb figcaption {
+		bottom: -70px;
+		opacity: 0;
+		transition: all 250ms ease-in-out;
+		-moz-transition: all 250ms ease-in-out;
+		-webkit-transition: all 250ms ease-in-out;
+		-o-transition: all 250ms ease-in-out;
+	}
+		.thumb figcaption a {
+			opacity: 0;
+			transition: all 250ms 250ms;
+			-moz-transition: all 250ms 250ms;
+			-webkit-transition: all 250ms 250ms;
+			-o-transition: all 250ms 250ms;
+		}
+		.thumb figcaption span {
+			opacity: 0;
+			transition: all 300ms 300ms;
+			-moz-transition: all 300ms 300ms;
+			-webkit-transition: all 300ms 300ms;
+			-o-transition: all 300ms 300ms;
+		}
+	figure.thumb:hover figcaption {
+		bottom: 0px;
+		opacity: 1;
+	}
+	figure.thumb:hover img {
+		filter: saturate(0.6) brightness(0.8) contrast(0.8) blur(2px);
+		transition: 350ms ease-in-out;
+	}
+		figure.thumb:hover a,
+		figure.thumb:hover span {
+			opacity: 1;
+		}
 }
