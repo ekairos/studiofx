@@ -1,22 +1,24 @@
+<nav id="galleryFilter" class="btn-group submenu">
+	<ul class="nav">
+		<li id="showAll" class="nav-item" data-ng-click="showAll()"><span class="hidden-xs">Show </span>All</li>
+		<li id="show3d" class="nav-item" data-ng-click="show3d()"><span class="hidden-xs">Show </span>3D</li>
+		<li id="showTvc" class="nav-item" data-ng-click="showTvc()"><span class="hidden-xs">Show </span>TV Commercials</li>
+		<li id="showMgx" class="nav-item" data-ng-click="showMgx()"><span class="hidden-xs">Show </span>Motion Graphics</li>
+	</ul>
+</nav>
+
 <main id="workMain">
 
-		<!-- 3d gallery -->
-	<article id="work-3d" class="anchor">
-		<header>
-			<h1>3D Work</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-		</header>
-		<section class="gallery">
-			<figure class="thumb" ng-repeat="g in gallery3d">
-				<img ng-src="../assets/gallery/{{g.file}}_tbn.jpg" alt="{{g.name}}" src="/">
+	<section id="gallery" class="anchor">
+		<div class="gallery">
+			<figure class="thumb" data-ng-repeat="n in galleryActive">
+				<img data-ng-src="../assets/gallery/{{n.file}}_tbn.jpg" alt="{{n.name}}" data-ng-click="loadViewer($index)" src="/">
 				<figcaption>
-					<a href="#">{{g.name}}</a>
-					<br>
-					<span>{{g.description}}</span>
+					<a href="#">{{n.name}}</a><br>{{n.description}}
 				</figcaption>
 			</figure>
-		</section>
-	</article>
+		</div>
+	</section>
 
 		<!-- post-production gallery -->
 	<article id="work-post" class="anchor">
@@ -27,11 +29,7 @@
 		<section class="gallery">
 			<figure class="thumb" ng-repeat="g in gallerypost">
 				<img ng-src="../assets/gallery/{{g.file}}_tbn.jpg" alt="{{g.name}}" src="/">
-				<figcaption>
-					<a href="#">{{g.name}}</a>
-					<br>
-					<span>{{g.description}}</span>
-				</figcaption>
+				<figcaption><a href="#">{{g.name}}</a><br>{{g.description}}</figcaption>
 			</figure>
 		</section>
 	</article>
@@ -45,11 +43,7 @@
 		<section class="gallery">
 			<figure class="thumb" ng-repeat="g in gallerymgx">
 				<img ng-src="../assets/gallery/{{g.file}}_tbn.jpg" alt="{{g.name}}" src="/">
-				<figcaption>
-					<a href="#">{{g.name}}</a>
-					<br>
-					<span>{{g.description}}</span>
-				</figcaption>
+				<figcaption><a href="#">{{g.name}}</a><br>{{g.description}}</figcaption>
 			</figure>
 		</section>
 	</article>
@@ -57,7 +51,7 @@
 </main>
 
 <footer class="copyright">
-	<p>These website's copyrights are supposed to be respected by people</p>
+	<p>All the content of this is copytighted, no prior diffusion, reproduction without prior written consent</p>
 </footer>
 
 <!-- modal viewer -->
@@ -65,9 +59,9 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">&times;</button>
-			<img id="heroPic" class="modal-body" src="{{imgSrc}}" alt="Hero image">
+			<img id="heroPic" class="modal-body" data-ng-src="../assets/gallery/{{hero.file}}.jpg" alt="Hero image" src="/">
 		</div>
 	</div>
 </div>
 
-<script type="text/javascript" src="../js/galleryViewer.js"></script>
+<!-- <script type="text/javascript" src="../js/galleryViewer.js"></script> -->

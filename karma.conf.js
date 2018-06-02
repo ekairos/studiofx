@@ -28,15 +28,15 @@ module.exports = function(config) {
         'js/controllerAbout.js',
         'js/controllerWork.js',
         'js/controllerContact.js',
-        'js/reelviewer.js',
+        //'js/reelviewer.js',
         
         // --- spec files ---
-        //'tests/unit/dummySpec.js',
+        // 'tests/unit/dummySpec.js',
         'tests/unit/controllerHomeSpec.js',
         'tests/unit/controllerAboutSpec.js',
         'tests/unit/controllerWorkSpec.js',
-        'tests/unit/controllerContactSpec.js',
-        'tests/unit/reelviewerSpec.js'
+        'tests/unit/controllerContactSpec.js'
+        //'tests/unit/reelviewerSpec.js'
     ],
 
 

@@ -4,9 +4,9 @@ angular.module('workController', [])
 
 		$scope.title = 'Work Page';
 
-		//		--- Gallery ---
+//				--- Gallery ---
 
-		var gallery3d = [
+		$scope.gallery3d = [
 			{
 				name: "Jeysen House",
 				file: "jeysen",
@@ -32,52 +32,88 @@ angular.module('workController', [])
 				description: "3D Models and animations for helicopter pilots and mecanics e-learning"
 			}
 		];
-		var gallerypost = [
+		$scope.gallerytvc = [
 			{
 				name: "Acts of Godfrey",
 				file: "aog",
-				type: "post",
+				type: "tvc",
 				description: "Feature film by Johnny Daukes"
 			},
 			{
 				name: "London Olympic 2012",
 				file: "ioc",
-				type: "post",
+				type: "tvc",
 				description: "International Olympic Committee Campagne for London 2012"
 			},
 			{
 				name: "boby",
 				file: "bobstr",
-				type: "post",
+				type: "tvc",
 				description: "Our 3DStereo animation"
 			},
 			{
 				name: "Motat",
 				file: "motat",
-				type: "post",
+				type: "tvc",
 				description: "Motat Ad for Halloween special event"
-			}
-		];
-		var gallerymgx = [
-			{
-				name: "NeoHub",
-				file: "neohub",
-				type: "post",
-				description: "Motion Graphics for NeoHub"
 			},
 			{
 				name: "Ptouch",
 				file: "ptouch",
-				type: "post",
+				type: "tvc",
 				description: "3d animation for Brother"
 			}
 		];
+		$scope.gallerymgx = [
+			{
+				name: "NeoHub",
+				file: "neohub",
+				type: "mgx",
+				description: "Motion Graphics for NeoHub"
+			}
+		];
 
-		$scope.gallery3d = gallery3d;
-		$scope.gallerypost = gallerypost;
-		$scope.gallerymgx = gallerymgx;
+		$scope.galleryAll = $scope.gallery3d.concat($scope.gallerytvc, $scope.gallerymgx);
+		$scope.galleryActive = $scope.galleryAll;
+		console.log($scope.galleryActive);
 
-		galleryAll = gallery3d.concat(gallerypost, gallerymgx);
-		$scope.galleryAll = $scope.gallery3d.concat($scope.gallerypost, $scope.gallerymgx);
+//				--- Filter functions ---
+
+		$scope.showAll = function() {
+			// sorts alphatically - optional
+			var reArrange = function(a, b) {
+			//	console.log(a.name);
+			//	console.log(b.name);
+				if(a.name < b.name) return -1;
+				if(a.name > b.name) return 1;
+				return 0;
+			}
+			$scope.galleryAll.sort(reArrange);
+			// console.log('gallery all', $scope.galleryAll);
+			$scope.galleryActive = $scope.galleryAll;
+			console.log('gallery Active = ', $scope.galleryActive);
+		}
+		$scope.show3d = function() {
+			$scope.galleryActive = $scope.gallery3d;
+			console.log($scope.galleryActive);
+		}
+		$scope.showTvc = function() {
+			$scope.galleryActive = $scope.gallerytvc;
+			console.log($scope.galleryActive);
+		}
+		$scope.showMgx = function() {
+			$scope.galleryActive = $scope.gallerymgx;
+			console.log($scope.galleryActive);
+		}
+
+// 				--- load hero on clicked img ---
+
+		$scope.loadViewer = function($index){
+			// console.log($index);
+			$scope.hero = $scope.galleryActive[$index];
+			console.log('hero :', $scope.hero);
+			
+			$('#viewer').modal('show');
+		}
 
 	});

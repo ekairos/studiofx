@@ -15,15 +15,15 @@ describe('testing work controller - ', function() {
 
 	it('should read galleries', function() {
 		expect($scope.gallery3d.length).toEqual(4);
-		expect($scope.gallerypost.length).toEqual(4);
-		expect($scope.gallerymgx.length).toEqual(2);
+		expect($scope.gallerytvc.length).toEqual(5);
+		expect($scope.gallerymgx.length).toEqual(1);
 		expect($scope.galleryAll.length).toEqual(10);
 	});
 
 	it('should read galleries item lists', function() {
 			// custom matcher from jasmin-expect
 		expect($scope.gallery3d).toBeArrayOfObjects();
-		expect($scope.gallerypost).toBeArrayOfObjects();
+		expect($scope.gallerytvc).toBeArrayOfObjects();
 		expect($scope.gallerymgx).toBeArrayOfObjects();
 		expect($scope.galleryAll).toBeArrayOfObjects();
 	});
@@ -39,6 +39,17 @@ describe('testing work controller - ', function() {
 				description: expectedString
 			}));
 		}
+	});
+
+	it('should load clicked image as hero', function() {
+		var target3 = {
+			name: "Arkangels",
+			file: "superpuma",
+			type: "3d",
+			description: "3D Models and animations for helicopter pilots and mecanics e-learning"
+		};
+		$scope.loadViewer(3);
+		expect($scope.hero).toEqual(target3);
 	});
 	
 });
