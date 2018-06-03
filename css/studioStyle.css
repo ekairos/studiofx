@@ -229,12 +229,12 @@ footer {
 		}
 /*					--- Reel viewer ---
 */
-#viewer {
+#demoViewer {
 	margin-left: auto;
 	margin-right: auto;
 	overflow: hidden;
 }
-	#viewer button {
+	#demoViewer button {
 		z-index: 1;
 		position: absolute;
 		right: 0;
