@@ -109,7 +109,7 @@ angular.module('workController', [])
 // 				--- load hero on clicked img ---
 
 		$scope.loadViewer = function($index){
-			// console.log($index);
+			console.log($index);
 			$scope.hero = $scope.galleryActive[$index];
 			console.log('hero :', $scope.hero);
 			

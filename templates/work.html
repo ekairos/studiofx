@@ -11,12 +11,7 @@
 
 	<section id="gallery" class="anchor">
 		<div class="gallery">
-			<figure class="thumb" data-ng-repeat="n in galleryActive">
-				<img data-ng-src="../assets/gallery/{{n.file}}_tbn.jpg" alt="{{n.name}}" data-ng-click="loadViewer($index)" src="/">
-				<figcaption>
-					<a href="#">{{n.name}}</a><br>{{n.description}}
-				</figcaption>
-			</figure>
+			<thumb data-ng-repeat="t in galleryActive"></thumb>
 		</div>
 	</section>
 
