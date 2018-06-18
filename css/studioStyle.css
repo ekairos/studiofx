@@ -109,6 +109,8 @@ footer {
 			border: none;
 			border-radius: 0;
 			box-shadow: none;
+			margin-left: auto;
+			margin-right: auto;
 		}
 			.modal button {
 				z-index: 1;

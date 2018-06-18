@@ -11,24 +11,23 @@
 
 	<section id="gallery" class="anchor">
 		<div class="gallery">
-			<thumb data-ng-repeat="t in galleryActive"></thumb>
+			<thumb data-ng-repeat="t in galleryActive" load="loadHero()" item="t"></thumb>
 		</div>
 	</section>
+
+	<!-- modal viewer -->
+<div id="viewer" class="modal fade" tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<viewer hero="hero"></viewer>
+			
+		</div>
+	</div>
+</div>
 
 </main>
 
 <footer class="copyright">
 	<p>All the content of this is copytighted, no prior diffusion, reproduction without prior written consent</p>
 </footer>
-
-<!-- modal viewer -->
-<div id="viewer" class="modal fade" tabindex="-1">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">&times;</button>
-			<img id="heroPic" class="modal-body" data-ng-src="../assets/gallery/{{hero.file}}.jpg" alt="Hero image" src="/">
-		</div>
-	</div>
-</div>
-
-<!-- <script type="text/javascript" src="../js/galleryViewer.js"></script> -->
