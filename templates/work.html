@@ -14,7 +14,7 @@
 			<figure class="thumb" data-ng-repeat="n in galleryActive">
 				<img data-ng-src="../assets/gallery/{{n.file}}_tbn.jpg" alt="{{n.name}}" data-ng-click="loadViewer($index)" src="/">
 				<figcaption>
-					<a href="#">{{n.name}}</a><br>{{n.description}}
+					<a href="#">{{n.name}}</a><br><span>{{n.description}}</span>
 				</figcaption>
 			</figure>
 		</div>
