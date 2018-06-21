@@ -62,7 +62,8 @@ angular.module('workController', [])
 				name: "Motat",
 				file: "motat",
 				cat: "tvc",
-				type: "img",
+				type: "vid",
+				mp4: "../assets/gallery/motat_360p.mp4",
 				description: "Motat Ad for Halloween special event"
 			},
 			{
@@ -87,7 +88,7 @@ angular.module('workController', [])
 				cat: "mgx",
 				type: "vid",
 				mp4: "../assets/gallery/koran_trailer.mp4",
-				description: "Easter Hero game trailer"
+				description: "Eastern Hero game trailer"
 			}
 		];
 
@@ -99,7 +100,9 @@ angular.module('workController', [])
 //				--- Filter functions ---
 
 		$scope.showAll = function() {
-			// sorts alphatically - optional
+			
+		// sorts alphatically - optional
+
 			var reArrange = function(a, b) {
 			//	console.log(a.name);
 			//	console.log(b.name);
@@ -108,6 +111,7 @@ angular.module('workController', [])
 				return 0;
 			}
 			$scope.galleryAll.sort(reArrange);
+
 			// console.log('gallery all', $scope.galleryAll);
 			$scope.galleryActive = $scope.galleryAll;
 			console.log('gallery Active = ', $scope.galleryActive);
@@ -125,34 +129,48 @@ angular.module('workController', [])
 			console.log($scope.galleryActive);
 		}
 
-			// asigne an initial empty object
+			// asign an initial empty object
 		$scope.hero = {};
+		
 
 // 				--- autoscale modal viewer ---
 
 		$scope.getRealSize = function() {
 
-			console.info('getting real size of hero Pic');
+			console.info('getting real size of hero');
 
-			var heroPic = document.getElementById('heroPic');
-			// console.log('heroPic element', heroPic);
+			if ($scope.hero.type == "img") {
 
-			var picHeightMax = heroPic.naturalHeight;
-			var picWidthMax = heroPic.naturalWidth;
-			var picRatio = picHeightMax / picWidthMax;
+				var heroPic = document.getElementById('heroPic');
+				// console.log('heroPic element', heroPic);
 
-			// console.log('pic ratio', picRatio);
+				var heroHeightMax = heroPic.naturalHeight;
+				var heroWidthMax = heroPic.naturalWidth;
+				
+			} else if ($scope.hero.type == "vid") {
 
-			$scope.picSize = {
-				height: picHeightMax,
-				widht: picWidthMax,
-				ratio: picRatio
+				var heroVid = document.getElementById("heroVid");
+
+				var heroHeightMax = heroVid.videoHeight;
+				var heroWidthMax = heroVid.videoWidth;
+
+			}
+			
+			var heroRatio = heroHeightMax / heroWidthMax;
+
+			console.log('hero ratio', heroRatio);
+
+			$scope.heroSize = {
+				height: heroHeightMax,
+				widht: heroWidthMax,
+				ratio: heroRatio
 			};
 
-			console.dir('natural hero pic size :', $scope.picSize);
+			console.dir('natural hero size :', $scope.heroSize);
 		}
 
-			// calc browser's windows size 	
+			// calc browser's window size 
+
 		$scope.getWinSize = function() {
 			// console.log('get win size');
 			
@@ -169,19 +187,20 @@ angular.module('workController', [])
 			return $scope.winSize;
 		};
 
+// 				--- Fits viewer to browser's window size ---
 
-		$scope.resizeModal= function() {
+		$scope.resizeModal = function() {
 			console.info('resizing modal viewer');
 
 			$scope.getWinSize();
 
 			console.dir('win size in resizer : ', $scope.winSize);
-			// console.dir('pic size in resizer', $scope.picSize);
+			// console.dir('hero size in resizer', $scope.heroSize);
 
-				// positioning
+			// Positioning
 
 				// calc displayed height from img is 100% width of win
-			var picHeight = $scope.winSize.width * $scope.picSize.ratio;
+			var picHeight = $scope.winSize.width * $scope.heroSize.ratio;
 			
 				// center vertically
 			var diffPos = ($scope.winSize.height - picHeight) / 2;
@@ -193,17 +212,18 @@ angular.module('workController', [])
 
 				// auto scaling
 			var maxHeight = $scope.winSize.height;
-			console.log('max height : ', maxHeight);
+			//console.log('hero max height : ', maxHeight);
 
-			var maxWidth = parseInt($scope.winSize.height / $scope.picSize.ratio);
-			console.log('max width : ', maxWidth);
+			var maxWidth = parseInt($scope.winSize.height / $scope.heroSize.ratio);
+			//console.log('hero max width : ', maxWidth);
 
 			$("#viewer .modal-content").css('max-width', maxWidth + 'px');
 			$("#viewer .modal-content").css('max-height', maxHeight + 'px');
 
 		}
 
-			// calc modal size & position when displayed
+			// triggers on / off resizing on viewer display on / off
+		
 		$('#viewer').on('show.bs.modal', function() {
 			$(window).on('resize', $scope.resizeModal);
 		});
@@ -211,7 +231,6 @@ angular.module('workController', [])
 		$('#viewer').on('hidden.bs.modal', function() {
 			$(window).off('resize', $scope.resizeModal);
 		});
-
 
 // 				--- load hero on clicked img ---
 
@@ -221,7 +240,7 @@ angular.module('workController', [])
 			console.dir($index, $scope.hero);
 
 			setTimeout(function() {
-				console.info('150ms delay');
+				console.info('100ms delay');
 
 				$scope.getRealSize();
 				
@@ -229,7 +248,22 @@ angular.module('workController', [])
 				
 				$('#viewer').modal('show');
 			
-			}, 150);
+			}, 100);
 		}
 
+//				--- vid player specific behaviour ---
+
+		$("#viewer").on("shown.bs.modal", function() {
+			if ($scope.hero.type == "vid") {
+				console.log("hero type is vid - resuming video");
+				document.getElementById("heroVid").play();
+			}
+		});
+
+		$("#viewer").on("hide.bs.modal", function() {
+			if ($scope.hero.type == "vid") {
+				console.log("hero type is vid - pausing video");
+				document.getElementById("heroVid").pause();
+			}
+		});
 	});

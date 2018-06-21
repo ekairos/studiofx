@@ -20,7 +20,7 @@ describe('work page tests - ', function() {
 
 		it('should show full gallery on laod', function() {
 
-			expect(this.items.count()).toEqual(10);
+			expect(this.items.count()).toEqual(11);
 		});
 			// when click/touch 3d button
 		it('should show show only 3d items', function() {
@@ -38,13 +38,13 @@ describe('work page tests - ', function() {
 		it('should show show only mgx items', function() {
 			this.buttonMgx.click();
 			browser.sleep(200);
-			expect(this.items.count()).toEqual(1);
+			expect(this.items.count()).toEqual(2);
 		});
 			// when click/touch All button
 		it('should show show only all items', function() {
 			this.buttonAll.click();
 			browser.sleep(200);
-			expect(this.items.count()).toEqual(10);
+			expect(this.items.count()).toEqual(11);
 		});
 	});
 
