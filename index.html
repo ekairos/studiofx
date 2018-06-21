@@ -52,11 +52,21 @@
 </div>
 
 <footer id="social-links">
-	<img class="social-icon" src="assets/fb_ico.png" alt="facebook">
-	<img class="social-icon" src="assets/twitter_ico.png" alt="twitter">
-	<img class="social-icon" src="assets/lin_ico.png" alt="linkedin">
-	<img class="social-icon" src="assets/vimeo_ico.png" alt="vimeo">
+	<img class="social-icon" src="assets/fb_ico.png" alt="facebook" data-toggle="tooltip" data-placement="top" title="Our team's channel coming soon">
+	<img class="social-icon" src="assets/twitter_ico.png" alt="twitter" data-toggle="tooltip" data-placement="top" title="Follow us on Twitter">
+	<img class="social-icon" src="assets/lin_ico.png" alt="linkedin" data-toggle="tooltip" data-placement="top" title="Connect with us on LinkedIn">
+	<img class="social-icon" src="assets/vimeo_ico.png" alt="vimeo" data-toggle="tooltip" data-placement="top" title="Our Vimeo channel">
 </footer>
+
+
+	<!-- scripts -->
+
+<!-- footers link tooltips -->
+<script type="text/javascript">
+	$(function () {
+		$('[data-toggle="tooltip"]').tooltip();
+	})
+</script>
 
 <!-- scripts for AngularJs -->
 <script type="text/javascript" src="js/app.js"></script>
