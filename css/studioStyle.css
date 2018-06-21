@@ -594,10 +594,10 @@ footer.copyright {
 }
 
 /*				-----------------------------	
-						DESKTOP RULES 				>= 1240
+						DESKTOP RULES 				>= 992 px
 				-----------------------------
 */
-@media screen and (min-width: 1240px) {
+@media screen and (min-width: 992px) {
 /*
 				===== ABOUT TEMPLATE =====
 */
