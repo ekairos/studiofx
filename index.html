@@ -15,6 +15,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Abel|Archivo+Black|Kanit|Rajdhani" rel="stylesheet">
 		<!-- Custom CSS -->
 	<link rel="stylesheet" type="text/css" href="css/studioStyle.css">
+	<link rel="stylesheet" type="text/css" href="css/studioAnimations.css">
 
 				<!-- ==== SCRIPTS ==== -->
 		<!-- Jquery -->
@@ -25,6 +26,7 @@
 		<!-- AngularJS -->
 	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
 	<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
 
 </head>
 <body>
@@ -47,7 +49,7 @@
 	</div><!-- /navbar collapse -->
 </nav>
 
-<div ng-view>
+<div ng-view ng-cloak>
 	<!-- angularJS views -->
 </div>
 
