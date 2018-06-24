@@ -1,5 +1,6 @@
 angular.module('studioApp', [
 	'ngRoute',
+	'ngAnimate',
 	'navController',
 	'homeController',
 	'aboutController',

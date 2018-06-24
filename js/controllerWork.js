@@ -80,6 +80,8 @@ angular.module('workController', [])
 //				--- Filter functions ---
 
 		$scope.showAll = function() {
+			$scope.galleryActive = [];
+
 			// sorts alphatically - optional
 			var reArrange = function(a, b) {
 			//	console.log(a.name);
@@ -88,22 +90,40 @@ angular.module('workController', [])
 				if(a.name > b.name) return 1;
 				return 0;
 			}
-			$scope.galleryAll.sort(reArrange);
-			// console.log('gallery all', $scope.galleryAll);
-			$scope.galleryActive = $scope.galleryAll;
-			console.log('gallery Active = ', $scope.galleryActive);
+			setTimeout(function() {
+				$scope.galleryAll.sort(reArrange);
+				// console.log('gallery all', $scope.galleryAll);
+				$scope.galleryActive = $scope.galleryAll;
+				console.log('gallery Active = ', $scope.galleryActive);
+				$scope.$digest();
+			}, 500);
 		}
 		$scope.show3d = function() {
-			$scope.galleryActive = $scope.gallery3d;
-			console.log($scope.galleryActive);
+			$scope.galleryActive = [];
+
+			setTimeout(function() {
+				$scope.galleryActive = $scope.gallery3d;
+				console.log($scope.galleryActive);
+				$scope.$digest();
+			}, 500);
 		}
 		$scope.showTvc = function() {
-			$scope.galleryActive = $scope.gallerytvc;
-			console.log($scope.galleryActive);
+			$scope.galleryActive = [];
+
+			setTimeout(function() {
+				$scope.galleryActive = $scope.gallerytvc;
+				console.log($scope.galleryActive);
+				$scope.$digest();
+			}, 500);
 		}
 		$scope.showMgx = function() {
-			$scope.galleryActive = $scope.gallerymgx;
-			console.log($scope.galleryActive);
+			$scope.galleryActive = [];
+
+			setTimeout(function() {
+				$scope.galleryActive = $scope.gallerymgx;
+				console.log($scope.galleryActive);
+				$scope.$digest();
+			}, 500);
 		}
 
 // 				--- load hero on clicked img ---
