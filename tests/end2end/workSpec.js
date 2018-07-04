@@ -49,31 +49,31 @@ describe('work page tests - ', function() {
 	});
 
 	describe('viewer - ', function() {
-		beforeEach(function() {
-			this.viewer = element(by.id('viewer'));
-		});
 
 		it('should be hidden on page load', function() {
-			// modal should be hidden
-			expect(this.viewer.getCssValue('display')).toBe('none');
+				// modal should be hidden
+			var viewer = element(by.id('viewer'));
+			expect(viewer.isDisplayed()).toBe(false);
 		});
 
 		it('should show on image click', function () {
-			$$('#gallery img').then(function(thumbs) {
-				thumbs[1].click();
+			$$('img').then(function(thumbs) {
+				thumbs[2].click();
 			});
-			browser.sleep(1000);
+			browser.sleep(2000);
 				// modal should show
-			expect(this.viewer.getCssValue('display')).toBe('block');
+			var viewer = element(by.id('viewer'));
+			expect(viewer.isDisplayed()).toBe(true);
 		});
 
-		it('should close on x button', function() {
-			$$('#viewer button').then(function(x) {
-				x[0].click()
+		it('should hide on close button', function() {
+			$$('.modal-content button').then(function(x) {
+				x[0].click();
 			});
-			browser.sleep(1000);
+			browser.sleep(500);
+			var viewer = element(by.id('viewer'));
 				// modal should hide
-			expect(this.viewer.getCssValue('display')).toBe('none');
+			expect(viewer.isDisplayed()).toBe(false);
 		});
 	});
 });

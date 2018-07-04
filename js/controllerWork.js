@@ -94,7 +94,7 @@ angular.module('workController', [])
 
 		$scope.galleryAll = $scope.gallery3d.concat($scope.gallerytvc, $scope.gallerymgx);
 		$scope.galleryActive = $scope.galleryAll;
-		console.log($scope.galleryActive);
+		console.dir('Active Gallery :', $scope.galleryActive);
 
 
 //				--- Filter functions ---
@@ -115,29 +115,39 @@ angular.module('workController', [])
 			// console.log('gallery all', $scope.galleryAll);
 			$scope.galleryActive = $scope.galleryAll;
 			console.log('gallery Active = ', $scope.galleryActive);
+				// reset hero
+			$scope.hero = {};
 		}
 		$scope.show3d = function() {
 			$scope.galleryActive = $scope.gallery3d;
 			console.log($scope.galleryActive);
+				// reset hero
+			$scope.hero = {};
 		}
 		$scope.showTvc = function() {
 			$scope.galleryActive = $scope.gallerytvc;
 			console.log($scope.galleryActive);
+				// reset hero
+			$scope.hero = {};
 		}
 		$scope.showMgx = function() {
 			$scope.galleryActive = $scope.gallerymgx;
 			console.log($scope.galleryActive);
+				// reset hero
+			$scope.hero = {};
 		}
 
-			// asign an initial empty object
+			// initial values for gallery
 		$scope.hero = {};
+		$scope.loader = {};
+		$scope.initGallery = false;
 		
 
 // 				--- autoscale modal viewer ---
 
 		$scope.getRealSize = function() {
 
-			console.info('getting real size of hero');
+			console.info('ctr - getting hero real size');
 
 			if ($scope.hero.type == "img") {
 
@@ -158,15 +168,16 @@ angular.module('workController', [])
 			
 			var heroRatio = heroHeightMax / heroWidthMax;
 
-			console.log('hero ratio', heroRatio);
+			// console.log('hero ratio', heroRatio);
 
 			$scope.heroSize = {
 				height: heroHeightMax,
 				widht: heroWidthMax,
 				ratio: heroRatio
 			};
+			// console.dir('natural hero size :', $scope.heroSize);
 
-			console.dir('natural hero size :', $scope.heroSize);
+			return $scope.heroSize;
 		}
 
 			// calc browser's window size 
@@ -194,7 +205,7 @@ angular.module('workController', [])
 
 			$scope.getWinSize();
 
-			console.dir('win size in resizer : ', $scope.winSize);
+			console.table('win size in resizeModal : ', $scope.winSize);
 			// console.dir('hero size in resizer', $scope.heroSize);
 
 			// Positioning
@@ -206,7 +217,7 @@ angular.module('workController', [])
 			var diffPos = ($scope.winSize.height - picHeight) / 2;
 			var topPos = parseInt(diffPos < 0 ? 0 : diffPos);
 
-			console.log('top position', topPos);
+			console.log('hero top position', topPos);
 
 			$("#viewer .modal-content").css('top', topPos + 'px');
 
@@ -225,6 +236,7 @@ angular.module('workController', [])
 			// triggers on / off resizing on viewer display on / off
 		
 		$('#viewer').on('show.bs.modal', function() {
+			$scope.resizeModal();
 			$(window).on('resize', $scope.resizeModal);
 		});
 
@@ -234,21 +246,44 @@ angular.module('workController', [])
 
 // 				--- load hero on clicked img ---
 
+
+		$scope.$watch('loader.name', function(newVal, oldVal) {
+
+			console.info('ctr - watch - initGallery', $scope.initGallery);
+
+			if (newVal !== oldVal) {
+				// console.warn('ctr - load watch - different hero');
+					// clear and reassign hero item
+				$scope.hero = {};
+
+				setTimeout(function() { // digest cycle timeout
+					$scope.hero = $scope.loader;
+					console.dir('hero', $scope.hero);
+					$scope.$digest();
+				}, 200);
+
+				setTimeout(function() { // 2nd digest cycle
+					$scope.getRealSize();
+					$("#viewer").modal('show');
+				}, 350);
+			}
+			else {
+				console.info('no hero loded yet');
+			}
+		});
+
 		$scope.loadHero = function($index) {
 
-			$scope.hero = $scope.galleryActive[$index];
-			console.dir($index, $scope.hero);
+			console.log('figure clicked');
 
-			setTimeout(function() {
-				console.info('100ms delay');
-
-				$scope.getRealSize();
-				
-				$scope.resizeModal();
-				
-				$('#viewer').modal('show');
+			$scope.loader = $scope.galleryActive[$index]
 			
-			}, 100);
+			if ($scope.initGallery == true && $scope.hero == $scope.loader)  {
+				$("#viewer").modal('show');
+			}
+			else {
+				$scope.initGallery = true;
+			}			
 		}
 
 //				--- vid player specific behaviour ---
