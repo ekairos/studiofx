@@ -100,6 +100,8 @@ angular.module('workController', [])
 //				--- Filter functions ---
 
 		$scope.showAll = function() {
+				//reset active gallery and hero
+			$scope.hero = {};
 			$scope.galleryActive = [];
 
 			// sorts alphatically - optional
@@ -111,6 +113,8 @@ angular.module('workController', [])
 				return 0;
 			}
 			setTimeout(function() {
+					//reset active gallery and hero
+				$scope.hero = {};
 				$scope.galleryAll.sort(reArrange);
 				// console.log('gallery all', $scope.galleryAll);
 				$scope.galleryActive = $scope.galleryAll;
@@ -119,6 +123,8 @@ angular.module('workController', [])
 			}, 500);
 		}
 		$scope.show3d = function() {
+				//reset active gallery and hero
+			$scope.hero = {};
 			$scope.galleryActive = [];
 
 			setTimeout(function() {
@@ -128,6 +134,8 @@ angular.module('workController', [])
 			}, 500);
 		}
 		$scope.showTvc = function() {
+				//reset active gallery and hero
+			$scope.hero = {};
 			$scope.galleryActive = [];
 
 			setTimeout(function() {
@@ -137,6 +145,8 @@ angular.module('workController', [])
 			}, 500);
 		}
 		$scope.showMgx = function() {
+				//reset active gallery and hero
+			$scope.hero = {};
 			$scope.galleryActive = [];
 
 			setTimeout(function() {

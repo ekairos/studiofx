@@ -24,13 +24,6 @@ describe('About Template - ', function() {
 			this.inactivLink = ['nav-item'];
 		});
 
-		it('should be active on About Us', function() {
-			expect(this.aUs.getAttribute('class')).toEqual(this.activLink);
-			expect(this.aVision.getAttribute('class')).toEqual(this.inactivLink);
-			expect(this.aWork.getAttribute('class')).toEqual(this.inactivLink);
-			expect(this.aTeam.getAttribute('class')).toEqual(this.inactivLink);
-		});
-
 		it('should follow to Our Vision', function() {
 			expect(this.aVision.getAttribute('class')).toEqual(this.inactivLink);
 			this.aVision.click();
@@ -59,6 +52,16 @@ describe('About Template - ', function() {
 			expect(this.aUs.getAttribute('class')).toEqual(this.inactivLink);
 			expect(this.aVision.getAttribute('class')).toEqual(this.inactivLink);
 			expect(this.aWork.getAttribute('class')).toEqual(this.inactivLink);
+		});
+
+		it('should be active on About Us', function() {
+			expect(this.aUs.getAttribute('class')).toEqual(this.inactivLink);
+			this.aUs.click();
+			browser.sleep(500);
+			expect(this.aUs.getAttribute('class')).toEqual(this.activLink);
+			expect(this.aVision.getAttribute('class')).toEqual(this.inactivLink);
+			expect(this.aWork.getAttribute('class')).toEqual(this.inactivLink);
+			expect(this.aTeam.getAttribute('class')).toEqual(this.inactivLink);
 		});
 
 	});

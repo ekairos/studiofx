@@ -34,46 +34,46 @@
 				===== WORK TEMPLATE =====
 */
 
-.thumb.ng-enter,
-.thumb.ng-move,
-.thumb.ng-leave {
+thumb.ng-enter,
+thumb.ng-move,
+thumb.ng-leave {
 	transition: all 0.4s ;
 	-webkit-transition: all 0.4s;
 	-moz-transition: all 0.4s;
 	-o-transition: all 0.4s;
 }
-.thumb.ng-enter,
-.thumb.ng-leave {
+thumb.ng-enter,
+thumb.ng-leave {
 	transition-timing-function: ease-out;
 }
-.thumb.ng-move {
+thumb.ng-move {
 	transition-timing-function: ease-in-out;
 }
 
-.thumb.ng-enter {
+thumb.ng-enter {
 	transition-delay: 0.5s;
 	-webkit-transition-delay: 0.5s;
 	-moz-transition-delay: 0.5s;
 	-o-transition-delay: 0.5s;
 }
 
-.thumb.ng-enter,
-.thumb.ng-move,
-.thumb.ng-leave.ng-leave-active {
+thumb.ng-enter,
+thumb.ng-move,
+thumb.ng-leave.ng-leave-active {
 	opacity: 0
 }
 
 /*	OPTIONAL STAGGERING ANIMATION */
-.thumb.ng-enter-stagger,
-.thumb.ng-move-stagger{
+thumb.ng-enter-stagger,
+thumb.ng-move-stagger{
 	transition-delay: 0.06s;
 	-webkit-transition-delay: 0.06s;
 	-moz-transition-delay: 0.06s;
 	-o-transition-delay: 0.06s;
 }
-.thumb-ng-leave,
-.thumb.ng-enter.ng-enter-active,
-.thumb.ng-move.ng-move-active {
+thumb-ng-leave,
+thumb.ng-enter.ng-enter-active,
+thumb.ng-move.ng-move-active {
 	opacity: 1;
 }
 
