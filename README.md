@@ -20,10 +20,10 @@ It shoud be clear with fluid and simple navigation as well as respnsive so to be
 - About page prensenting services and team
 - Address on googleMap for location
 - Contact Forms
+- Portfolio gallery viewer
 
 ### Features to add
 
-- Portfolio gallery viewer
 
 ## Tech used
 
@@ -53,5 +53,9 @@ It shoud be clear with fluid and simple navigation as well as respnsive so to be
 	- **Protractor** is our AngularJs end-to-end testing framework
 - [Webdriver-manager](https://www.protractortest.org/#/server-setup)
 	- **webdriver-manager** helps running [Selenium server](https://www.seleniumhq.org/) and drive the browsers we want
+
+#### Tests environment
+
+End 2 End test are running in Firefox 57.0, Chrome 67.0 and Opera 54.0.
 
 _You need [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) to be installed on your machine to run **Selenium Server** locally._
