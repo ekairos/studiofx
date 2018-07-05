@@ -10,57 +10,67 @@ angular.module('workController', [])
 			{
 				name: "Jeysen House",
 				file: "jeysen",
-				type: "3d",
+				cat: "3d",
+				type: "img",
 				description: "Jeysen House designed by that famous unknown architect"
 			},
 			{
 				name: "Master bedroom",
 				file: "bed1",
-				type: "3d",
+				cat: "3d",
+				type: "img",
 				description: "Indoor previsualisations for Jeysen House"
 			},
 			{
 				name: "MentalPix office",
 				file: "hkOffice",
-				type: "3d",
+				cat: "3d",
+				type: "img",
 				description: "MentalPix HongKong's office previsualisation"
 			},
 			{
 				name: "Arkangels",
 				file: "superpuma",
-				type: "3d",
-				description: "3D Models and animations for helicopter pilots and mecanics e-learning"
+				cat: "3d",
+				type: "img",
+				description: "e-learning for helicopter pilots and mecanics"
 			}
 		];
 		$scope.gallerytvc = [
 			{
 				name: "Acts of Godfrey",
 				file: "aog",
-				type: "tvc",
+				cat: "tvc",
+				type: "img",
 				description: "Feature film by Johnny Daukes"
 			},
 			{
 				name: "London Olympic 2012",
 				file: "ioc",
-				type: "tvc",
-				description: "International Olympic Committee Campagne for London 2012"
+				cat: "tvc",
+				type: "img",
+				description: "International Olympic Committee campaign"
 			},
 			{
 				name: "boby",
 				file: "bobstr",
-				type: "tvc",
+				cat: "tvc",
+				type: "img",
 				description: "Our 3DStereo animation"
 			},
 			{
 				name: "Motat",
 				file: "motat",
-				type: "tvc",
+				cat: "tvc",
+				type: "vid",
+				mp4: "../assets/gallery/motat_360p.mp4",
 				description: "Motat Ad for Halloween special event"
 			},
 			{
 				name: "Ptouch",
 				file: "ptouch",
-				type: "tvc",
+				cat: "tvc",
+				type: "img",
 				description: "3d animation for Brother"
 			}
 		];
@@ -68,14 +78,24 @@ angular.module('workController', [])
 			{
 				name: "NeoHub",
 				file: "neohub",
-				type: "mgx",
+				cat: "mgx",
+				type: "img",
 				description: "Motion Graphics for NeoHub"
+			},
+			{
+				name: "Easter Hero",
+				file: "koran",
+				cat: "mgx",
+				type: "vid",
+				mp4: "../assets/gallery/koran_trailer.mp4",
+				description: "Eastern Hero game trailer"
 			}
 		];
 
 		$scope.galleryAll = $scope.gallery3d.concat($scope.gallerytvc, $scope.gallerymgx);
 		$scope.galleryActive = $scope.galleryAll;
-		console.log($scope.galleryActive);
+		console.dir('Active Gallery :', $scope.galleryActive);
+
 
 //				--- Filter functions ---
 
@@ -126,14 +146,168 @@ angular.module('workController', [])
 			}, 500);
 		}
 
-// 				--- load hero on clicked img ---
+			// initial values for gallery
+		$scope.hero = {};
+		$scope.loader = {};
+		$scope.initGallery = false;
+		
 
-		$scope.loadViewer = function($index){
-			// console.log($index);
-			$scope.hero = $scope.galleryActive[$index];
-			console.log('hero :', $scope.hero);
+// 				--- autoscale modal viewer ---
+
+		$scope.getRealSize = function() {
+
+			console.info('ctr - getting hero real size');
+
+			if ($scope.hero.type == "img") {
+
+				var heroPic = document.getElementById('heroPic');
+				// console.log('heroPic element', heroPic);
+
+				var heroHeightMax = heroPic.naturalHeight;
+				var heroWidthMax = heroPic.naturalWidth;
+				
+			} else if ($scope.hero.type == "vid") {
+
+				var heroVid = document.getElementById("heroVid");
+
+				var heroHeightMax = heroVid.videoHeight;
+				var heroWidthMax = heroVid.videoWidth;
+
+			}
 			
-			$('#viewer').modal('show');
+			var heroRatio = heroHeightMax / heroWidthMax;
+
+			// console.log('hero ratio', heroRatio);
+
+			$scope.heroSize = {
+				height: heroHeightMax,
+				widht: heroWidthMax,
+				ratio: heroRatio
+			};
+			// console.dir('natural hero size :', $scope.heroSize);
+
+			return $scope.heroSize;
 		}
 
+			// calc browser's window size 
+
+		$scope.getWinSize = function() {
+			// console.log('get win size');
+			
+			var winHeight = parseInt($(window).height());
+			var winWidth = parseInt($(window).width());
+
+			$scope.winSize = {
+				width: winWidth,
+				height: winHeight
+			};
+
+			// console.dir('win size :', $scope.winSize);
+
+			return $scope.winSize;
+		};
+
+// 				--- Fits viewer to browser's window size ---
+
+		$scope.resizeModal = function() {
+			console.info('resizing modal viewer');
+
+			$scope.getWinSize();
+
+			console.table('win size in resizeModal : ', $scope.winSize);
+			// console.dir('hero size in resizer', $scope.heroSize);
+
+			// Positioning
+
+				// calc displayed height from img is 100% width of win
+			var picHeight = $scope.winSize.width * $scope.heroSize.ratio;
+			
+				// center vertically
+			var diffPos = ($scope.winSize.height - picHeight) / 2;
+			var topPos = parseInt(diffPos < 0 ? 0 : diffPos);
+
+			console.log('hero top position', topPos);
+
+			$("#viewer .modal-content").css('top', topPos + 'px');
+
+				// auto scaling
+			var maxHeight = $scope.winSize.height;
+			//console.log('hero max height : ', maxHeight);
+
+			var maxWidth = parseInt($scope.winSize.height / $scope.heroSize.ratio);
+			//console.log('hero max width : ', maxWidth);
+
+			$("#viewer .modal-content").css('max-width', maxWidth + 'px');
+			$("#viewer .modal-content").css('max-height', maxHeight + 'px');
+
+		}
+
+			// triggers on / off resizing on viewer display on / off
+		
+		$('#viewer').on('show.bs.modal', function() {
+			$scope.resizeModal();
+			$(window).on('resize', $scope.resizeModal);
+		});
+
+		$('#viewer').on('hidden.bs.modal', function() {
+			$(window).off('resize', $scope.resizeModal);
+		});
+
+// 				--- load hero on clicked img ---
+
+
+		$scope.$watch('loader.name', function(newVal, oldVal) {
+
+			console.info('ctr - watch - initGallery', $scope.initGallery);
+
+			if (newVal !== oldVal) {
+				// console.warn('ctr - load watch - different hero');
+					// clear and reassign hero item
+				$scope.hero = {};
+
+				setTimeout(function() { // digest cycle timeout
+					$scope.hero = $scope.loader;
+					console.dir('hero', $scope.hero);
+					$scope.$digest();
+				}, 200);
+
+				setTimeout(function() { // 2nd digest cycle
+					$scope.getRealSize();
+					$("#viewer").modal('show');
+				}, 350);
+			}
+			else {
+				console.info('no hero loded yet');
+			}
+		});
+
+		$scope.loadHero = function($index) {
+
+			console.log('figure clicked');
+
+			$scope.loader = $scope.galleryActive[$index]
+			
+			if ($scope.initGallery == true && $scope.hero == $scope.loader)  {
+				$("#viewer").modal('show');
+			}
+			else {
+				$scope.initGallery = true;
+			}			
+		}
+
+//				--- vid player specific behaviour ---
+
+		$("#viewer").on("shown.bs.modal", function() {
+			if ($scope.hero.type == "vid") {
+				console.log("hero type is vid - resuming video");
+				document.getElementById("heroVid").play();
+			}
+		});
+
+		$("#viewer").on("hide.bs.modal", function() {
+			if ($scope.hero.type == "vid") {
+				console.log("hero type is vid - pausing video");
+				document.getElementById("heroVid").pause();
+			}
+		});
 	});

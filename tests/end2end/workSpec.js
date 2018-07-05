@@ -20,7 +20,7 @@ describe('work page tests - ', function() {
 
 		it('should show full gallery on laod', function() {
 
-			expect(this.items.count()).toEqual(10);
+			expect(this.items.count()).toEqual(11);
 		});
 			// when click/touch 3d button
 		it('should show show only 3d items', function() {
@@ -38,42 +38,42 @@ describe('work page tests - ', function() {
 		it('should show show only mgx items', function() {
 			this.buttonMgx.click();
 			browser.sleep(200);
-			expect(this.items.count()).toEqual(1);
+			expect(this.items.count()).toEqual(2);
 		});
 			// when click/touch All button
 		it('should show show only all items', function() {
 			this.buttonAll.click();
 			browser.sleep(200);
-			expect(this.items.count()).toEqual(10);
+			expect(this.items.count()).toEqual(11);
 		});
 	});
 
 	describe('viewer - ', function() {
-		beforeEach(function() {
-			this.viewer = element(by.id('viewer'));
-		});
 
 		it('should be hidden on page load', function() {
-			// modal should be hidden
-			expect(this.viewer.getCssValue('display')).toBe('none');
+				// modal should be hidden
+			var viewer = element(by.id('viewer'));
+			expect(viewer.isDisplayed()).toBe(false);
 		});
 
 		it('should show on image click', function () {
-			$$('#gallery img').then(function(thumbs) {
-				thumbs[1].click();
+			$$('img').then(function(thumbs) {
+				thumbs[2].click();
 			});
-			browser.sleep(1000);
+			browser.sleep(2000);
 				// modal should show
-			expect(this.viewer.getCssValue('display')).toBe('block');
+			var viewer = element(by.id('viewer'));
+			expect(viewer.isDisplayed()).toBe(true);
 		});
 
-		it('should close on x button', function() {
-			$$('#viewer button').then(function(x) {
-				x[0].click()
+		it('should hide on close button', function() {
+			$$('.modal-content button').then(function(x) {
+				x[0].click();
 			});
-			browser.sleep(1000);
+			browser.sleep(500);
+			var viewer = element(by.id('viewer'));
 				// modal should hide
-			expect(this.viewer.getCssValue('display')).toBe('none');
+			expect(viewer.isDisplayed()).toBe(false);
 		});
 	});
 });

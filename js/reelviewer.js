@@ -11,11 +11,11 @@ $(document).ready(function() {
 
 			// positioning
 		var topPos = parseInt(diffPos < 0 ? 0 : diffPos);
-		$('#viewer').css('top', topPos + 'px');
+		$('#demoViewer').css('top', topPos + 'px');
 	
 			// max sizes
 		var maxWidth = Math.round((winHeight * 1.77));
-		$('#viewer').css("max-width", maxWidth + 'px');
+		$('#demoViewer').css("max-width", maxWidth + 'px');
 	}
 
 	positionViewer();
@@ -23,14 +23,16 @@ $(document).ready(function() {
 	$(window).on('resize', positionViewer);
 
 		// reel viewer
-	var reel = document.getElementById("heroVid");
+	var demo = document.getElementById("heroVid");
 
-	$('#viewer').on('hidden.bs.modal', function() {
+	$('#demoViewer').on('hidden.bs.modal', function() {
 		console.log('modal is hidden, pausing video');
-		reel.pause();
+		demo.pause();
 	});
-	$('#viewer').on('shown.bs.modal', function() {
+	$('#demoViewer').on('shown.bs.modal', function() {
+		console.log('positioning viewer');
+		positionViewer();
 		console.log('modal is shown, resuming video');
-		reel.play();
+		demo.play();
 	});
 });

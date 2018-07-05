@@ -1,3 +1,12 @@
+/*
+
+		====================
+
+		 NOT IN CURRENT USE
+
+		====================
+
+
 $(document).ready(function(){
 	console.log('document is ready for galleryloader');
 
@@ -40,7 +49,7 @@ $(document).ready(function(){
 
 		resizeModal();
 		
-		// $('#viewer.modal').on('show.bs.modal', resizeModal);
+		$('#viewer.modal').on('show.bs.modal', resizeModal);
 		
 		$('#viewer').modal('show');
 
@@ -48,3 +57,5 @@ $(document).ready(function(){
 	});
 
 });
+
+*/
