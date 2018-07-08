@@ -57,7 +57,7 @@ It shoud be clear with fluid and simple navigation as well as respnsive so to be
 - [Jasmine-expect](https://www.npmjs.com/package/jasmine-expect)
   - Used to add custom matchers for testing the app
 
-#### Tests environment
+### Tests environment
 
 End 2 End test are running in Firefox 57.0, Chrome 67.0 and Opera 54.0.
 
