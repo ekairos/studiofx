@@ -514,7 +514,7 @@ footer.copyright {
 	#aboutVision,
 	#aboutWork,
 	#aboutTeam header {
-		width: 80%;
+		width: 90%;
 		max-width: 860px;
 		margin: 40px auto;
 	}
@@ -524,14 +524,14 @@ footer.copyright {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		justify-content: center;
+		justify-content: space-evenly;
+		margin-left: auto;
+		margin-right: auto;
 	}
 		#teamBook li {
 			margin: 10px 5px;
-			flex-grow: 1;
-			flex-basis: 220px;
-			align-self: normal;
-			max-width: 320px;
+			align-self: stretch;
+			max-width: 280px;
 		}
 /*
 				===== WORK TEMPLATE =====
@@ -612,12 +612,15 @@ footer.copyright {
 				padding-top: 200px;
 			}
 		#aboutTeam {
-			width: 80%;
+			width: 90%;
 			margin-left: auto;
 			margin-right: auto;
 		}
 			#aboutTeam header {
 				padding-top: 60px;
+			}
+			#teamBook {
+				max-width: 1240px;
 			}
 /*
 				===== WORK TEMPLATE =====
