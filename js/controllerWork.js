@@ -63,7 +63,7 @@ angular.module('workController', [])
 				file: "motat",
 				cat: "tvc",
 				type: "vid",
-				mp4: "../assets/gallery/motat_360p.mp4",
+				mp4: "../assets/gallery/tvc/motat_360p.mp4",
 				description: "Motat Ad for Halloween special event"
 			},
 			{
@@ -83,11 +83,11 @@ angular.module('workController', [])
 				description: "Motion Graphics for NeoHub"
 			},
 			{
-				name: "Easter Hero",
-				file: "koran",
+				name: "Eastern Hero",
+				file: "eastern_hero",
 				cat: "mgx",
 				type: "vid",
-				mp4: "../assets/gallery/koran_trailer.mp4",
+				mp4: "../assets/gallery/mgx/eastern_hero_trailer.mp4",
 				description: "Eastern Hero game trailer"
 			}
 		];
