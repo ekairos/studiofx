@@ -3,7 +3,6 @@
 */
 /*					--- Elements ---
 */
-
 html, body, [ng-view] {
 	height: 100%;
 }
@@ -89,9 +88,14 @@ footer {
 }
 /*				___ COLOR PANEL ___
 */
-
 /*				___ Bootstrap Custom ___
 */
+/*					--- Nav Bar ---
+*/
+.navbar-brand {
+	padding: 5px 40px;
+	height: 40px;
+}
 /*					--- Modals ---
 */
 .modal {
@@ -133,7 +137,6 @@ footer {
 	background-color: transparent;
 	color: #fff;
 }
-
 /*
 				===== INDEX =====
 */
@@ -178,7 +181,6 @@ footer {
 	.social-icon:hover {
 		border-radius: 50%;
 	}
-
 /*
 				===== HOME TEMPLATE =====
 */
@@ -196,16 +198,21 @@ footer {
 		width: 100%;
 	    flex: 0 0 35%;
 	}
-		#studioFx h1 {
+		#studioFx .logo {
 			padding: 20px;
 			border: 1px solid #fff;
 			border-width: 1px 0px 1px 0px;
 			box-shadow: 0 0 40px rgba(0,0,0,0.5);
 		}
+		#studioFx img {
+			min-width: 280px;
+			width: 50%;
+			max-width: 450px;
+		}
 		#studioFx h5 {
 			letter-spacing: 1px;
 			word-spacing: 2px;
-			margin-top: 5%;
+			margin-top: 40px;
 		}
 	#reel {
 		width: 50px;
