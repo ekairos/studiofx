@@ -86,8 +86,13 @@ footer {
 	color: #000;
 	background-color: rgba(224,224,224,0.6);
 }
-/*				___ COLOR PANEL ___
+/*				___ Graphics ___
 */
+.bg {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+}
 /*				___ Bootstrap Custom ___
 */
 /*					--- Nav Bar ---
@@ -193,6 +198,7 @@ footer {
 	justify-content: center;
 	align-content: center;
 	align-items: flex-end;
+	background-image: url('../assets/bg.jpg');
 }
 	#studioFx {
 		width: 100%;
@@ -202,7 +208,8 @@ footer {
 			padding: 20px;
 			border: 1px solid #fff;
 			border-width: 1px 0px 1px 0px;
-			box-shadow: 0 0 40px rgba(0,0,0,0.5);
+			box-shadow: 0 0 15px 10px rgba(0,0,0,0.7);
+			background-color: rgba(0, 0, 0, 0.5)
 		}
 		#studioFx img {
 			min-width: 280px;
@@ -371,7 +378,6 @@ footer.copyright {
 	.copyright p {
 		margin-bottom: 14px;
 	}
-
 /*
 				===== CONTACT TEMPLATE =====
 */
@@ -575,6 +581,12 @@ footer.copyright {
 /*
 				===== CONTACT TEMPLATE =====
 */
+	.bg-contact {
+		background-image: url('../assets/office/mars_office.jpg');
+		height: auto;
+		width: auto;
+		padding-bottom: 5px;
+	}
 	#contactMain {
 		max-width: 900px;
 	}
