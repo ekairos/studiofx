@@ -320,6 +320,9 @@ footer {
 .thumb {
 	position: relative;
 	overflow: hidden;
+	max-width: 540px;
+	margin-right: auto;
+	margin-left: auto;
 }
 	.thumb img {
 		width: 100%;
@@ -578,6 +581,9 @@ footer.copyright {
 		flex-flow: row wrap;
 		justify-content: center;
 	}
+		.thumb img {
+			max-width: 360px;
+		}
 /*
 				===== CONTACT TEMPLATE =====
 */

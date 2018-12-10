@@ -12,7 +12,7 @@ angular.module('workController', [])
 				file: "jeysen",
 				cat: "3d",
 				type: "img",
-				description: "Jeysen House designed by that famous unknown architect"
+				description: "Jeysen House designed by that famous architect"
 			},
 			{
 				name: "Master bedroom",
