@@ -238,12 +238,20 @@ footer {
 	margin-right: auto;
 	overflow: hidden;
 }
-	#demoViewer button {
-		z-index: 1;
+	#demoViewer .reel-header {
+		width: 100%;
 		position: absolute;
-		right: 0;
+		top: 0px;
+		opacity: 0.2;
+		transition: opacity 300ms;
 	}
-
+	#demoViewer:hover .reel-header {
+		opacity: 1;
+	}
+		.reel-header>button {
+			z-index: 1;
+			float: right;
+		}
 /*
 				===== ABOUT TEMPLATE =====
 */

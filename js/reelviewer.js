@@ -1,5 +1,33 @@
 $(document).ready(function() {
 
+		// reel viewer
+	var demo = document.getElementById("heroVid");
+
+		// change video resolution
+	var sizes = {
+		"sd": "assets/gallery/reel_sd.mp4",
+		"hd": "assets/gallery/reel_720p.mp4"
+	}
+	
+	function changeVid(size) {
+		demo.setAttribute("src", sizes[size]);
+		$(".btn-group button").toggleClass("active");
+	}
+
+	$("#sd").on('click', function() {
+		if (demo.getAttribute("src") != sizes['sd']) {
+			changeVid('sd');
+		}
+		// console.log(demo.getAttribute("src"));
+	})
+	$("#hd").on('click', function() {
+		if (demo.getAttribute("src") != sizes['hd']) {
+			changeVid('hd');
+		}
+		// console.log(demo.getAttribute("src"));
+	})
+	
+		// Positioning the viewer
 	function positionViewer() {
 		var winHeight = $(window).height();
 		var winWidth = $(window).width();
@@ -18,12 +46,10 @@ $(document).ready(function() {
 		$('#demoViewer').css("max-width", maxWidth + 'px');
 	}
 
+		// position on page load
 	positionViewer();
 
 	$(window).on('resize', positionViewer);
-
-		// reel viewer
-	var demo = document.getElementById("heroVid");
 
 	$('#demoViewer').on('hidden.bs.modal', function() {
 		console.log('modal is hidden, pausing video');

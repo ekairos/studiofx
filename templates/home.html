@@ -17,14 +17,16 @@
 <!-- modal viewer -->
 <div id="demoViewer" class="modal fade" tabindex="-1">
 	<div class="modal-dialog">
-		<!-- <div class="modal-content"> -->
-			<!-- <div class="modal-body"> -->
-				<button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">&times;</button>
-				<video id="heroVid" width="100%" preload="auto" controls>
-					<source src="../assets/gallery/reel_sd.mp4" type="video/mp4">
-				</video>
-			<!-- </div> -->
-		<!-- </div> -->
+		<section class="reel-header">
+			<button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">&times;</button>
+			<div class="btn-group hidden-xs" role="group" aria-label="...">
+				<button id="sd" type="button" class="btn btn-default active">SD</button>
+				<button id="hd" type="button" class="btn btn-default">HD</button>
+			</div>
+		</section>
+		<video id="heroVid" width="100%" preload="auto" controls>
+			<source src="../assets/gallery/reel_sd.mp4" type="video/mp4">
+		</video>
 	</div>
 </div>
 
