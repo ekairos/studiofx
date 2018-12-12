@@ -238,14 +238,14 @@ footer {
 	margin-right: auto;
 	overflow: hidden;
 }
-	#demoViewer .reel-header {
+	.modal-dialog .reel-header {
 		width: 100%;
 		position: absolute;
 		top: 0px;
 		opacity: 0.2;
 		transition: opacity 300ms;
 	}
-	#demoViewer:hover .reel-header {
+	.modal-dialog:hover .reel-header {
 		opacity: 1;
 	}
 		.reel-header>button {
