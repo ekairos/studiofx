@@ -279,12 +279,12 @@ angular.module('workController', [])
 					$scope.hero = $scope.loader;
 					console.dir('hero', $scope.hero);
 					$scope.$digest();
-				}, 200);
+				}, 250);
 
 				setTimeout(function() { // 2nd digest cycle
 					$scope.getRealSize();
 					$("#viewer").modal('show');
-				}, 350);
+				}, 400);
 			}
 			else {
 				console.info('no hero loded yet');
