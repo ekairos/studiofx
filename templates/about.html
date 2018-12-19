@@ -7,46 +7,49 @@
 	</ul>
 </nav>
 
-<main id="aboutMain">
-	<section id="aboutUs" class="anchor">
-		<header>
-			<h1>About Us</h1>
-			<p>From there to here.</p>
+<main class="flex-v-centr">
+
+ 	<section id="aboutUs" class="anchor safe-read">
+		<header class="header-block">
+			<h1 class="header-title">About Us</h1>
+			<p class="prime-text">From there to here.</p>
 		</header>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at posuere arcu. Aliquam dolor velit, semper sit amet malesuada eu, lacinia ut lacus. Fusce a est mi. Proin viverra, metus ut laoreet lacinia, mi nisi.</p>
 	</section>
 
-	<section id="aboutVision" class="anchor">
-		<header>
-			<h1>Our Vision</h1>
-			<p>From here to there</p>
+	<section id="aboutVision" class="anchor safe-read">
+		<header class="header-block">
+			<h1 class="header-title">Our Vision</h1>
+			<p class="prime-text">From here to there</p>
 		</header>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at posuere arcu. Aliquam dolor velit, semper sit amet malesuada eu, lacinia ut lacus. Fusce a est mi. Proin viverra, metus ut laoreet lacinia, mi nisi.</p>
 	</section>
 
-	<section id="aboutWork" class="anchor">
-		<header>
-			<h1>Our Work</h1>
-			<p>We are proud of the range of service we now provide</p>
+	<section id="aboutWork" class="anchor safe-read">
+		<header class="header-block">
+			<h1 class="header-title">Our Work</h1>
+			<p class="prime-text">We aparagraphre proud of the range of service we now provide</p>
 		</header>
 		<p><strong>Nunc varius</strong> condimentum libero, in mollis arcu lobortis sed. Mauris rhoncus molestie hendrerit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer imperdiet.</p>
 		<p><strong>Nunc varius</strong> condimentum libero, in mollis arcu lobortis sed. Mauris rhoncus molestie hendrerit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus metus. Integer imperdiet.</p>
 	</section>
 
-	<section id="aboutTeam" class="anchor">
-		<header>
-			<h1>Our Core Team</h1>
+	<section id="aboutTeam" class="anchor safe-read">
+		<header class="header-block">
+			<h1 class="header-title">Our Core Team</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at posuere arcu. Aliquam dolor velit, semper sit amet malesuada eu, lacinia ut lacus. Fusce a est mi. Proin viverra, metus ut laoreet lacinia, mi nisi.</p>
 		</header>
-		<ul id="teamBook">
-			<li data-ng-repeat="member in members">
-				<h2>{{member.name}}</h2>
-				<h3>{{member.title}}</h3>
-				<img data-ng-src="/assets/team/{{member.file}}.jpg" width="250" height="250" alt="{{member.name}} profile picture missing" src="/">
-				<p>{{member.description}}</p>
-			</li>
-		</ul>
+
 	</section>
+	
+	<ul class="team-book">
+		<li data-ng-repeat="member in members">
+			<h2 class="membr-name">{{member.name}}</h2>
+			<h3 class="membr-title">{{member.title}}</h3>
+			<img data-ng-src="/assets/team/{{member.file}}.jpg" width="250" height="250" alt="{{member.name}} profile picture missing" src="/">
+			<p class="membr-desc">{{member.description}}</p>
+		</li>
+	</ul>
 </main>
 
 <script type="text/javascript" src="js/scrollspy.js"></script>

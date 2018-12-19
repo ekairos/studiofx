@@ -1,13 +1,13 @@
-<main id="landing" class="bg" ng-cloak>
+<main class="bg home-landing flex-v-centr" ng-cloak>
 
-	<header id="studioFx">
+	<header class="landing-header">
 		<div class="logo">
 			<img src="/assets/studiofx_logo.png" alt="logo image" width="250">
 		</div>
-		<h5>We're having a digital craig !</h5>
+		<p class="landing-subTitle">We're having a digital craig !</p>
 	</header>
 
-	<section id="reel" data-toggle="modal" data-target="#demoViewer">
+	<section class="demo-reel" data-toggle="modal" data-target="#demoViewer">
 		<!-- load full screen demo reel -->
 		<span class="glyphicon glyphicon-play"></span>
 	</section>
@@ -15,19 +15,23 @@
 </main>
 
 <!-- modal viewer -->
-<div id="demoViewer" class="modal fade" tabindex="-1">
-	<div class="modal-dialog">
+<div id="demoViewer" class="modal fade demoViewer" tabindex="-1">
+	<div class="modal-dialog demo-viewer-content mod-full-width">
+
 		<section class="reel-header">
-			<button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">&times;</button>
+			<button type="button" class="btn btn-default btn-shadow bs-btn" data-dismiss="modal" aria-label="Close">&times;</button>
+
 			<div class="btn-group hidden-xs" role="group" aria-label="...">
-				<button id="sd" type="button" class="btn btn-default active">SD</button>
-				<button id="hd" type="button" class="btn btn-default">HD</button>
+				<button id="sd" type="button" class="btn btn-default bs-btn active">SD</button>
+				<button id="hd" type="button" class="btn btn-default bs-btn">HD</button>
 			</div>
 		</section>
+
 		<video id="heroVid" width="100%" preload="auto" controls>
 			<source src="../assets/gallery/reel_sd.mp4" type="video/mp4">
 		</video>
-	</div>
-</div>
+
+	</div><!-- /modal-dialog -->
+</div><!-- /modal -->
 
 <script type="text/javascript" src="js/reelviewer.js"></script>

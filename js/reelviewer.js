@@ -39,11 +39,11 @@ $(document).ready(function() {
 
 			// positioning
 		var topPos = parseInt(diffPos < 0 ? 0 : diffPos);
-		$('#demoViewer').css('top', topPos + 'px');
+		$('.demo-viewer-content').css('top', topPos + 'px');
 	
 			// max sizes
 		var maxWidth = Math.round((winHeight * 1.77));
-		$('#demoViewer').css("max-width", maxWidth + 'px');
+		$('.demo-viewer-content').css("max-width", maxWidth + 'px');
 	}
 
 		// position on page load

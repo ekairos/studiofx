@@ -11,8 +11,6 @@
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
 		<!-- reset CSS-->
 	<link rel="stylesheet" type="text/css" href="css/resetCSS.css">
-		<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Abel|Archivo+Black|Kanit|Rajdhani" rel="stylesheet">
 		<!-- Custom CSS -->
 	<link rel="stylesheet" type="text/css" href="css/studioStyle.css">
 	<link rel="stylesheet" type="text/css" href="css/studioAnimations.css">
@@ -28,19 +26,29 @@
 	<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
 	<script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
 
+		<!-- scripts for AngularJs -->
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/controllerNav.js"></script>
+	<script type="text/javascript" src="js/controllerHome.js"></script>
+	<script type="text/javascript" src="js/controllerAbout.js"></script>
+	<script type="text/javascript" src="js/controllerWork.js"></script>
+	<script type="text/javascript" src="js/controllerContact.js"></script>
+	<script type="text/javascript" src="js/directiveThumb.js"></script>
+	<script type="text/javascript" src="js/directiveViewer.js"></script>
+
 </head>
 <body>
 
-<nav id="studioNavbar" class="navbar navbar-fixed-top navbar-inverse" ng-controller="NavController">
+<nav class="navbar navbar-fixed-top navbar-inverse" ng-controller="NavController">
 	<div class="navbar-header">
-		<div id="navLogo" class="navbar-brand"><a href="/"><img src="/assets/studiofx_label.png" alt="StuioFX" width="124" height="40"></a></div>
+		<div class="navbar-brand navbar-logo"><a href="/"><img src="/assets/studiofx_label.png" alt="StuioFX" width="124" height="40"></a></div>
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navMenu">
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
 	</div><!-- /navbar hedaer -->
-	<div id="navMenu" class="collapse navbar-collapse">
+	<div id="navMenu" class="collapse navbar-collapse nav-menu">
 		<ul class="nav navbar-nav navbar-right">
 			<li ng-class="pageClass('/about')"><a href="/about">About</a></li>
 			<li ng-class="pageClass('/work')"><a href="/work">Work</a></li>
@@ -53,7 +61,7 @@
 	<!-- angularJS views -->
 </div>
 
-<footer id="social-links">
+<footer class="social-links">
 	<img class="social-icon" src="assets/fb_ico.png" alt="facebook" data-toggle="tooltip" data-placement="top" title="Our team's channel coming soon">
 	<img class="social-icon" src="assets/twitter_ico.png" alt="twitter" data-toggle="tooltip" data-placement="top" title="Follow us on Twitter">
 	<img class="social-icon" src="assets/lin_ico.png" alt="linkedin" data-toggle="tooltip" data-placement="top" title="Connect with us on LinkedIn">
@@ -69,16 +77,6 @@
 		$('[data-toggle="tooltip"]').tooltip();
 	})
 </script>
-
-<!-- scripts for AngularJs -->
-<script type="text/javascript" src="js/app.js"></script>
-<script type="text/javascript" src="js/controllerNav.js"></script>
-<script type="text/javascript" src="js/controllerHome.js"></script>
-<script type="text/javascript" src="js/controllerAbout.js"></script>
-<script type="text/javascript" src="js/controllerWork.js"></script>
-<script type="text/javascript" src="js/controllerContact.js"></script>
-<script type="text/javascript" src="js/directiveThumb.js"></script>
-<script type="text/javascript" src="js/directiveViewer.js"></script>
 
 </body>
 </html>

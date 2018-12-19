@@ -7,7 +7,7 @@ function initMap() {
 	    zoom: 8,
 	    mapTypeId: 'roadmap'
     };
-    var map = new google.maps.Map(document.getElementById("gMap"), mapOptions);
+    var map = new google.maps.Map(document.getElementById("studiofx-map"), mapOptions);
     var ctcMark = new google.maps.Marker({
     	position: mapOptions.center,
     	map: map,
