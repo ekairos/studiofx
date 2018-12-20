@@ -4,11 +4,11 @@
   "description": "StudioFx's portfolio",
   "main": "index.js",
   "scripts": {
+    "start": "node_modules/http-server/bin/http-server -c-1",
     "unittest": "node_modules/grunt/bin/grunt karma:unit",
-    "httpserver": "http-server -c-1",
     "webdriver": "node_modules/webdriver-manager/bin/webdriver-manager update && node_modules/webdriver-manager/bin/webdriver-manager start",
     "protractor": "sleep 5 && protractor protractor.conf.js",
-    "e2etest": "npm-run-all --parallel -r webdriver httpserver protractor"
+    "e2etest": "npm-run-all --parallel -r start webdriver protractor"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/GarethS3/studiofx#readme",
   "dependencies": {
-    "bower": "^1.8.4"
+    "bower": "^1.8.4",
+    "http-server": "^0.11.1"
   },
   "devDependencies": {
     "angular-mocks": "^1.6.10",
