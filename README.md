@@ -2,6 +2,9 @@
 
 ## Overview
 
+**_Live preview_** :
+[githup pages](https://gareths3.github.io/studiofx/)  
+
 ### What is it for ?
 
 It should present the Studio's portfolio to potential client as much as new talents willing to join the team in its growth.
@@ -10,31 +13,100 @@ It should present the Studio's portfolio to potential client as much as new tale
 
 The website should showcase StudioFX's gallery, present the team and the services they provide.
 While portfolio are best shown on desktop displays, it should be a mobile first approach to ensure that the website and its content is easily and quickly accessible anywhere to exchange and present the studio services.
-It shoud be clear with fluid and simple navigation as well as respnsive so to be accessible from any devices.
+It should be clear with fluid and simple navigation as well as responsive so to be accessible from any devices.
 
-## Features
+## Contributing
 
-### Existing Features
+### Getting the code up and running
 
-- Demo Reel on Home Page
-- About page prensenting services and team
-- Address on googleMap for location
-- Contact Forms
-- Portfolio gallery viewer
+1. Firstly you will need to clone this repository by running
+   ```
+   git clone https://github.com/GarethS3/studiofx.git
+   ```
+2. Install project’s dependencies :
+   ```
+   npm install && bower install
+   ```
+   - If you need to install **Node** and **Bower** :
+      1. Node installation is [here](https://nodejs.org/en/)
+      2. Then install Bower : `npm install -g bower`
+      3. `npm install && bower install`
+3. Start local server :
+   ```
+   npm run start
+   ```
+   -  Or with http-server global installation :
+      1. Make sure you have **http-server** or install it running : `sudo npm install -g http-server`
+      2. Execute `http-server`. _Using ` -c-1 ` flags will disable the cache_.
+4. The project will now run on [localhost:8080](http://127.0.0.1:8080) with any web browser.
 
-### Features to add
+### The Testing framework
+
+#### Unit Testing
+
+The Unit Tests are run in Firefox 64.0, Chrome 71.0 and Opera 57.0.
+
+You can run the tests using local config:
+```
+npm run unittest
+```
+Global config requires to install Karma-cli and Grunt-cli globally with security privileges access :
+```bash
+sudo npm install -g karma-cli grunt-cli
+```
+Then run the tests from the project root : 
+```bash
+grunt karma:unit
+```
+
+Check configuration and tested files in `gruntfile.js` and `karma.conf.js` files in project root.  
+_To test in additional browsers you will need to check for their [Karma launcher](https://npmjs.org/browse/keyword/karma-launcher) and add them in the ` karma.conf.js ` file_
+
+
+#### End-to-End Testing
+
+These End-to-End tests were run in Firefox 64.0 and Chrome 71.0.
+
+_You need [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) to be installed on your computer to run **Selenium Server** locally._
+
+To simply run the tests with local config:
+```
+npm run e2etest
+```
+To run the tests with global installation of Webdriver-manager and Protractor proceed as follow :
+1. Installing Protractor and Webdriver-manager :
+   ```bash
+   sudo npm install -g protractor webdriver-manager
+   ```
+2. Make sure you **update webdriver-manager** :
+   ```bash
+   sudo webdriver-manager update
+   ```
+3. You will then have to run these commands in separate command lines :
+   1. Start the server on `localHost:8080` :
+   ```
+   bash http-server -c-1
+   ```
+   2. Start webdriver-manager:
+   ```bash
+   webdriver-manager start
+   ```
+   3. Then run protractor :
+   ```bash
+   protractor protractor.conf.js
+   ```
 
 ## Tech used
 
-### Main tech used includes:
+### Main tech used:
 
 - [AngularJS](https://angularjs.org/)
 	- **AngularJS** is used to handle page routing, build custom directives
 - [Bootstrap](http://getbootstrap.com/)
 	- **Bootstrap v3.3.7** is used to give the project a simple, responsive layout. No update to BS4 planed at this stage and would result in new version.
-- [npm](https://www.npmjs.com/)
+- [NPM](https://www.npmjs.com/)
 	- We use **npm** to help manage some of the dependencies in our application
-- [bower](https://bower.io/)
+- [Bower](https://bower.io/)
 	- **Bower** is used to manage the installation of our libraries and frameworks
  
 ### Testing tools
@@ -54,29 +126,23 @@ It shoud be clear with fluid and simple navigation as well as respnsive so to be
 	- **webdriver-manager** helps running [Selenium server](https://www.seleniumhq.org/) and drive the browsers we want
 
 ### Additional tech used
+
+-[http-server](https://www.npmjs.com/package/http-server)
+  - To run the project on ` localHost:8080 `
 - [Jasmine-expect](https://www.npmjs.com/package/jasmine-expect)
   - Used to add custom matchers for testing the app
 
-### Tests environment
 
-End 2 End test are running in Firefox 57.0, Chrome 67.0 and Opera 54.0.
+## Features
 
-_You need [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) to be installed on your machine to run **Selenium Server** locally._
+### Existing Features
 
-## Contributing
+- Demo Reel on Home Page
+- About page presenting services and team
+- Address on googleMap for location
+- Contact Forms
+- Portfolio gallery viewer
 
-### Getting the code up and running
+### Features to add
 
-1. Firstly you will need to clone this repository by running the `git clone <project's Github URL>` command
-2. After you've that you'll need to make sure that you have **npm** and **bower** installed
-   1. You first need to get **npm** by installing Node from [here](https://nodejs.org/en/)
-   2. Then you can install bower running the following command:
-     `npm install -g bower` this may require sudo on Mac/Linux
-3. Once **npm** and **bower** are installed, you'll need to install all of the dependencies in *package.json* and *bower.json*
-  ```
-  npm install
-  bower install
-  ```
-4. After those dependencies have been installed you'll need to make sure that you have **http-server** installed. You can install this by running the following: `npm install -g http-server` this also may require sudo on Mac/Linux
-5. Once **http-server** is installed run `http-server -c-1`
-6. The project will now run on [localhost:8080](http://127.0.0.1:8080)
+_There is always space for improvement_
