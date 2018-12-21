@@ -94,8 +94,6 @@ angular.module('workController', [])
 
 		$scope.galleryAll = $scope.gallery3d.concat($scope.gallerytvc, $scope.gallerymgx);
 		$scope.galleryActive = $scope.galleryAll;
-		console.dir('Active Gallery :', $scope.galleryActive);
-
 
 //				--- Filter functions ---
 
@@ -106,8 +104,6 @@ angular.module('workController', [])
 
 			// sorts alphatically - optional
 			var reArrange = function(a, b) {
-			//	console.log(a.name);
-			//	console.log(b.name);
 				if(a.name < b.name) return -1;
 				if(a.name > b.name) return 1;
 				return 0;
@@ -116,9 +112,9 @@ angular.module('workController', [])
 					//reset active gallery and hero
 				$scope.hero = {};
 				$scope.galleryAll.sort(reArrange);
-				// console.log('gallery all', $scope.galleryAll);
+
 				$scope.galleryActive = $scope.galleryAll;
-				console.log('gallery Active = ', $scope.galleryActive);
+
 				$scope.$digest();
 			}, 500);
 		}
@@ -129,7 +125,6 @@ angular.module('workController', [])
 
 			setTimeout(function() {
 				$scope.galleryActive = $scope.gallery3d;
-				console.log($scope.galleryActive);
 				$scope.$digest();
 			}, 500);
 		}
@@ -140,7 +135,6 @@ angular.module('workController', [])
 
 			setTimeout(function() {
 				$scope.galleryActive = $scope.gallerytvc;
-				console.log($scope.galleryActive);
 				$scope.$digest();
 			}, 500);
 		}
@@ -151,7 +145,6 @@ angular.module('workController', [])
 
 			setTimeout(function() {
 				$scope.galleryActive = $scope.gallerymgx;
-				console.log($scope.galleryActive);
 				$scope.$digest();
 			}, 500);
 		}
@@ -171,7 +164,6 @@ angular.module('workController', [])
 			if ($scope.hero.type == "img") {
 
 				var heroPic = document.getElementById('heroPic');
-				// console.log('heroPic element', heroPic);
 
 				var heroHeightMax = heroPic.naturalHeight;
 				var heroWidthMax = heroPic.naturalWidth;
@@ -187,14 +179,11 @@ angular.module('workController', [])
 			
 			var heroRatio = heroHeightMax / heroWidthMax;
 
-			// console.log('hero ratio', heroRatio);
-
 			$scope.heroSize = {
 				height: heroHeightMax,
 				widht: heroWidthMax,
 				ratio: heroRatio
 			};
-			// console.dir('natural hero size :', $scope.heroSize);
 
 			return $scope.heroSize;
 		}
@@ -202,7 +191,6 @@ angular.module('workController', [])
 			// calc browser's window size 
 
 		$scope.getWinSize = function() {
-			// console.log('get win size');
 			
 			var winHeight = parseInt($(window).height());
 			var winWidth = parseInt($(window).width());
@@ -211,8 +199,6 @@ angular.module('workController', [])
 				width: winWidth,
 				height: winHeight
 			};
-
-			// console.dir('win size :', $scope.winSize);
 
 			return $scope.winSize;
 		};
@@ -225,7 +211,6 @@ angular.module('workController', [])
 			$scope.getWinSize();
 
 			console.table('win size in resizeModal : ', $scope.winSize);
-			// console.dir('hero size in resizer', $scope.heroSize);
 
 			// Positioning
 
@@ -236,16 +221,12 @@ angular.module('workController', [])
 			var diffPos = ($scope.winSize.height - picHeight) / 2;
 			var topPos = parseInt(diffPos < 0 ? 0 : diffPos);
 
-			console.log('hero top position', topPos);
-
 			$("#viewer .modal-dialog").css('top', topPos + 'px');
 
 				// auto scaling
 			var maxHeight = $scope.winSize.height;
-			//console.log('hero max height : ', maxHeight);
 
 			var maxWidth = parseInt($scope.winSize.height / $scope.heroSize.ratio);
-			//console.log('hero max width : ', maxWidth);
 
 			$("#viewer .modal-dialog").css('max-width', maxWidth + 'px');
 			$("#viewer .modal-dialog").css('max-height', maxHeight + 'px');
@@ -268,10 +249,7 @@ angular.module('workController', [])
 
 		$scope.$watch('loader.name', function(newVal, oldVal) {
 
-			console.info('ctr - watch - initGallery', $scope.initGallery);
-
 			if (newVal !== oldVal) {
-				// console.warn('ctr - load watch - different hero');
 					// clear and reassign hero item
 				$scope.hero = {};
 

@@ -18,20 +18,17 @@ $(document).ready(function() {
 		if (demo.getAttribute("src") != sizes['sd']) {
 			changeVid('sd');
 		}
-		// console.log(demo.getAttribute("src"));
 	})
 	$("#hd").on('click', function() {
 		if (demo.getAttribute("src") != sizes['hd']) {
 			changeVid('hd');
 		}
-		// console.log(demo.getAttribute("src"));
 	})
 	
 		// Positioning the viewer
 	function positionViewer() {
 		var winHeight = $(window).height();
 		var winWidth = $(window).width();
-	//	console.log(winWidth);
 
 		var vidMaxHeight = $(window).width() / 1.77;
 

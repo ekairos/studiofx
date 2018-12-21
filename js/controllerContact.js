@@ -16,8 +16,6 @@ angular.module('contactController', [])
 		$scope.sendQuery = function() {
 			$scope.querySent = true;
 			console.log('form sent');
-			// var data = $scope.contact;
-			// console.log(data);
 			$('#formResult').modal('show');
 		};
 	});

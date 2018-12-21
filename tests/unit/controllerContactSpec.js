@@ -8,11 +8,7 @@ describe('testing contact controller - ', function() {
 		$scope = $rootScope.$new();
 		var contactCtr = $controller('ContactController', {$scope: $scope});
 	}));
-/*
-	it('should read scope title', function() {
-		expect($scope.title).toBe('Contact Page');
-	});
-*/
+
 	describe('contact form - ', function() {
 
 		beforeEach(function() {
