@@ -1,81 +1,84 @@
 <main class="bg-contact bg">
-	<div id="contactMain">
-		<header>
-			<h1>We love holiday postcards !</h1>
+	<div class="top-safe bottom-safe safe-form">
+		<header class="header-block">
+			<h1 class="header-title">We love holiday postcards !</h1>
 		</header>
 
-		<section id="contactLocation">
-			<section id="address">
+		<section class="darken-bg loc-details">
+			<section class="details">
 				<h2>Address :</h2>
-				<p>10 Place du chateau,<br>
+				<p class="prime-text">10 Place du chateau,<br>
 				13000, Marseille</p>
 				<h2>Phone :</h2>
-				<p><strong>Landline : </strong>+33(0)491223344<br>
+				<p class="prime-text"><strong>Landline : </strong>+33(0)491223344<br>
 				<strong>Mobile : </strong>+33(0)698989898</p>
 			</section>
-			<section id="contactMap">
-				<div id="gMap"></div> <!-- GoogleMap location -->
+			<section class="map-details">
+				<div id="studiofx-map" class="g-map"></div> <!-- GoogleMap location -->
 			</section>
 		</section>
 
-		<section id="querySection">
-			<h1>Send us your query :</h1>
+		<section>
+			<header class="header-block">
+				<h1 class="header-title">Send us your query :</h1>
+			</header>
 
-			<form id="contactForm" name="contactForm" data-ng-submit="sendQuery()" novalidate>
+			<form class="ctc-form" name="contactForm" data-ng-submit="sendQuery()" novalidate>
 
-				<section id="senderInfo">
+				<section class="darken-bg">
 					<div class="form-group">
 						<label>Name :</label>
-						<input type="text" name="contactName" class="form-control" data-ng-model="contact.name" placeholder="Insert your Name" required>
-						<p class="help-block" data-ng-show="contactForm.contactName.$pristine">Your name is required</p>
+						<input type="text" name="contactName" class="form-control query-field" data-ng-model="contact.name" placeholder="Insert your Name" required>
+						<p class="sub-field prime-text" data-ng-show="contactForm.contactName.$pristine">Your name is required</p>
 					</div>
 					<div class="form-group">
 						<label>Company :</label>
-						<input type="text" name="companyName" class="form-control" data-ng-model="contact.company" placeholder="Insert your company name if any">
+						<input type="text" name="companyName" class="form-control query-field" data-ng-model="contact.company" placeholder="Insert your company name if any">
 					</div>
 					<div class="form-group">
 						<label>Email :</label>
-						<input type="email" name="contactMail" class="form-control" ng-model="contact.email" placeholder="username@domain.net" pattern="[A-Za-z0-9._-]+@[A-Za-z0-9-._]+\.[A-Za-z]{2,11}" required>
-						<p class="help-block" data-ng-show="contactForm.contactMail.$pristine || contactForm.contactMail.$invalid">A valid email is required</p>
+						<input type="email" name="contactMail" class="form-control query-field" ng-model="contact.email" placeholder="username@domain.net" pattern="[A-Za-z0-9._-]+@[A-Za-z0-9-._]+\.[A-Za-z]{2,11}" required>
+						<p class="sub-field prime-text" data-ng-show="contactForm.contactMail.$pristine || contactForm.contactMail.$invalid">A valid email is required</p>
 					</div>
 				</section> <!-- / sender infos -->
 
-				<section id="query">
+				<section class="darken-bg">
 					<div class="form-group">
 						<label>Query type :</label>
-						<select class="form-control" id="queryList" name="contactType" data-ng-model="contact.query" data-ng-options="query for query in queries" required></select> 
-						<p class="help-block" data-ng-show="contactForm.contactType.$untouched">Please select your query type</p>
+						<select class="form-control query-field" id="queryList" name="contactType" data-ng-model="contact.query" data-ng-options="query for query in queries" required></select> 
+						<p class="sub-field prime-text" data-ng-show="contactForm.contactType.$untouched">Please select your query type</p>
 					</div>
 					<div class="form-group">
 						<label>Message :</label>
-						<textarea type="text" name="contactMessage" class="form-control" data-ng-model="contact.message" placeholder="Please keep it short ;)" maxlength="350" required></textarea>
-						<p class="help-block">350 characters max</p>
+						<textarea type="text" name="contactMessage" class="form-control query-field" data-ng-model="contact.message" placeholder="Please keep it short ;)" maxlength="350" required></textarea>
+						<p class="sub-field prime-text">350 characters max</p>
 					</div>
 				</section> <!-- / query section -->
 
 				<section class="form-group">
-					<button id="submitQueryButton" class="btn btn-default" type="submit" data-ng-disabled="contactForm.$invalid">Submit Query</button>
+					<button id="submitQueryButton" class="btn btn-default bs-btn" type="submit" data-ng-disabled="contactForm.$invalid">Submit Query</button>
 				</section>
 
 			</form>
 
 		</section>
-	</div>
+	<!-- </div> -->
 </main>
 
 <!-- modal validation message -->
 <div id="formResult" class="modal fade" tabindex="-1">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h3>Thank you <span data-ng-bind="contact.name"></span> for your query !</h3>
+	<div class="flex-v-centr full-height">
+		<div class="modal-dialog query">
+		<!-- <div class="modal-content"> -->
+			<div class="modal-header no-border">
+				<h2>Thank you <span data-ng-bind="contact.name"></span> for your query !</h2>
 			</div>
 			<div class="modal-body">
-				<p>We'll use ' <span data-ng-bind="contact.email"></span> ' to be in touch in regards of your message :</p>
-				<p>"<br><span ng-bind="contact.message"></span><br>"</p>
+				<p class="prime-text">We'll use ' <span data-ng-bind="contact.email"></span> ' to be in touch in regards of your message :</p>
+				<p class="prime-text">"<br><span ng-bind="contact.message"></span><br>"</p>
 			</div>
-			<div class="modal-footer">
-				<button type="button" data-dismiss="modal" class="btn btn-default" aria-label="Close">Close</button>
+			<div class="modal-footer no-border">
+				<button type="button" data-dismiss="modal" class="btn btn-default btn-shadow bs-btn" aria-label="Close">Close</button>
 			</div>
 		</div>
 	</div>
@@ -84,4 +87,5 @@
 <!-- contact map scripts -->
 <script type="text/javascript" src="../js/gmapload.js"></script>
 <!-- googlemap API -->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3-MlUYF5woPkYUivnSsRaHdx-XI4_UvY&callback=initMap"></script>
+<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeFb8AlxzLklm6png0oCpioUTvP7I2fnw&callback=initMap"></script> -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>

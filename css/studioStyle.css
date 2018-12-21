@@ -1,12 +1,15 @@
 /*
 				___ COMMON RULES (mobile first)___
 */
-/*					--- Elements ---
+/*					--- Fonts ---
+*/
+@import url('https://fonts.googleapis.com/css?family=Rajdhani');
+/*
+					--- Elements ---
 */
 html, body, [ng-view] {
 	height: 100%;
 }
-
 html {
 	font-size: 14px;
 }
@@ -15,31 +18,50 @@ body {
     color: #ddd;
     background-color: #333;
 }
-h1 {
-	font-size: 3.6rem;
+strong {
+	font-weight: bolder;
 }
-h5 {
-	font-size: 1.1rem;
-	margin: 4px 0;
+.header-block {
+	padding: 10px 0;
 }
-p {
+.header-title {
+	font-size: 2rem;
+	padding: 6px 0;
+	padding-left: 5%; 
+}
+.prime-text {
 	margin: 6px auto;
 	padding-left: 3%;
 	padding-right: 3%;
 }
-strong {
-	font-weight: bolder;
+/*					--- Layout ---
+*/
+.flex-v-centr {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
-header {
-	position: relative;
-	padding: 10px 0;
+.top-safe {
+	padding-top: 50px;
 }
-footer {
-	width: 100%;
-	text-align: center;
-	padding: 2px 0px;
-	background-color: rgba(0,0,0,0.3);
+.bottom-safe {
+	margin-bottom: 45px;
 }
+.full-height {
+	height: 100%;
+}
+.safe-form {
+	max-width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.safe-read {
+	width: 90%;
+	max-width: 900px;
+}
+/*					--- Navigation ---
+*/
 /*					--- Submenus ---
 */
 .submenu {
@@ -47,6 +69,7 @@ footer {
 	top: 51px;
 	width: 100%;
 	background-color: rgba(0,0,0,0.65);
+	z-index: 1;
 }
 	.submenu ul {
 		max-width: 900px;
@@ -63,24 +86,29 @@ footer {
 		}
 		.submenu li:hover {
 			background-color: #bbb;
+			cursor: pointer;
+			color: #000;
 		}
-			.submenu li:hover a {
-				color: #000;
-			}
 			.submenu li a {
 				text-decoration: none;
 				color: #ddd;
 				padding: unset;
 			}
-			.submenu li.active a {
+			.submenu li:hover a {
+				color: #000;
+			}
+			.submenu .active a {
 				color: #000;
 			}
 			.nav li a:hover,
 			.nav li a:focus {
 				background-color: unset;
 			}
+/*					--- ---
+*/
 .anchor {
-	padding-top: 80px;
+	padding-top: 90px;
+	padding-bottom: 10px;
 }
 .active {
 	color: #000;
@@ -97,65 +125,53 @@ footer {
 */
 /*					--- Nav Bar ---
 */
-.navbar-brand {
+.navbar-logo {
 	padding: 5px 40px;
-	height: 40px;
 }
 /*					--- Modals ---
 */
-.modal {
-	padding: 0px;
-	margin: 0px;
-	padding: 0!important;
+.mod-full-width {
+	margin: 0 auto;
+	width: 100%;
 }
-	.modal-dialog {
-		margin: 0px;
-		width: 100%;
+	.btn-shadow {
+		z-index: 1;
+		box-shadow: 0 0 10px #222, inset 0 0 5px #555;
 	}
-		.modal-content {
-			background-color: rgba(0,0,0,0.8);
-			color: #fff;
-			border: none;
-			border-radius: 0;
-			box-shadow: none;
-			margin-left: auto;
-			margin-right: auto;
-		}
-			.modal button {
-				z-index: 1;
-				box-shadow: 0 0 10px #222, inset 0 0 5px #555;
-			}
-			.modal-header,
-			.modal-footer {
-				border: none;
-			}
-			.modal-body {
-				padding: 0;
-			}
+	.no-border {
+		border: none;
+	}
+	/* remove modal's body padding */
+	.mod-body {
+		padding: 0;
+	}
+/* Darken background on modal drop */
 .modal-backdrop.in {
 	opacity: 0.9;
 }
 /*					--- BS buttons ---
 */
-.btn {
+.bs-btn {
 	padding: 3px 9px;
 	background-color: transparent;
 	color: #fff;
 }
 /*
-				===== INDEX =====
+				=====================
+						INDEX
+				=====================
 */
 /*					--- Navigation ---
 */
-#navMenu {
+.nav-menu {
 	text-align: center;
 	font-size: 1.3rem;
-	padding: 0px;
+	padding: 0;
 }
-	#navMenu ul {
-		margin: 0px;
+	.nav-menu ul {
+		margin: 0;
 	}
-		#navMenu li {
+		.nav-menu li {
 			padding-top: 20px;
 			padding-bottom: 20px;
 			border-top: 1px;
@@ -163,115 +179,107 @@ footer {
 			border-style: solid;
 			border-color: transparent;
 		}
-		#navMenu .nav-activ {
+		.nav-menu .nav-activ {
 			border-color: #999;
 			background-color: rgba(128,128,128,0.2);
 		}
 /*					--- Footer ---
 */
-#social-links {
+.social-links {
 	position: fixed;
-	bottom: 0px;
+	bottom: 0;
+	width: 100%;
+	padding: 2px 0;
+	text-align: center;
+	background-color: rgba(0,0,0,0.3);
 }
 	.social-icon {
-		display: inline-block;
-		position: relative;
 		width: 22px;
 		height: 22px;
 		padding: 2px;
 		margin: 5px 10px;
 		border: 1px solid #fff;
+		border-radius: 0%;
 		transition: border-radius 0.3s;
 	}
 	.social-icon:hover {
 		border-radius: 50%;
 	}
 /*
-				===== HOME TEMPLATE =====
+				=====================
+					HOME TEMPLATE
+				=====================
 */
-#landing {
+.home-landing {
 	width: 100%;
 	height: 100%;
 	text-align: center;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	align-items: flex-end;
 	background-image: url('../assets/bg.jpg');
 }
-	#studioFx {
+	.landing-header {
 		width: 100%;
 	    flex: 0 0 35%;
 	}
-		#studioFx .logo {
-			padding: 20px;
+		.landing-header .logo {
+			padding: 15px;
 			border: 1px solid #fff;
-			border-width: 1px 0px 1px 0px;
+			border-width: 1px 0 1px 0;
+			box-shadow: 0 0 15px 10px #808080;
 			box-shadow: 0 0 15px 10px rgba(0,0,0,0.7);
-			background-color: rgba(0, 0, 0, 0.5)
+			background-color: rgba(0, 0, 0, 0.5);
 		}
-		#studioFx img {
+		.landing-header img {
 			min-width: 280px;
 			width: 50%;
 			max-width: 450px;
 		}
-		#studioFx h5 {
+		.landing-subTitle {
+			font-size: 1.1rem;
 			letter-spacing: 1px;
+			margin-top: 30px;
 			word-spacing: 2px;
-			margin-top: 40px;
 		}
-	#reel {
+	.demo-reel {
 		width: 50px;
 		padding: 20px;
-		align-self: center;
+		margin-top: 3%;
 		border: 1px solid white;
 		border-width: 1px 0;
 	}
-		#reel span {
+		.demo-reel span {
 			cursor: pointer;
 		}
 /*					--- Reel viewer ---
 */
-#demoViewer {
-	margin-left: auto;
-	margin-right: auto;
-	overflow: hidden;
+.reel-header {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	opacity: 0.2;
+	transition: opacity 300ms;
 }
-	.modal-dialog .reel-header {
-		width: 100%;
-		position: absolute;
-		top: 0px;
-		opacity: 0.2;
-		transition: opacity 300ms;
+.demo-viewer-content:hover .reel-header {
+	opacity: 1;
+}
+	.reel-header > button {
+		z-index: 1;
+		float: right;
 	}
-	.modal-dialog:hover .reel-header {
-		opacity: 1;
-	}
-		.reel-header>button {
-			z-index: 1;
-			float: right;
-		}
 /*
-				===== ABOUT TEMPLATE =====
+				======================
+					ABOUT TEMPLATE
+				======================
 */
-#aboutMain h1 {
-	font-size: 2rem;
-	padding: 6px 0;
-	padding-left: 6%; 
+.team-book {
+	padding-bottom: 60px;
+	width: 100%;
 }
-#aboutTeam {
-	padding-bottom: 40px;
-}
-#teamBook {
-	display: bock;
-}
-	#teamBook li {
+	.team-book li {
 		padding: 10px;
 		margin: 20px auto 0;
 		background: rgb(80,80,80);
 	}
-		#teamBook img {
+		.team-book img {
 			width: 100%;
 			height: auto;
 			padding: 10px;
@@ -280,7 +288,7 @@ footer {
 			margin-right: auto;
 			display: block;
 		}
-		#teamBook h2 {
+		.membr-name {
 			font-size: 2rem;
 			padding-top: 6px;
 			padding-bottom: 6px;
@@ -291,40 +299,22 @@ footer {
 			border-color: #eee;
 			border-style: solid;
 		}
-		#teamBook h3,
-		#teamBook p {
+		.membr-title,
+		.membr-desc {
 			width: 90%;
 			margin: 5px auto 10px;
 		}
-		#teamBook h3 {
+		.membr-title {
 			font-size: 1.1rem;
 			padding-left: 10%;
 		}
-
 /*
-				===== WORK TEMPLATE =====
+				=====================
+					WORK TEMPLATE
+				=====================
 */
-/*					--- Submenu ---
-*/
-#galleryFilter {
-	z-index: 1;
-}
 /*					--- Gallery ---
 */
-#workMain header {
-	padding-left: 3%;
-	padding-right: 3%;
-}
-#workMain h1 {
-	font-size: 2rem;
-	padding: 6px 0;
-	padding-left: 5%;
-}
-#work-mgx {
-	padding-bottom: 39px;
-	box-sizing: border-box;
-	min-height: 640px;
-}
 .thumb {
 	position: relative;
 	overflow: hidden;
@@ -341,210 +331,152 @@ footer {
 		display: block;
 		width: 100%;
 		padding: 10px 0;
-		bottom: 0px;
+		bottom: 0;
 		text-align: center;
 		color: #fff;
 		font-size: 0.9rem;
 		letter-spacing: 1px;
 		line-height: 1.1rem;
 		background-color: rgba(0,0,0,0.65);
-		border-width: 1px 0px 1px 0px;
+		border-width: 1px 0 1px 0;
 		border-style: solid;
 		border-color: rgba(255,255,255,0.5);
 	}
-		.thumb figcaption a {
+		.thumb a {
 			text-decoration: none;
 			color: #fff;
 			font-size: 1.1rem;
 		}
-
 /*					--- Modal Viewer ---
 */
-#viewer {
-	margin-left: auto;
-	margin-right: auto;
-	overflow: hidden;
+.z-right {
+	z-index: 1;
+	position: absolute;
+	right: 0;
 }
-	#viewer button {
-		z-index: 1;
-		position: absolute;
-		right: 0;
-	}
-
-	#heroPic {
-		width: 100%;
-		padding: 0;
-	}
-
+.full-img {
+	width: 100%;
+	padding: 0;
+}
 /*					--- Footer ---
 */
-footer.copyright {
+.copyright {
 	position: relative;
 	font-size: 0.8rem;
 	letter-spacing: 1px;
-	background-color: rgba(0,0,0,0);
-	padding-top: 10px;
-	padding-bottom: 40px; 
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 60px; 
 }
-	.copyright p {
-		margin-bottom: 14px;
-	}
 /*
-				===== CONTACT TEMPLATE =====
+				========================
+					CONTACT TEMPLATE
+				========================
 */
-#contactMain {
-	width: 90%;
-	margin: 51px auto 45px;
-}
-#contactMain h1 {
-	font-size: 2rem;
-	padding: 6px 0;
-	margin-left: 5%;
-}
 /*					--- Address ---
 */
-#contactLocation {
+.darken-bg {
+	padding: 15px;
+	background-color: rgba(0,0,0,0.3);
+}
+.details h2,
+.query h2 {
+	font-size: 1.5rem;
+	padding: 5px 0;
+	margin: 4px 0;
+	margin-left: 6%;
+}
+.loc-details {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
-	justify-content: center;
-	padding: 15px;
-	background-color: rgba(0,0,0,0.3);
 }
-	#address {
+	.details {
 		width: 100%;
 		padding-left: 10%;
 	}
-		#address h2 {
-			font-size: 1.5rem;
-			padding: 5px 0;
-			margin: 4px 0;
-			margin-left: 6%;
-		}
-	#contactMap {
-		margin: 15px 0;
+	.map-details {
+		flex-basis: 75%;
 	}
-		#gMap {
+		.g-map {
 			/* safe guard width for mobile devices*/
+			display: block;
 			width: 90%;
 			height: 250px;
-			margin: 10px auto;
+			margin: 15px auto;
 		}
 /*					--- Query Form ---
 */
-#senderInfo,
-#query {
-	padding: 15px;
-	background-color: rgba(0,0,0,0.3);
+.ctc-form button {
+	display: block;
+	margin: 10px auto;
 }
-	#contactForm button {
-		display: block;
-		margin: 10px auto;
-	}
-	#contactForm input,
-	#contactForm textarea,
-	#contactForm select {
-		display: block;
-		width: 95%;
-		margin-left: auto;
-	}
-	#contactForm textarea {
-		min-height: 80px;
-	}
-	#contactForm .help-block {
-		position: relative;
-		left: 5%;
-		color: #d7d7d7;
-	}
-	#contactForm .form.control {
-		font-size: 1.2rem;
-	}
-	form label {
-		display: block;
-		padding-bottom: 8px;
-		font-size: 1.2rem;
-	}
-	input::placeholder {
-		font-style: italic;
-	}
-
-#formResult.modal {
-	text-align: center;
-	padding: 0!important;
+.query-field {
+	width: 95%;
+	margin-left: auto;
 }
-
-#formResult.modal:before {
-  content: '';
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-  margin-right: -4px;
+.query-field textarea {
+	min-height: 80px;
 }
-
-#formResult .modal-dialog {
-	display: inline-block;
-	text-align: left;
-	vertical-align: middle;
-	max-width: 600px;
+.query-field::placeholder {
+	font-style: italic;
 }
-	#formResult h3 {
-		font-size: 1.5rem;
-		padding: 5px 0;
-		margin: 4px 0;
-		margin-left: 5%;
+.sub-field {
+	position: relative;
+	left: 5%;
+	color: #d7d7d7;
 }
-
-#formResult .modal-body {
-	max-height: 200px;
-	overflow-y: auto;
-	padding: 0 20px;
+.ctc-form .form.control {
+	font-size: 1.2rem;
 }
-
-
-/*				------------------------------	
+form label {
+	display: block;
+	padding-bottom: 8px;
+	font-size: 1.2rem;
+}
+.query {
+	padding: 10px 20px;
+	background-color: rgba(0,0,0,0.8);
+}
+/*
+				*******************************
 					TABLETS / DESKTOP RULES 		>= 768
-				------------------------------
+				*******************************
 */
 
 @media screen and (min-width: 768px) {
 /*
-				===== INDEX =====
+				=====================
+						INDEX
+				=====================
 */
 /*					--- Navigation ---
 */
 	.navbar-header {
 		margin-left: 10%;
 	}
-	#navMenu ul {
+	.nav-menu ul {
 		width: 20%;
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: space-between;
 		margin-right: 10%;
 	}
-		#navMenu li {
-			padding-top: 0px;
-			padding-bottom: 0px;
+		.nav-menu li {
+			padding-top: 0;
+			padding-bottom: 0;
 		}
-
-
 /*
-				===== ABOUT TEMPLATE =====
+				======================
+					ABOUT TEMPLATE
+				======================
 */
-	#aboutMain {
-		margin: 0 auto 60px;
-	}
-	#aboutUs,
-	#aboutVision,
-	#aboutWork,
-	#aboutTeam header {
-		width: 90%;
-		max-width: 860px;
-		margin: 40px auto;
-	}
 /*					--- Team ---
 */
-	#teamBook {
+	.anchor {
+		padding-bottom: 30px;
+	}
+	.team-book {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -552,137 +484,86 @@ footer.copyright {
 		margin-left: auto;
 		margin-right: auto;
 	}
-		#teamBook li {
+		.team-book li {
 			margin: 10px 5px;
 			align-self: stretch;
 			max-width: 280px;
 		}
 /*
-				===== WORK TEMPLATE =====
-*/
-/*					--- Submenu ---
-*/
-#galleryFilter li:hover {
-	cursor: pointer;
-}
-#gallery {
-	margin-top: 20px;
-}
-/*					--- Main ---
-*/
-	#workMain {
-		max-width: 1200px;
-		margin: 0 auto;
-	}
-	#work-3d header,
-	#work-post header,
-	#work-mgx header {
-		max-width: 900px;
-		margin-left: auto;
-		margin-right: auto;
-		padding: 10px 60px;
-	}
-/*					--- Gallery ---
+				=====================
+					WORK TEMPLATE
+				=====================
 */
 	.gallery {
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: center;
-	}
+		align-content: center;
+}
 		.thumb img {
 			max-width: 360px;
 		}
 /*
-				===== CONTACT TEMPLATE =====
+				========================
+					CONTACT TEMPLATE
+				========================
 */
 	.bg-contact {
 		background-image: url('../assets/office/mars_office.jpg');
-		height: auto;
-		width: auto;
 		padding-bottom: 5px;
-	}
-	#contactMain {
-		max-width: 900px;
 	}
 /*					--- Address ---
 */
-	#contactLocation {
-		display: flex;
+	.loc-details {
 		flex-direction: row;
-		flex-wrap: nowrap;
 	}
-		#address {
+		.details {
 			padding-left: 3%;
-		}
-		#contactMap {
-			flex-basis: 75%;
-		}
-			#gMap {
-				height: 300px;
-			}
-		#address {
 			flex-basis: 25%;
 			align-self: center;
 			min-width: 200px;
 		}
+		.g-map {
+			flex-basis: 75%;
+			height: 330px;
+		}
 }
-
-/*				-----------------------------	
+/*
+				*****************************	
 						DESKTOP RULES 				>= 992 px
-				-----------------------------
+				*****************************
 */
 @media screen and (min-width: 992px) {
 /*
-				===== ABOUT TEMPLATE =====
+				======================
+					ABOUT TEMPLATE
+				======================
 */
-	#aboutMain {
-		max-width: 1450px;
+	.team-book {
+		max-width: 1240px;
 	}
-		#aboutMain section {
-			min-height: 840px;
-		}
-			#aboutMain header {
-				padding-top: 200px;
-			}
-		#aboutTeam {
-			width: 90%;
-			margin-left: auto;
-			margin-right: auto;
-		}
-			#aboutTeam header {
-				padding-top: 60px;
-			}
-			#teamBook {
-				max-width: 1240px;
-			}
 /*
-				===== WORK TEMPLATE =====
+				=====================
+					WORK TEMPLATE
+				=====================
 */
-
+/*					--- thumbs CSS Animation ---
+*/
 	.thumb figcaption {
 		bottom: -70px;
 		opacity: 0;
 		transition: all 250ms ease-in-out;
-		-moz-transition: all 250ms ease-in-out;
-		-webkit-transition: all 250ms ease-in-out;
-		-o-transition: all 250ms ease-in-out;
 	}
 		.thumb figcaption a {
 			opacity: 0;
 			transition: all 250ms 250ms;
-			-moz-transition: all 250ms 250ms;
-			-webkit-transition: all 250ms 250ms;
-			-o-transition: all 250ms 250ms;
 		}
 		.thumb figcaption span {
 			opacity: 0;
 			transition: all 300ms 300ms;
-			-moz-transition: all 300ms 300ms;
-			-webkit-transition: all 300ms 300ms;
-			-o-transition: all 300ms 300ms;
 		}
 	figure.thumb:hover figcaption {
-		bottom: 0px;
+		bottom: 0;
 		opacity: 1;
 	}
 	figure.thumb:hover img {

@@ -67,7 +67,7 @@ describe('work page tests - ', function() {
 		});
 
 		it('should hide on close button', function() {
-			$$('.modal-content button').then(function(x) {
+			$$('.modal-dialog button').then(function(x) {
 				x[0].click();
 			});
 			browser.sleep(500);

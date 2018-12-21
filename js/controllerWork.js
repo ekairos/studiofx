@@ -238,7 +238,7 @@ angular.module('workController', [])
 
 			console.log('hero top position', topPos);
 
-			$("#viewer .modal-content").css('top', topPos + 'px');
+			$("#viewer .modal-dialog").css('top', topPos + 'px');
 
 				// auto scaling
 			var maxHeight = $scope.winSize.height;
@@ -247,8 +247,8 @@ angular.module('workController', [])
 			var maxWidth = parseInt($scope.winSize.height / $scope.heroSize.ratio);
 			//console.log('hero max width : ', maxWidth);
 
-			$("#viewer .modal-content").css('max-width', maxWidth + 'px');
-			$("#viewer .modal-content").css('max-height', maxHeight + 'px');
+			$("#viewer .modal-dialog").css('max-width', maxWidth + 'px');
+			$("#viewer .modal-dialog").css('max-height', maxHeight + 'px');
 
 		}
 
