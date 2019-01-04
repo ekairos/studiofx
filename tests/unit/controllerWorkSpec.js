@@ -16,25 +16,25 @@ describe('testing work controller - ', function() {
 		});
 
 		it('should read galleries', function() {
-			expect($scope.gallery3d.length).toEqual(4);
-			expect($scope.gallerytvc.length).toEqual(5);
-			expect($scope.gallerymgx.length).toEqual(2);
-			expect($scope.galleryAll.length).toEqual(11);
+			expect($scope.gallery.g3d.length).toEqual(4);
+			expect($scope.gallery.gtvc.length).toEqual(5);
+			expect($scope.gallery.gmgx.length).toEqual(2);
+			expect($scope.gallery.gall().length).toEqual(11);
 		});
 
 		it('should read galleries item lists', function() {
 				// custom matcher from jasmin-expect
-			expect($scope.gallery3d).toBeArrayOfObjects();
-			expect($scope.gallerytvc).toBeArrayOfObjects();
-			expect($scope.gallerymgx).toBeArrayOfObjects();
-			expect($scope.galleryAll).toBeArrayOfObjects();
+			expect($scope.gallery.g3d).toBeArrayOfObjects();
+			expect($scope.gallery.gtvc).toBeArrayOfObjects();
+			expect($scope.gallery.gmgx).toBeArrayOfObjects();
+			expect($scope.gallery.gall()).toBeArrayOfObjects();
 		});
 
 		it('should read gallery items', function() {
 				// custom matcher from jasmin-expect
 			var expectedString = jasmine.any(String);
-			for(i = 0; i < $scope.galleryAll.length; i++) {
-				expect($scope.galleryAll[i]).toEqual(jasmine.objectContaining({
+			for(i = 0; i < $scope.gallery.gall().length; i++) {
+				expect($scope.gallery.gall()[i]).toEqual(jasmine.objectContaining({
 					name: expectedString,
 					file: expectedString,
 					type: expectedString,

@@ -4,155 +4,133 @@ angular.module('workController', [])
 
 		$scope.title = 'Work Page';
 
-//				--- Gallery ---
-
-		$scope.gallery3d = [
-			{
-				name: "Jeysen House",
-				file: "jeysen",
-				cat: "3d",
-				type: "img",
-				description: "Jeysen House designed by that famous architect"
-			},
-			{
-				name: "Master bedroom",
-				file: "bed1",
-				cat: "3d",
-				type: "img",
-				description: "Indoor previsualisations for Jeysen House"
-			},
-			{
-				name: "MentalPix office",
-				file: "hkOffice",
-				cat: "3d",
-				type: "img",
-				description: "MentalPix HongKong's office previsualisation"
-			},
-			{
-				name: "Arkangels",
-				file: "superpuma",
-				cat: "3d",
-				type: "img",
-				description: "e-learning for helicopter pilots and mecanics"
-			}
-		];
-		$scope.gallerytvc = [
-			{
-				name: "Acts of Godfrey",
-				file: "aog",
-				cat: "tvc",
-				type: "img",
-				description: "Feature film by Johnny Daukes"
-			},
-			{
-				name: "London Olympic 2012",
-				file: "ioc",
-				cat: "tvc",
-				type: "img",
-				description: "International Olympic Committee campaign"
-			},
-			{
-				name: "boby",
-				file: "bobstr",
-				cat: "tvc",
-				type: "img",
-				description: "Our 3DStereo animation"
-			},
-			{
-				name: "Motat",
-				file: "motat",
-				cat: "tvc",
-				type: "vid",
-				mp4: "../assets/gallery/tvc/motat_360p.mp4",
-				description: "Motat Ad for Halloween special event"
-			},
-			{
-				name: "Ptouch",
-				file: "ptouch",
-				cat: "tvc",
-				type: "img",
-				description: "3d animation for Brother"
-			}
-		];
-		$scope.gallerymgx = [
-			{
-				name: "NeoHub",
-				file: "neohub",
-				cat: "mgx",
-				type: "img",
-				description: "Motion Graphics for NeoHub"
-			},
-			{
-				name: "Eastern Hero",
-				file: "eastern_hero",
-				cat: "mgx",
-				type: "vid",
-				mp4: "../assets/gallery/mgx/eastern_hero_trailer.mp4",
-				description: "Eastern Hero game trailer"
-			}
-		];
-
-		$scope.galleryAll = $scope.gallery3d.concat($scope.gallerytvc, $scope.gallerymgx);
-		$scope.galleryActive = $scope.galleryAll;
-
-//				--- Filter functions ---
-
-		$scope.showAll = function() {
-				//reset active gallery and hero
-			$scope.hero = {};
-			$scope.galleryActive = [];
-
-			// sorts alphatically - optional
-			var reArrange = function(a, b) {
-				if(a.name < b.name) return -1;
-				if(a.name > b.name) return 1;
-				return 0;
-			}
-			setTimeout(function() {
-					//reset active gallery and hero
-				$scope.hero = {};
-				$scope.galleryAll.sort(reArrange);
-
-				$scope.galleryActive = $scope.galleryAll;
-
-				$scope.$digest();
-			}, 500);
-		}
-		$scope.show3d = function() {
-				//reset active gallery and hero
-			$scope.hero = {};
-			$scope.galleryActive = [];
-
-			setTimeout(function() {
-				$scope.galleryActive = $scope.gallery3d;
-				$scope.$digest();
-			}, 500);
-		}
-		$scope.showTvc = function() {
-				//reset active gallery and hero
-			$scope.hero = {};
-			$scope.galleryActive = [];
-
-			setTimeout(function() {
-				$scope.galleryActive = $scope.gallerytvc;
-				$scope.$digest();
-			}, 500);
-		}
-		$scope.showMgx = function() {
-				//reset active gallery and hero
-			$scope.hero = {};
-			$scope.galleryActive = [];
-
-			setTimeout(function() {
-				$scope.galleryActive = $scope.gallerymgx;
-				$scope.$digest();
-			}, 500);
-		}
-
 			// initial values for gallery
-		$scope.hero = {};
+		$scope.hero,
 		$scope.loader = {};
 		$scope.initGallery = false;
+
+		console.dir('hero : ', $scope.hero);
+		console.dir('loader : ', $scope.loader);
+
+//				--- Gallery Obj ---
+
+		$scope.gallery = {
+			g3d: [
+				{
+					name: "Jeysen House",
+					file: "jeysen",
+					cat: "3d",
+					type: "img",
+					description: "Jeysen House designed by that famous architect"
+				},
+				{
+					name: "Master bedroom",
+					file: "bed1",
+					cat: "3d",
+					type: "img",
+					description: "Indoor previsualisations for Jeysen House"
+				},
+				{
+					name: "MentalPix office",
+					file: "hkOffice",
+					cat: "3d",
+					type: "img",
+					description: "MentalPix HongKong's office previsualisation"
+				},
+				{
+					name: "Arkangels",
+					file: "superpuma",
+					cat: "3d",
+					type: "img",
+					description: "e-learning for helicopter pilots and mecanics"
+				}
+			],
+			gtvc: [
+				{
+					name: "Acts of Godfrey",
+					file: "aog",
+					cat: "tvc",
+					type: "img",
+					description: "Feature film by Johnny Daukes"
+				},
+				{
+					name: "London Olympic 2012",
+					file: "ioc",
+					cat: "tvc",
+					type: "img",
+					description: "International Olympic Committee campaign"
+				},
+				{
+					name: "boby",
+					file: "bobstr",
+					cat: "tvc",
+					type: "img",
+					description: "Our 3D Stereo animation"
+				},
+				{
+					name: "Motat",
+					file: "motat",
+					cat: "tvc",
+					type: "vid",
+					mp4: "../assets/gallery/tvc/motat_360p.mp4",
+					description: "Motat Ad for Halloween special event"
+				},
+				{
+					name: "Ptouch",
+					file: "ptouch",
+					cat: "tvc",
+					type: "img",
+					description: "3d animation for Brother"
+				}
+			],
+			gmgx: [
+				{
+					name: "NeoHub",
+					file: "neohub",
+					cat: "mgx",
+					type: "img",
+					description: "Motion Graphics for NeoHub"
+				},
+				{
+					name: "Eastern Hero",
+					file: "eastern_hero",
+					cat: "mgx",
+					type: "vid",
+					mp4: "../assets/gallery/mgx/eastern_hero_trailer.mp4",
+					description: "Eastern Hero game trailer"
+				}
+			],
+			gall: function(ord) {
+				// sorts alphabatically 
+				var reArrange = function(a, b) {
+					if(a.name < b.name) return -1;
+					if(a.name > b.name) return 1;
+					return 0;
+				}
+				// rearrange alphabatically only after gallery initiated
+				if (ord == true) {
+					return this.g3d.concat(this.gtvc, this.gmgx).sort(reArrange);
+				} else {	
+					return this.g3d.concat(this.gtvc, this.gmgx);
+				}
+			}
+		}
+
+		// Loading gallery
+		$scope.galleryActive = $scope.gallery.gall($scope.initGallery);
+
+		$scope.filter = function(gal) {
+
+			$scope.hero = {};
+			// trigers ng-leave animation
+			$scope.galleryActive = [];
+
+			setTimeout(function() {
+				// triggers ng-enter animation
+				$scope.galleryActive = gal;
+				$scope.$digest();
+			}, 500); // ng animation delay
+		}
 		
 
 // 				--- autoscale modal viewer ---
@@ -245,8 +223,8 @@ angular.module('workController', [])
 		});
 
 // 				--- load hero on clicked img ---
-
-
+		
+		// Delay viewer whdn new hero assigned
 		$scope.$watch('loader.name', function(newVal, oldVal) {
 
 			if (newVal !== oldVal) {
@@ -269,18 +247,16 @@ angular.module('workController', [])
 			}
 		});
 
+		// show modal when no hero change
 		$scope.loadHero = function($index) {
-
 			console.log('figure clicked');
-
+			
+			// change image in loader, init watcher loader.name
 			$scope.loader = $scope.galleryActive[$index]
 			
-			if ($scope.initGallery == true && $scope.hero == $scope.loader)  {
+			if ($scope.hero == $scope.loader)  {
 				$("#viewer").modal('show');
-			}
-			else {
-				$scope.initGallery = true;
-			}			
+			}		
 		}
 
 //				--- vid player specific behaviour ---
