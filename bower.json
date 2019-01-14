@@ -3,9 +3,9 @@
   "description": "StudioFx's portfolio",
   "main": "index.js",
   "authors": [
-    "Gareth"
+    "Gareth SCIARRONE"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "https://github.com/GarethS3/studiofx",
   "ignore": [
     "**/.*",
