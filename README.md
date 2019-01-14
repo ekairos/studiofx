@@ -1,5 +1,13 @@
 # StudioFX
 
+## Table Of Content
+
+- [Overview](#overview)
+- [Contributing](#contributing)
+- [Tech used](#tech-used)
+- [Features](#features)
+- [License](#license)
+
 ## Overview
 
 **_Live preview_** :
@@ -146,3 +154,7 @@ To run the tests with global installation of Webdriver-manager and Protractor pr
 ### Features to add
 
 _There is always space for improvement_
+
+## License
+
+See the LICENSE.md file for license rights and limitations (MIT).
