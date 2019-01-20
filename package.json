@@ -10,10 +10,7 @@
     "protractor": "sleep 5 && protractor protractor.conf.js",
     "e2etest": "npm-run-all --parallel -r start webdriver protractor"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GarethS3/studiofx.git"
-  },
+  "repository": "git+https://github.com/GarethS3/studiofx.git",
   "author": "Gareth SCIARRONE",
   "license": "MIT",
   "bugs": {
@@ -21,8 +18,12 @@
   },
   "homepage": "https://github.com/GarethS3/studiofx#readme",
   "dependencies": {
-    "bower": "^1.8.4",
-    "http-server": "^0.11.1"
+    "angular": "1.6.9",
+    "angular-animate": "1.6.9",
+    "angular-route": "1.6.9",
+    "bootstrap": "3.3.7",
+    "http-server": "^0.11.1",
+    "jquery": "^3.3.1"
   },
   "devDependencies": {
     "angular-mocks": "^1.6.10",

@@ -16,9 +16,9 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
         // --- libraries frameworks files ---
-        'bower_components/angular/angular.min.js',
-        'bower_components/jquery/dist/jquery.js',
-        'bower_components/bootstrap/dist/js/bootstrap.min.js',
+        'node_modules/angular/angular.min.js',
+        'node_modules/jquery/dist/jquery.js',
+        'node_modules/bootstrap/dist/js/bootstrap.min.js',
         'node_modules/angular-mocks/angular-mocks.js',
         'node_modules/jasmine-expect/dist/jasmine-matchers.js',
 
