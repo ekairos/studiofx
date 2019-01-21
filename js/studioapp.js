@@ -32,7 +32,7 @@ angular.module('studioApp').config(['$locationProvider', '$routeProvider', funct
 		redirectTo: '/'
 	});
 }]);
-;
+
 angular.module('aboutController', [])
 	.controller('AboutController', ['$scope', function($scope) {
 		console.log('About template');
@@ -67,7 +67,7 @@ angular.module('aboutController', [])
 			}
 		];
 	}]);
-;
+
 angular.module('contactController', [])
 	.controller('ContactController', ['$scope', '$log', function($scope, $log) {
 		console.log('Contact template');
@@ -89,14 +89,14 @@ angular.module('contactController', [])
 			$('#formResult').modal('show');
 		};
 	}]);
-;
+
 angular.module('homeController', [])
 	.controller('HomeController', ['$scope', function($scope) {
 		console.log('Home template');
 
 		$scope.title = "Home Page";
 	}]);
-;
+
 angular.module('navController', [])
 	.controller('NavController', ['$scope', '$location', function($scope, $location) {
 		$scope.pageClass = function(path) {
@@ -107,7 +107,7 @@ angular.module('navController', [])
 			$('#navMenu').collapse("hide");
 		});
 	}]);
-;
+
 angular.module('workController', [])
 	.controller('WorkController', ['$scope', function($scope) {
 		console.log('Work template');
@@ -385,7 +385,7 @@ angular.module('workController', [])
 			}
 		});
 	}]);
-;
+
 angular.module('studioApp')
 	.directive('thumb', function() {
 		return {
@@ -393,7 +393,7 @@ angular.module('studioApp')
 			templateUrl: '../templates/directives/thumb.html'
 		}
 	});
-;
+
 angular.module('studioApp')
 	.directive('viewer', function() {
 		return {

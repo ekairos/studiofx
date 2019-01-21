@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node_modules/http-server/bin/http-server -c-1",
-    "unittest": "node_modules/grunt/bin/grunt karma:unit",
+    "unittest": "gulp unitTest",
     "webdriver": "node_modules/webdriver-manager/bin/webdriver-manager update && node_modules/webdriver-manager/bin/webdriver-manager start",
     "protractor": "sleep 5 && protractor protractor.conf.js",
     "e2etest": "npm-run-all --parallel -r start webdriver protractor"
@@ -33,6 +33,11 @@
     "grunt-contrib-uglify": "^4.0.0",
     "grunt-karma": "^3.0.1",
     "grunt-ng-annotate": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-ng-annotate": "^2.1.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.1",
     "jasmine": "^3.1.0",
     "jasmine-core": "^3.1.0",
     "jasmine-expect": "^3.8.3",
