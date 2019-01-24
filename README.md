@@ -114,8 +114,8 @@ To run the tests with global installation of Webdriver-manager and Protractor pr
 	- **Bootstrap v3.3.7** is used to give the project a simple, responsive layout. No update to BS4 planed at this stage and would result in new version.
 - [NPM](https://www.npmjs.com/)
 	- We use **npm** to help manage some of the dependencies in our application
-- [Bower](https://bower.io/)
-	- **Bower** is used to manage the installation of our libraries and frameworks
+- [Yarn](https://yarnpkg.com/en/)
+	- **Yarn** is now used to manage the installation of our libraries and framework. (_Previously used Bower_)
  
 ### Testing tools
 
@@ -123,8 +123,8 @@ To run the tests with global installation of Webdriver-manager and Protractor pr
 	- **Jasmine** as our testing framework
 - [karma](https://karma-runner.github.io/2.0/index.html)
 	- **Karma** as our test runner for the browsers we want
-- [Grunt](https://gruntjs.com/)
-	- **Grunt** as our task runner
+- [Gulp](https://gulpjs.com/)
+	- Now using **Gulp** as our task runner instead of Grunt. (_Previously used Grunt_)
 - [Angular mocks](https://docs.angularjs.org/api/ngMock)
 	- We need **ngMocks** to test our AngularJs components
 
