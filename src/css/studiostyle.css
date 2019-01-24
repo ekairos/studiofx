@@ -214,7 +214,7 @@ strong {
 	width: 100%;
 	height: 100%;
 	text-align: center;
-	background-image: url('../assets/bg.jpg');
+	background-image: url('../../assets/bg.jpg');
 }
 	.landing-header {
 		width: 100%;
@@ -509,7 +509,7 @@ form label {
 				========================
 */
 	.bg-contact {
-		background-image: url('../assets/office/mars_office.jpg');
+		background-image: url('../../assets/office/mars_office.jpg');
 		padding-bottom: 5px;
 	}
 /*					--- Address ---
