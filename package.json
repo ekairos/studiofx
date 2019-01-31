@@ -8,7 +8,10 @@
     "unittest": "gulp unitTest",
     "webdriver": "node_modules/webdriver-manager/bin/webdriver-manager update && node_modules/webdriver-manager/bin/webdriver-manager start",
     "protractor": "sleep 5 && protractor protractor.conf.js",
-    "e2etest": "npm-run-all --parallel -r start webdriver protractor"
+    "e2etest": "npm-run-all --parallel -r start webdriver protractor",
+    "buildjs": "gulp buildjs",
+    "cssmin": "gulp cssmin",
+    "build": "npm-run-all -s cssmin buildjs"
   },
   "repository": "git+https://github.com/GarethS3/studiofx.git",
   "author": "Gareth SCIARRONE",
