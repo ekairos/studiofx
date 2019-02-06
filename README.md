@@ -42,6 +42,10 @@ The website has been designed to respond to the following scenarios:
 	- The overall gallery directly shows the variety of projects on which StudioFX has been involved.
 	- Text content on external social network platform also gives the possibility to promote StudioFX production environment and team behavior.
 
+### Wireframes
+
+Wireframes (along with few drafts) are visible in [this directory](./wireframes/).
+
 ## Contributing
 
 ### Getting the code up and running
