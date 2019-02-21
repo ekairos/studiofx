@@ -1,7 +1,5 @@
 angular.module('contactController', [])
 	.controller('ContactController', function($scope, $log) {
-
-		$scope.title = "Contact Page";
 		
 		$scope.contact = {};
 

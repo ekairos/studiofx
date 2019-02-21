@@ -6,9 +6,6 @@ angular.module('workController', [])
 		$scope.loader = {};
 		$scope.initGallery = false;
 
-		console.dir('hero : ', $scope.hero);
-		console.dir('loader : ', $scope.loader);
-
 //				--- Gallery Obj ---
 		$scope.gallery = {
 			g3d: [

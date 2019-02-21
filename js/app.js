@@ -2,7 +2,7 @@ angular.module('studioApp', [
 	'ngRoute',
 	'ngAnimate',
 	'navController',
-	// 'homeController', ** no feauters yet implemented **
+	'homeController',
 	'aboutController',
 	'workController',
 	'contactController'
