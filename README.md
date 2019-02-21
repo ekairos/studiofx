@@ -56,15 +56,16 @@ Wireframes (along with few drafts) are visible in [this directory](./wireframes/
    ```
 2. Install project’s dependencies :
    ```bash
-   npm install
+   yarn install
    ```
-   _**Node** installation [here](https://nodejs.org/en/)_
+   _**Yarn** installation [here](https://yarnpkg.com/en/)_
 3. Start local server :
    ```bash
    npm run start
    ```
 This will execute `http-server` using ` -c-1 ` flags will disable the cache.
-The project will now run at [localhost:8080](http://127.0.0.1:8080) with any web browser.
+The project will now run at [localhost:8080](http://127.0.0.1:8080) with any web browser.  
+_**Npm** installation [here](https://nodejs.org/en/)_  
 
 ### The Testing framework
 
@@ -78,20 +79,21 @@ npm run unittest
 ```
 
 Check configuration and tested scripts in `gulpfile.js` and `karma.conf.js`, in project root directory.  
-_To test in additional browsers you will need to check for their [Karma launcher](https://npmjs.org/browse/keyword/karma-launcher) and add them in the ` karma.conf.js ` file_.
+_To test within additional browsers you will need to check for their [Karma launcher](https://npmjs.org/browse/keyword/karma-launcher) and add them in the ` karma.conf.js ` file_.
 
 #### End-to-End Testing
 
 These End-to-End tests are executed in Firefox 64.0 and Chrome 71.0 running Selenium server and Protactor.
 
-_You need [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) to be installed on your computer to run **Selenium Server** locally._
+_You need [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) to be installed on your computer to run **Selenium Server** locally._  
 
 To simply run the tests with local config :
 ```bash
 npm run e2etest
 ```
-This will run the tests with local installation of Webdriver-manager and Protractor after updating the drivers. Should it fails in the 5s delay (which you can change in package.json), you may have to update them running: ```npm run webdriver```.
-Once the selenium driver is running on port 4444 you can interrupt it and run again ```npm run e2etest``` or run simultaneously ```npm run protractor```.
+This will run the tests with local installation of Webdriver-manager and Protractor after updating the drivers.  
+
+_Before running end to end tests for the first time you need to update webdriver manager :``` npm run webdriver ```. Once Selenium Server is running on port 4444 you can interrupt it and run again ```npm run e2etest``` or run simultaneously ```npm run protractor```._
 
 Check configuration in `protractor.conf.js` in project root directory.
 
@@ -105,10 +107,10 @@ Check configuration in `protractor.conf.js` in project root directory.
 	- **Bootstrap v3.3.7** is used to give the project a simple, responsive layout. No update to BS4 planed at this stage and would result in new version.
 - [jQuery](https://jquery.com/)
 	- **jQuery** library is used to ease DOM manipulation. _Note that **jqLite** is built-in AngularJS_
-- [NPM](https://www.npmjs.com/)
-	- We use **npm** to help manage some of the dependencies in our application
 - [Yarn](https://yarnpkg.com/en/)
 	- **Yarn** is now used to manage the installation of our libraries and framework (_Previously used Bower_)
+- [NPM](https://www.npmjs.com/)
+	- Used to initiate this project, manage our dev-dependencies and run scripts for deployment.
  
 ### Testing tools
 
@@ -117,7 +119,7 @@ Check configuration in `protractor.conf.js` in project root directory.
 - [karma](https://karma-runner.github.io/2.0/index.html)
 	- **Karma** as our test runner for the browsers we want
 - [Gulp](https://gulpjs.com/)
-	- Now using **Gulp** as our task runner instead of Grunt. (_Previously used Grunt_)
+	- Now using **Gulp** as our task runner. (_Previously with Grunt_)
 - [Angular mocks](https://docs.angularjs.org/api/ngMock)
 	- We need **ngMocks** to test our AngularJs components
 
@@ -132,7 +134,6 @@ Check configuration in `protractor.conf.js` in project root directory.
   - To run the project on ` localHost:8080 `
 - [Jasmine-expect](https://www.npmjs.com/package/jasmine-expect)
   - Used to add custom matchers for testing the app
-
 
 ## Features
 
@@ -156,7 +157,7 @@ See the [LICENSE.md](./LICENSE.md) file for license rights and limitations (MIT)
 
 ### Code
 
-Tanks to Eric A. Meyer for the [resetCSS](./src/css/resetCSS.css) file, used to smooth appearance differences between browsers.
+Tanks to Eric A. Meyer for the [resetCSS](./css/resetCSS.css) file, used to smooth appearance differences between browsers.
 
 ### Media
 
