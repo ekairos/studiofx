@@ -17,26 +17,28 @@ module.exports = function(config) {
     files: [
         // --- libraries frameworks files ---
         'node_modules/angular/angular.min.js',
-        'node_modules/jquery/dist/jquery.js',
+        'node_modules/jquery/dist/jquery.min.js',
         'node_modules/bootstrap/dist/js/bootstrap.min.js',
         'node_modules/angular-mocks/angular-mocks.js',
+        // additional matchers
         'node_modules/jasmine-expect/dist/jasmine-matchers.js',
 
-        // --- app files ---
+        // --- src files ---
         'js/app.js',
-        'js/controllerHome.js',
+        // 'js/controllerHome.js', ** No features to test yet **
         'js/controllerAbout.js',
         'js/controllerWork.js',
         'js/controllerContact.js',
-        //'js/reelviewer.js',
+
+        // --- distribution files ---
+        // 'dist/js/studioapp.min.js',
         
         // --- spec files ---
         // 'tests/unit/dummySpec.js',
-        'tests/unit/controllerHomeSpec.js',
+        // 'tests/unit/controllerHomeSpec.js', ** No features to test yet **
         'tests/unit/controllerAboutSpec.js',
         'tests/unit/controllerWorkSpec.js',
         'tests/unit/controllerContactSpec.js'
-        //'tests/unit/reelviewerSpec.js'
     ],
 
 

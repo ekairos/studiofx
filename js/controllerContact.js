@@ -1,6 +1,5 @@
 angular.module('contactController', [])
 	.controller('ContactController', function($scope, $log) {
-		console.log('Contact template');
 
 		$scope.title = "Contact Page";
 		

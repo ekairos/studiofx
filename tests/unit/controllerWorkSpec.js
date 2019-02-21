@@ -11,10 +11,6 @@ describe('testing work controller - ', function() {
 
 	describe('gallery - ', function() {
 
-		it('should read scope title', function() {
-			expect($scope.title).toBe('Work Page');
-		});
-
 		it('should read galleries', function() {
 			expect($scope.gallery.g3d.length).toEqual(4);
 			expect($scope.gallery.gtvc.length).toEqual(5);

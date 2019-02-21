@@ -1,3 +1,10 @@
+/* ***************************************
+	
+No features yet implemented on home page
+
+**************************************** */
+
+/*
 describe('testing home controller - ', function() {
 
 	beforeEach(module('homeController'));
@@ -13,3 +20,4 @@ describe('testing home controller - ', function() {
 		expect($scope.title).toBe('Home Page');
 	})
 });
+*/

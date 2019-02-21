@@ -20,20 +20,19 @@
 
 				<!-- ==== SCRIPTS ==== -->
 		<!-- Jquery -->
-	<script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
 		<!-- Bootstrap -->
-	<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
 		<!-- AngularJS -->
 	<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
 	<script type="text/javascript" src="node_modules/angular-route/angular-route.min.js"></script>
 	<script type="text/javascript" src="node_modules/angular-animate/angular-animate.min.js"></script>
 
-		<!-- scripts for AngularJs -->
+		<!-- scripts for AngularJs !homeController.js -->
 	<!-- build:js js/studioapp.min.js -->
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="js/controllerNav.js"></script>
-	<script type="text/javascript" src="js/controllerHome.js"></script>
 	<script type="text/javascript" src="js/controllerAbout.js"></script>
 	<script type="text/javascript" src="js/controllerWork.js"></script>
 	<script type="text/javascript" src="js/controllerContact.js"></script>
@@ -46,7 +45,7 @@
 
 <nav class="navbar navbar-fixed-top navbar-inverse" ng-controller="NavController">
 	<div class="navbar-header">
-		<div class="navbar-brand navbar-logo"><a href="/"><img src="/assets/studiofx_label.png" alt="StuioFX" width="124" height="40"></a></div>
+		<div class="navbar-brand navbar-logo"><a href="/"><img src="assets/studiofx_label.png" alt="StuioFX" width="124" height="40"></a></div>
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navMenu">
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
@@ -55,9 +54,9 @@
 	</div><!-- /navbar hedaer -->
 	<div id="navMenu" class="collapse navbar-collapse nav-menu">
 		<ul class="nav navbar-nav navbar-right">
-			<li ng-class="pageClass('/about')"><a href="/about">About</a></li>
-			<li ng-class="pageClass('/work')"><a href="/work">Work</a></li>
-			<li ng-class="pageClass('/contact')"><a href="/contact">Contact</a></li>
+			<li ng-class="pageClass('/about')"><a href="about">About</a></li>
+			<li ng-class="pageClass('/work')"><a href="work">Work</a></li>
+			<li ng-class="pageClass('/contact')"><a href="contact">Contact</a></li>
 		</ul>
 	</div><!-- /navbar collapse -->
 </nav>

@@ -49,13 +49,10 @@ $(document).ready(function() {
 	$(window).on('resize', positionViewer);
 
 	$('#demoViewer').on('hidden.bs.modal', function() {
-		console.log('modal is hidden, pausing video');
 		demo.pause();
 	});
 	$('#demoViewer').on('shown.bs.modal', function() {
-		console.log('positioning viewer');
 		positionViewer();
-		console.log('modal is shown, resuming video');
 		demo.play();
 	});
 });

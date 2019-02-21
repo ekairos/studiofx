@@ -9,10 +9,6 @@ describe('About Controller test - ', function() {
 		var aboutCtr = $controller('AboutController', {$scope: $scope});
 	}));
 
-	it('should read scope title', function() {
-		expect($scope.title).toBe('About Page');
-	});
-
 	describe('About Controller', function() {
 		it('should read members list', function() {
 			expect($scope.members.length).toEqual(4);
