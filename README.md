@@ -1,19 +1,20 @@
 # StudioFX
 
-Table Of Content
+Table Of Contents
 
 - [Overview](#overview)
 - [UX](#ux)
 - [Contributing](#contributing)
 - [Tech used](#tech-used)
 - [Features](#features)
+- [Deployment](#deployment)
 - [License](#license)
 - [Credits](#credits)
 
 ## Overview
 
-**_Live preview_** :
-[githup pages](https://gareths3.github.io/studiofx/)  
+**_Deployed on_** :
+[Heroku](https://studiofx.herokuapp.com/)    
 
 ### What is it for ?
 
@@ -28,7 +29,7 @@ While portfolio are best shown on desktop displays, the mobile first approach in
 
 The website has been designed to respond to the following scenarios:
 
-- As a client, I want to check previous work to estimate the outcome quality of my project with StudioFX should they match the service required.
+- As a client, I want to check previous work to estimate the outcome quality of my project with StudioFX should they present the service required.
 	- To satisfy this demand, the video sampling previous work is present on the landing page.
 	- The gallery is accessible from landing page. Priority is given to media visibility over text content. It pictures the full range of services and skills provided while a sub-menu filters diverse types of projects.
 	- A basic presentation of the Studio and the core team members is provided to give a feel of how they work and how they interact in collaborative projects with their clients.
@@ -38,13 +39,13 @@ The website has been designed to respond to the following scenarios:
 	- Social links are displayed at all times as a persistent fixed footer.
 	- Having the text content separated from the gallery on external platforms raises the flexibility to interact with professional network while reducing the maintenance for the website.
 
-- As a digital artist and employee, I want to investigate on potential talent need of StudioFX.
+- As a digital artist I want to investigate on potential talent need of StudioFX.
 	- The overall gallery directly shows the variety of projects on which StudioFX has been involved.
 	- Text content on external social network platform also gives the possibility to promote StudioFX production environment and team behavior.
 
 ### Wireframes
 
-Wireframes (along with few drafts) are visible in [this directory](./wireframes/).
+Wireframes (along with few drafts) are visible in [wireframes/](./wireframes/).
 
 ## Contributing
 
@@ -58,20 +59,20 @@ Wireframes (along with few drafts) are visible in [this directory](./wireframes/
    ```bash
    yarn install
    ```
-   _**Yarn** installation [here](https://yarnpkg.com/en/)_
+_Install **Yarn** [here](https://yarnpkg.com/en/)_
 3. Start local server :
    ```bash
    npm run start
    ```
 This will execute `http-server` using ` -c-1 ` flags will disable the cache.
 The project will now run at [localhost:8080](http://127.0.0.1:8080) with any web browser.  
-_**Npm** installation [here](https://nodejs.org/en/)_  
+_Install **Npm** [here](https://nodejs.org/en/)_  
 
 ### The Testing framework
 
 #### Unit Testing
 
-The Unit Tests are run in Firefox 64.0, Chrome 71.0 and Opera 57.0 using Karma testing framework.
+The Unit Tests are run in Firefox 65.0, Chrome 72.0 and Opera 58.0 using Karma testing framework.
 
 You can run the tests using local config:
 ```bash
@@ -83,7 +84,7 @@ _To test within additional browsers you will need to check for their [Karma laun
 
 #### End-to-End Testing
 
-These End-to-End tests are executed in Firefox 64.0 and Chrome 71.0 running Selenium server and Protactor.
+These End-to-End tests are executed in Firefox 65.0 and Chrome 72.0 running Selenium Server and Protactor.
 
 _You need [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) to be installed on your computer to run **Selenium Server** locally._  
 
@@ -102,9 +103,9 @@ Check configuration in `protractor.conf.js` in project root directory.
 ### Main tech used:
 
 - [AngularJS](https://angularjs.org/)
-	- **AngularJS** is used to handle page routing, build custom directives
+	- **AngularJS** LTS 1.7.7 is used to handle page routing, build custom directives
 - [Bootstrap](http://getbootstrap.com/)
-	- **Bootstrap v3.3.7** is used to give the project a simple, responsive layout. No update to BS4 planed at this stage and would result in new version.
+	- **Bootstrap v3.4.0** is used to give the project a simple, responsive layout. No update to BS4 planed at this stage and would result in new version.
 - [jQuery](https://jquery.com/)
 	- **jQuery** library is used to ease DOM manipulation. _Note that **jqLite** is built-in AngularJS_
 - [Yarn](https://yarnpkg.com/en/)
@@ -126,7 +127,7 @@ Check configuration in `protractor.conf.js` in project root directory.
 - [Protractor](https://www.protractortest.org/#/)
 	- **Protractor** is our AngularJs end-to-end testing framework
 - [Webdriver-manager](https://www.protractortest.org/#/server-setup)
-	- **Webdriver-manager** helps running [Selenium server](https://www.seleniumhq.org/) and drive the browsers needed
+	- **Webdriver-manager** helps running [Selenium Server](https://www.seleniumhq.org/) and drive the browsers needed
 
 ### Additional tech used
 
@@ -142,12 +143,21 @@ Check configuration in `protractor.conf.js` in project root directory.
 - Demo Reel on Home Page
 - About page presenting services and team
 - Address on googleMap for location
-- Contact Forms
+- Contact Form
 - Portfolio gallery viewer
 
 ### Features to add
 
-_There is always space for improvement_
+- Swipe feature on landing page. Loops between gallery categories displaying a single representative bg image and a different catchline as subtitle.
+- Add links from gallery’s thumbnail/viewer to its article on relevant external social platform. 
+
+## Deployment
+
+The gh-pages branch is a subtree of the [dist/](./dist/) directory on the master branch.
+It also contains ‘yarn.lock’ and ‘package.json’ specifying the version of yarn used to install the app dependencies.  
+Heroku is configured to install Dependencies only (not DevDependencies) to build the app and run it on port 8080.
+
+_Please note Google Map runs on the contact page without an APIKey for now._
 
 ## License
 
