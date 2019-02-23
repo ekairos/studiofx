@@ -59,14 +59,14 @@ Wireframes (along with few drafts) are visible in [wireframes/](./wireframes/).
    ```bash
    yarn install
    ```
-_Install **Yarn** [here](https://yarnpkg.com/en/)_
+   _Install **Yarn** [here](https://yarnpkg.com/en/)_
 3. Start local server :
    ```bash
    npm run start
    ```
-This will execute `http-server` using ` -c-1 ` flags will disable the cache.
-The project will now run at [localhost:8080](http://127.0.0.1:8080) with any web browser.  
-_Install **Npm** [here](https://nodejs.org/en/)_  
+   This will execute `http-server` using ` -c-1 ` flags will disable the cache.  
+   The project will now run at [localhost:8080](http://127.0.0.1:8080) with any web browser.  
+   _Install **Npm** [here](https://nodejs.org/en/)_  
 
 ### The Testing framework
 
@@ -105,7 +105,7 @@ Check configuration in `protractor.conf.js` in project root directory.
 - [AngularJS](https://angularjs.org/)
 	- **AngularJS** LTS 1.7.7 is used to handle page routing, build custom directives
 - [Bootstrap](http://getbootstrap.com/)
-	- **Bootstrap v3.4.0** is used to give the project a simple, responsive layout. No update to BS4 planed at this stage and would result in new version.
+	- **Bootstrap v3.x** is used to give the project a simple, responsive layout. No update to BS4 planed at this stage and would result in new version.
 - [jQuery](https://jquery.com/)
 	- **jQuery** library is used to ease DOM manipulation. _Note that **jqLite** is built-in AngularJS_
 - [Yarn](https://yarnpkg.com/en/)
