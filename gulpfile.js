@@ -51,7 +51,7 @@ function concatNgTask() {
 }
 // minify JS files
 function uglifyTask() {
-  return src(['js/gmapload.js', 'js/reelviewer.js', 'js/scrollspy.js'])
+  return src(['js/reelviewer.js', 'js/scrollspy.js'])
     .pipe(sourcemaps.init())
     .pipe(uglify())
     .pipe(rename({ extname: '.min.js' }))

@@ -11,7 +11,7 @@ describe('About Controller test - ', function() {
 
 	describe('About Controller', function() {
 		it('should read members list', function() {
-			expect($scope.members.length).toEqual(4);
+			expect($scope.members.length).toEqual(3);
 		});
 		it('should read team members details', function() {
 			// custom matcher from jasmin-expect

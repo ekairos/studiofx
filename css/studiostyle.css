@@ -22,14 +22,13 @@ strong {
 	padding: 10px 0;
 }
 .header-title {
-	font-size: 2rem;
-	padding: 6px 0;
-	padding-left: 5%; 
+	font-size: 2.5rem;
+	padding-left: 1rem;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 .prime-text {
-	margin: 6px auto;
-	padding-left: 3%;
-	padding-right: 3%;
+	line-height: 1.5rem;
 }
 /*					--- Layout ---
 */
@@ -55,7 +54,7 @@ strong {
 }
 .safe-read {
 	width: 90%;
-	max-width: 900px;
+	max-width: 700px;
 }
 /*					--- Navigation ---
 */
@@ -105,7 +104,6 @@ strong {
 */
 .anchor {
 	padding-top: 90px;
-	padding-bottom: 10px;
 }
 .active {
 	color: #000;
@@ -188,7 +186,7 @@ strong {
 	width: 100%;
 	padding: 2px 0;
 	text-align: center;
-	background-color: rgba(0,0,0,0.3);
+	background-color: #222;
 }
 	.social-icon {
 		width: 22px;
@@ -246,6 +244,10 @@ strong {
 		.demo-reel span {
 			cursor: pointer;
 		}
+.home-footer {
+	position:fixed;
+	bottom: 0;
+}
 /*					--- Reel viewer ---
 */
 .reel-header {
@@ -267,9 +269,18 @@ strong {
 					ABOUT TEMPLATE
 				======================
 */
+.about-section {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+	.about-section p {
+		font-size: 1.1rem;
+		line-height: 1.3rem;
+	}
 .team-book {
 	padding-bottom: 60px;
 	width: 100%;
+	max-width: 900px;
 }
 	.team-book li {
 		padding: 10px;
@@ -287,11 +298,11 @@ strong {
 		}
 		.membr-name {
 			font-size: 2rem;
-			padding-top: 6px;
-			padding-bottom: 6px;
-			padding-left: 5%;
-			margin-right: 5%;
-			margin-left: 5%;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-left: 1rem;
+			margin-right: 1rem;
+			margin-left: 1rem;
 			border-bottom: 1px;
 			border-color: #eee;
 			border-style: solid;
@@ -302,8 +313,8 @@ strong {
 			margin: 5px auto 10px;
 		}
 		.membr-title {
-			font-size: 1.1rem;
-			padding-left: 10%;
+			font-size: 1.3rem;
+			line-height: 2rem;;
 		}
 /*
 				=====================
@@ -362,7 +373,6 @@ strong {
 	font-size: 0.8rem;
 	letter-spacing: 1px;
 	text-align: center;
-	padding-top: 20px;
 	padding-bottom: 60px; 
 }
 /*
@@ -372,69 +382,76 @@ strong {
 */
 /*					--- Address ---
 */
-.darken-bg {
-	padding: 15px;
-	background-color: rgba(0,0,0,0.3);
-}
-.details h2,
-.query h2 {
-	font-size: 1.5rem;
-	padding: 5px 0;
-	margin: 4px 0;
-	margin-left: 6%;
-}
 .loc-details {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
 }
-	.details {
-		width: 100%;
-		padding-left: 10%;
+.darken-bg {
+	padding: 15px;
+	background-color: rgba(0,0,0,0.3);
+}
+.darken-bg {
+	padding: 15px;
+	background-color: rgba(0,0,0,0.3);
+}
+.ctc-section {
+	margin: 30px auto;
+}
+.ctc-details {
+	margin-bottom: 50px;
+}
+	.ctc-details h2 {
+		font-size: 1.5rem;
+		text-align: center;
+		margin-bottom: 20px;
 	}
-	.map-details {
-		flex-basis: 75%;
+	.ctc-details p {
+		font-size: 1.2rem;
+		line-height: 1.5rem;
 	}
-		.g-map {
-			/* safe guard width for mobile devices*/
-			display: block;
-			width: 90%;
-			height: 250px;
-			margin: 15px auto;
-		}
 /*					--- Query Form ---
 */
-.ctc-form button {
-	display: block;
-	margin: 10px auto;
+.ctc-form {
+	width: 300px;
+}
+	.ctc-form button {
+		display: block;
+		margin: 10px auto;
+	}
+	.ctc-form label {
+		display: block;
+		padding-bottom: 8px;
+		font-size: 1.2rem;
+	}
+.ctc-form .form-control {
+	font-size: 1.2rem;
 }
 .query-field {
 	width: 95%;
 	margin-left: auto;
 }
-.query-field textarea {
-	min-height: 80px;
-}
-.query-field::placeholder {
-	font-style: italic;
-}
+	.query-field textarea {
+		min-height: 80px;
+	}
+	.query-field::placeholder {
+		font-style: italic;
+	}
 .sub-field {
 	position: relative;
-	left: 5%;
+	margin-left: 5%;
 	color: #d7d7d7;
-}
-.ctc-form .form.control {
-	font-size: 1.2rem;
-}
-form label {
-	display: block;
-	padding-bottom: 8px;
-	font-size: 1.2rem;
 }
 .query {
 	padding: 10px 20px;
 	background-color: rgba(0,0,0,0.8);
 }
+	.query h3 {
+		font-size: 1.5rem;
+	}
+	.query p {
+		font-size: 1.2rem;
+	}
 /*
 				*******************************
 					TABLETS / DESKTOP RULES 		>= 768
@@ -476,7 +493,7 @@ form label {
 	.team-book {
 		display: flex;
 		flex-direction: row;
-		flex-wrap: wrap;
+		flex-wrap: nowrap;
 		justify-content: space-evenly;
 		margin-left: auto;
 		margin-right: auto;
@@ -484,7 +501,6 @@ form label {
 		.team-book li {
 			margin: 10px 5px;
 			align-self: stretch;
-			max-width: 280px;
 		}
 /*
 				=====================
@@ -505,24 +521,16 @@ form label {
 					CONTACT TEMPLATE
 				========================
 */
-	.bg-contact {
-		background-image: url('../assets/office/mars_office.jpg');
-		padding-bottom: 5px;
-	}
 /*					--- Address ---
 */
-	.loc-details {
-		flex-direction: row;
+	.ctc-form {
+		width: 400px;
 	}
-		.details {
-			padding-left: 3%;
-			flex-basis: 25%;
+	.loc-details {
+		flex-direction: row-reverse;
+	}
+		.ctc-section {
 			align-self: center;
-			min-width: 200px;
-		}
-		.g-map {
-			flex-basis: 75%;
-			height: 330px;
 		}
 }
 /*
@@ -531,14 +539,6 @@ form label {
 				*****************************
 */
 @media screen and (min-width: 992px) {
-/*
-				======================
-					ABOUT TEMPLATE
-				======================
-*/
-	.team-book {
-		max-width: 1240px;
-	}
 /*
 				=====================
 					WORK TEMPLATE

@@ -20,12 +20,6 @@ angular.module('aboutController', [])
 				title: 'Head of production',
 				description: 'Tic tac',
 				file: 'paolo_segretti'
-			},
-			{
-				name: 'Geoffray Lami',
-				title: 'Designer',
-				description: 'The art guy, our dreaming pencil. Working along with Akira, they are our award winning team.',
-				file: 'geoffray_lami'
 			}
 		];
 	});

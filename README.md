@@ -142,7 +142,6 @@ Check configuration in `protractor.conf.js` in project root directory.
 
 - Demo Reel on Home Page
 - About page presenting services and team
-- Address on googleMap for location
 - Contact Form
 - Portfolio gallery viewer
 
@@ -150,14 +149,13 @@ Check configuration in `protractor.conf.js` in project root directory.
 
 - Swipe feature on landing page. Loops between gallery categories displaying a single representative bg image and a different catchline as subtitle.
 - Add links from gallery’s thumbnail/viewer to its article on relevant external social platform. 
+- Address on googleMap for location  
 
 ## Deployment
 
 The gh-pages branch is a subtree of the [dist/](./dist/) directory on the master branch.
 It also contains ‘yarn.lock’ and ‘package.json’ specifying the version of yarn used to install the app dependencies.  
 Heroku is configured to install Dependencies only (not DevDependencies) to build the app and run it on port 8080.
-
-_Please note Google Map runs on the contact page without an APIKey for now._
 
 ## License
 
