@@ -16,13 +16,11 @@
     "depl": "gulp assets",
     "dist": "npm-run-all -s depl build"
   },
-  "repository": "git+https://github.com/GarethS3/studiofx.git",
-  "author": "Gareth SCIARRONE",
-  "license": "MIT",
+  "repository": "git+https://github.com/ekairos/studiofx.git",
   "bugs": {
-    "url": "https://github.com/GarethS3/studiofx/issues"
+    "url": "https://github.com/ekairos/studiofx/issues"
   },
-  "homepage": "https://github.com/GarethS3/studiofx#readme",
+  "homepage": "https://github.com/ekairos/studiofx#readme",
   "dependencies": {
     "angular": "1.7.7",
     "angular-animate": "1.7.7",

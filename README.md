@@ -1,5 +1,8 @@
 # StudioFX
 
+_This was submitted among [others](https://github.com/ekairos/) to Code Institute as part 
+of my training as Software Developer. I was proudly awarded First Class Honours._
+
 Table Of Contents
 
 - [Overview](#overview)
@@ -22,7 +25,7 @@ To present the Studio's portfolio to potential client as much as new talents wil
 
 ### What does it do ?
 
-The website should showcase StudioFX's gallery, present the team and the services they provide.
+The website should showcase StudioFX's gallery, presents the team and the services they provide.
 While portfolio are best shown on desktop displays, the mobile first approach insures the targeted users can access what they are looking for from any devices.
 
 ## UX
@@ -53,7 +56,7 @@ Wireframes (along with few drafts) are visible in [wireframes/](./wireframes/).
 
 1. Firstly you will need to clone this repository by running :
    ```bash
-   git clone https://github.com/GarethS3/studiofx.git
+   git clone https://github.com/ekairos/studiofx.git
    ```
 2. Install project’s dependencies :
    ```bash
@@ -157,9 +160,6 @@ The gh-pages branch is a subtree of the [dist/](./dist/) directory on the master
 It also contains ‘yarn.lock’ and ‘package.json’ specifying the version of yarn used to install the app dependencies.  
 Heroku is configured to install Dependencies only (not DevDependencies) to build the app and run it on port 8080.
 
-## License
-
-See the [LICENSE.md](./LICENSE.md) file for license rights and limitations (MIT).
 
 ## Credits
 
@@ -169,9 +169,9 @@ Tanks to Eric A. Meyer for the [resetCSS](./css/resetCSS.css) file, used to smoo
 
 ### Media
 
-Graphic elements were created by Gareth Sciarrone.  
-Photographs and material in the gallery section are copyrighted Gareth Sciarrone except for the following:  
-London Olympic 2012:  © International Olympic Committee,  
-Acts Of Godfrey : © Acts of Godfrey Limited,  
-Ptouch : © Brother Industries, Ltd,  
-Motat : © Copyright MOTAT (Museum of Transport and Technology).  
+Graphic elements, photographs and material (other than video footage) were created by my self.  
+Following materials are copyrighted (former clients as 3D VFX Compositing artist) :  
+- London Olympic 2012:  © International Olympic Committee,  
+- Acts Of Godfrey : © Acts of Godfrey Limited,  
+- Ptouch : © Brother Industries, Ltd,  
+- Motat : © Copyright MOTAT (Museum of Transport and Technology).  
