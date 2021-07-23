@@ -3,6 +3,8 @@
 _This was submitted among [others](https://github.com/ekairos/) to Code Institute as part 
 of my training as Software Developer. I was proudly awarded First Class Honours._
 
+_This project is not maintained anymore._
+
 Table Of Contents
 
 - [Overview](#overview)
@@ -75,7 +77,7 @@ Wireframes (along with few drafts) are visible in [wireframes/](./wireframes/).
 
 #### Unit Testing
 
-The Unit Tests are run in Firefox 65.0, Chrome 72.0 and Opera 58.0 using Karma testing framework.
+The Unit Tests are run in Firefox 90.0, Chrome 91.0 using Karma testing framework.
 
 You can run the tests using local config:
 ```bash
@@ -87,17 +89,17 @@ _To test within additional browsers you will need to check for their [Karma laun
 
 #### End-to-End Testing
 
-These End-to-End tests are executed in Firefox 65.0 and Chrome 72.0 running Selenium Server and Protactor.
+These End-to-End tests are executed in Chrome 91.0 running Selenium Server and Protactor.
 
 _You need [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) to be installed on your computer to run **Selenium Server** locally._  
+
+_Before running end-to-end tests for the first time you need to update webdriver manager :``` npm run webdriver ```. Once Selenium Server is running on port 4444 you can interrupt it and run again ```npm run e2etest``` or run simultaneously ```npm run protractor```._
 
 To simply run the tests with local config :
 ```bash
 npm run e2etest
 ```
 This will run the tests with local installation of Webdriver-manager and Protractor after updating the drivers.  
-
-_Before running end to end tests for the first time you need to update webdriver manager :``` npm run webdriver ```. Once Selenium Server is running on port 4444 you can interrupt it and run again ```npm run e2etest``` or run simultaneously ```npm run protractor```._
 
 Check configuration in `protractor.conf.js` in project root directory.
 

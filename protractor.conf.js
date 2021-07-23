@@ -10,20 +10,14 @@ exports.config = {
 		'tests/end2end/workSpec.js'
 	],
 
+	// There is currently an issue with newer versions of protractor and Gecko driver.
+	// Since this project is not maintained anymore the end-ro-end tests are run with Chrome only.
 	capabilities: {
-		browserName: 'firefox'
+		browserName: 'chrome'
 	},
 
-/*
-	mutliCapabilities: [{
-		browserName: 'firefox'
-	},
-	{
-		browserName: 'chrome'
-	}],
-*/
 	framework: 'jasmine',
 	// set location of server running the test
 	// http-server runs on port 8080
 	baseUrl: 'http://localhost:8080/'
-}
+};
